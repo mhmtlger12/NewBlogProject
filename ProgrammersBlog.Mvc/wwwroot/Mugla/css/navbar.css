@@ -1,0 +1,324 @@
+/* Muğla Navbar Tasarımı - Modern ve Uyumlu */
+:root {
+    --ana-mavi: #005792;
+    --deniz-mavi: #0077be;
+    --acik-mavi: #e1f5fe;
+    --koyu-mavi: #003b5c;
+    --turkuaz: #00a7c7;
+    --zeytin-yesil: #7cb342;
+    --gunes-sari: #FFD54F;
+    --lacivert: #003366;
+    --altin: #D4AF37;
+    --koyu-gri: #333333;
+    --acik-gri: #f5f5f5;
+}
+
+/* Ana Navbar Konteyner */
+.mugla-navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+    position: relative;
+    z-index: 1000;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* Navbar İçeriği */
+.mugla-navbar .navbar {
+    padding: 0;
+}
+
+/* Mobil Menü Butonu */
+.mugla-navbar .custom-toggler {
+    border-color: var(--ana-mavi);
+}
+
+.mugla-navbar .custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 87, 146, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Menü Linkleri */
+.mugla-navbar .nav-item {
+    position: relative;
+    margin: 0 10px; /* Menü öğeleri arasındaki boşluğu artırdım */
+}
+
+.mugla-navbar .nav-link {
+    color: var(--koyu-mavi) !important;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap; /* Menü öğelerinin satır atlamasını önler */
+}
+
+.mugla-navbar .nav-link:hover {
+    color: var(--turkuaz) !important;
+}
+
+/* Menü ikonları için düzenleme */
+.mugla-navbar .nav-link i {
+    margin-right: 6px;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Altçizgi Animasyonu */
+.mugla-navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 50%;
+    background-color: var(--altin);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.mugla-navbar .nav-link:hover::after {
+    width: 70%;
+}
+
+/* Dropdown Menü */
+.mugla-navbar .dropdown-menu {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-top: 5px;
+    min-width: 240px;
+    animation: fadeIn 0.3s ease-in-out;
+    border-top: 3px solid var(--altin);
+    left: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mugla-navbar .dropdown-item {
+    color: var(--koyu-gri);
+    padding: 12px 15px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.mugla-navbar .dropdown-item:hover {
+    background-color: rgba(0, 119, 190, 0.08);
+    color: var(--deniz-mavi);
+    transform: translateX(5px);
+}
+
+.mugla-navbar .dropdown-item i {
+    width: 20px;
+    text-align: center;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.mugla-navbar .dropdown-item:hover i {
+    transform: scale(1.2);
+}
+
+/* Dropdown Menü Stilleri */
+.mugla-navbar .dropdown-menu {
+    margin: 0;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Varsayılan olarak gizli */
+    display: none;
+}
+
+/* Sadece .show sınıfı ile göster (tıklama ile) */
+.mugla-navbar .dropdown-menu.show {
+    display: block;
+}
+
+/* Hover ile açılmayı kesinlikle engelle */
+.mugla-navbar .dropdown:hover .dropdown-menu:not(.show) {
+    display: none !important;
+}
+
+.mugla-navbar .dropdown-toggle::after {
+    margin-left: 5px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+}
+
+/* Tıklama durumunda ok işareti dönsün */
+.mugla-navbar .dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+/* Sosyal Medya İkonları */
+.mugla-navbar .social-item {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.mugla-navbar .social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.mugla-navbar .social-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: var(--ana-mavi);
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.mugla-navbar .social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 87, 146, 0.3);
+}
+
+.mugla-navbar .social-icon:nth-child(1) {
+    background-color: #1877f2; /* Facebook */
+}
+
+.mugla-navbar .social-icon:nth-child(2) {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); /* Instagram */
+}
+
+.mugla-navbar .social-icon:nth-child(3) {
+    background-color: #000000; /* Twitter-X */
+}
+
+.mugla-navbar .social-icon:nth-child(4) {
+    background-color: #0077b5; /* LinkedIn */
+}
+
+/* Responsive Ayarları */
+@media (max-width: 991.98px) {
+    .mugla-navbar {
+        padding: 10px 0;
+    }
+    
+    .mugla-navbar .navbar-brand.mugla-logo {
+        max-width: 80%;
+        padding-right: 15px;
+    }
+    
+    .mugla-navbar .logo-baslik {
+        font-size: 1.7rem;
+    }
+    
+    .mugla-navbar .logo-slogan {
+        font-size: 0.8rem;
+    }
+    
+    .mugla-navbar .nav-link {
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .mugla-navbar .nav-link::after {
+        display: none;
+    }
+    
+    .mugla-navbar .nav-item:last-child .nav-link {
+        border-bottom: none;
+    }
+    
+    .mugla-navbar .social-item {
+        margin-left: 0;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        justify-content: center;
+    }
+    
+    .mugla-navbar .social-icons {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .mugla-navbar .social-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    .mugla-navbar .dropdown-menu {
+        border: none;
+        box-shadow: none;
+        padding: 0 0 0 20px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        animation: none;
+        border-top: none;
+        background-color: rgba(0, 119, 190, 0.05);
+        border-radius: 0;
+    }
+    
+    .mugla-navbar .dropdown-item {
+        padding: 10px 15px;
+        border-radius: 0;
+        border-left: 2px solid var(--altin);
+        margin-bottom: 5px;
+    }
+    
+    .mugla-navbar .dropdown-item:hover {
+        transform: none;
+        background-color: rgba(0, 119, 190, 0.1);
+    }
+    
+    .mugla-navbar .dropdown-toggle::after {
+        float: right;
+        margin-top: 8px;
+    }
+    
+    .mugla-navbar .navbar-collapse {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}
+
+/* Daha küçük ekranlar için ek düzenlemeler */
+@media (max-width: 576px) {
+    .mugla-navbar .logo-amblem {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .mugla-navbar .logo-amblem::before {
+        font-size: 26px;
+    }
+    
+    .mugla-navbar .logo-baslik {
+        font-size: 1.5rem;
+    }
+    
+    .mugla-navbar .logo-slogan {
+        font-size: 0.7rem;
+    }
+}

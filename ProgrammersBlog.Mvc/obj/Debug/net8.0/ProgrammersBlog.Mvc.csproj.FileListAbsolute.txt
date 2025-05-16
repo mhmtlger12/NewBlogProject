@@ -1215,3 +1215,4 @@ C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\scopedc
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\Programm.EADCD596.Up2Date
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.genruntimeconfig.cache
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ref\ProgrammersBlog.Mvc.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.sourcelink.json

@@ -6,9 +6,9 @@
     var websiteInfo = WebsiteInfo.Value;
 }
 
-<header class="navigation py-3">
+<header class="mugla-navbar">
     <div class="container">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand mugla-logo" asp-controller="Home" asp-action="Index">
                 <div class="logo-amblem"></div>
                 <div class="logo-yazi">
@@ -17,12 +17,12 @@
                 </div>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto">
                     @foreach (var menu in Model.Where(m => m.ParentId == null).OrderBy(m => m.Order))
                     {
                         var hasSubMenus = Model.Any(m => m.ParentId == menu.Id);
@@ -35,9 +35,9 @@
                                     <a class="nav-link" href="@Url.Action("About", "Home")">
                                         @if (!string.IsNullOrEmpty(menu.Icon))
                                         {
-                                            <i class="@menu.Icon me-1"></i>
+                                            <i class="@menu.Icon"></i>
                                         }
-                                        @menu.Name
+                                        <span>@menu.Name</span>
                                     </a>
                                 }
                                 else if (menu.Name.ToLower() == "iletişim")
@@ -45,9 +45,9 @@
                                     <a class="nav-link" href="@Url.Action("Contact", "Home")">
                                         @if (!string.IsNullOrEmpty(menu.Icon))
                                         {
-                                            <i class="@menu.Icon me-1"></i>
+                                            <i class="@menu.Icon"></i>
                                         }
-                                        @menu.Name
+                                        <span>@menu.Name</span>
                                     </a>
                                 }
                                 else
@@ -55,9 +55,9 @@
                                     <a class="nav-link" href="@Url.Action("Index", "Home", new { menuId = menu.Id })">
                                         @if (!string.IsNullOrEmpty(menu.Icon))
                                         {
-                                            <i class="@menu.Icon me-1"></i>
+                                            <i class="@menu.Icon"></i>
                                         }
-                                        @menu.Name
+                                        <span>@menu.Name</span>
                                     </a>
                                 }
                             </li>
@@ -65,14 +65,14 @@
                         else
                         {
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true">
                                     @if (!string.IsNullOrEmpty(menu.Icon))
                                     {
-                                        <i class="@menu.Icon me-1"></i>
+                                        <i class="@menu.Icon"></i>
                                     }
-                                    @menu.Name
+                                    <span>@menu.Name</span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-animated">
+                                <ul class="dropdown-menu custom-dropdown">
                                     @{
                                         // Kullanılacak ikon ve renk çeşitleri
                                         string[] colors = new string[] {
@@ -92,30 +92,30 @@
                                         <li>
                                             @if (subMenu.Name.ToLower() == "hakkımızda")
                                             {
-                                                <a class="dropdown-item d-flex align-items-center" href="@Url.Action("About", "Home")">
+                                                <a class="dropdown-item" href="@Url.Action("About", "Home")">
                                                     @if (!string.IsNullOrEmpty(subMenu.Icon))
                                                     {
-                                                        <i class="@subMenu.Icon me-2 @color"></i>
+                                                        <i class="@subMenu.Icon @color"></i>
                                                     }
                                                     <span>@subMenu.Name</span>
                                                 </a>
                                             }
                                             else if (subMenu.Name.ToLower() == "iletişim")
                                             {
-                                                <a class="dropdown-item d-flex align-items-center" href="@Url.Action("Contact", "Home")">
+                                                <a class="dropdown-item" href="@Url.Action("Contact", "Home")">
                                                     @if (!string.IsNullOrEmpty(subMenu.Icon))
                                                     {
-                                                        <i class="@subMenu.Icon me-2 @color"></i>
+                                                        <i class="@subMenu.Icon @color"></i>
                                                     }
                                                     <span>@subMenu.Name</span>
                                                 </a>
                                             }
                                             else
                                             {
-                                                <a class="dropdown-item d-flex align-items-center" href="@Url.Action("Index", "Home", new { menuId = subMenu.Id })">
+                                                <a class="dropdown-item" href="@Url.Action("Index", "Home", new { menuId = subMenu.Id })">
                                                     @if (!string.IsNullOrEmpty(subMenu.Icon))
                                                     {
-                                                        <i class="@subMenu.Icon me-2 @color"></i>
+                                                        <i class="@subMenu.Icon @color"></i>
                                                     }
                                                     <span>@subMenu.Name</span>
                                                 </a>
@@ -126,17 +126,17 @@
                             </li>
                         }
                     }
+                    
+                    <!-- Sosyal Medya Linkleri -->
+                    <li class="nav-item social-item">
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </li>
                 </ul>
-
-                <!-- Sosyal Medya Linkleri -->
-                <div class="d-flex p-3">
-                    <div class="social-icons d-flex gap-3">
-                        <a href="#" class="fs-5 social-icon text-facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="fs-5 social-icon text-instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="fs-5 social-icon text-twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="fs-5 social-icon text-linkedin"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
             </div>
         </nav>
     </div>

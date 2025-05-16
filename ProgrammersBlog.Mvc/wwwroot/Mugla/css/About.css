@@ -1,16 +1,16 @@
-﻿/* Muğla Hakkımızda Sayfası Stilleri - Deniz Temalı */
+/* Muğla Hakkımızda Sayfası Stilleri - Deniz Temalı */
 :root {
-    --deniz-mavisi: #0095b6;
-    --acik-turkuaz: #4ecdc4;
-    --gok-mavisi: #1d7e9d;
-    --kum-rengi: #f9f5eb;
-    --mercan: #ff7e67;
-    --zeytinyagi: #a9c27f;
-    --beyaz-kopuk: #ffffff;
-    --gece-mavisi: #003b5c;
-    --golge-efekti: 0 5px 20px rgba(0, 87, 146, 0.15);
-    --gecis-suresi: 0.4s;
-    --border-radius: 16px;
+    --about-deniz: #0095b6;
+    --about-turkuaz: #4ecdc4;
+    --about-gok: #1d7e9d;
+    --about-kum: #f9f5eb;
+    --about-mercan: #ff7e67;
+    --about-zeytin: #a9c27f;
+    --about-beyaz: #ffffff;
+    --about-gece: #003b5c;
+    --about-golge: 0 5px 20px rgba(0, 87, 146, 0.15);
+    --about-gecis: 0.4s;
+    --about-radius: 16px;
 }
 
 /* Hero Alanı */
@@ -21,9 +21,9 @@
     background-size: cover;
     background-position: center;
     margin-bottom: 60px;
-    border-radius: var(--border-radius);
+    border-radius: var(--about-radius);
     overflow: hidden;
-    box-shadow: var(--golge-efekti);
+    box-shadow: var(--about-golge);
 }
 
 .about-hero-overlay {
@@ -47,9 +47,9 @@
         font-weight: 800;
         margin-bottom: 10px;
         transform: translateY(0);
-        transition: transform var(--gecis-suresi);
+        transition: transform var(--about-gecis);
         font-size: 3.5rem;
-        color: var(--beyaz-kopuk);
+        color: var(--about-beyaz);
         letter-spacing: 1px;
     }
 
@@ -58,7 +58,7 @@
 }
 
 .hero-subtitle {
-    color: var(--kum-rengi);
+    color: var(--about-kum);
     font-size: 1.4rem;
     font-weight: 300;
     margin-bottom: 20px;
@@ -81,12 +81,12 @@
 
 .breadcrumb-item a {
     text-decoration: none;
-    transition: color var(--gecis-suresi);
-    color: var(--beyaz-kopuk);
+    transition: color var(--about-gecis);
+    color: var(--about-beyaz);
 }
 
     .breadcrumb-item a:hover {
-        color: var(--mercan) !important;
+        color: var(--about-mercan) !important;
     }
 
 /* Wave Efekti */

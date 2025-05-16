@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "39yaIuKCkZ3rrlJxZ8Y5RAJtWDcqfP0ekL6Q1cpps+8=",
+  "Hash": "KKtDzIu8mi+eFT0C/sj6DvD0WjhtS0Vq5PcI6+/DufQ=",
   "Source": "ProgrammersBlog.Mvc",
   "BasePath": "_content/ProgrammersBlog.Mvc",
   "Mode": "Default",
@@ -4575,6 +4575,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Mugla\\css\\logo.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\navbar.css",
+      "SourceId": "ProgrammersBlog.Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\",
+      "BasePath": "_content/ProgrammersBlog.Mvc",
+      "RelativePath": "Mugla/css/navbar.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Mugla\\css\\navbar.css"
     },
     {
       "Identity": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\style.css",

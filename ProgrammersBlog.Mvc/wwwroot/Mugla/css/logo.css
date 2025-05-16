@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --ana-mavi: #005792;
     --deniz-mavi: #0077be;
     --acik-mavi: #e1f5fe;
@@ -11,12 +11,6 @@
     --koyu-gri: #333333;
     --acik-gri: #f5f5f5;
     --turquaz: #48cae4;
-}
-
-body {
-    font-family: 'Source Sans 3', sans-serif;
-    color: #333;
-    background-color: #f8f9fa;
 }
 
 /* Profesyonel Logo Tasarımı */
@@ -90,100 +84,6 @@ body {
     border-top: 2px solid var(--altin);
     padding-top: 4px;
     margin-top: 3px;
-}
-
-/* Navigation and Dropdown Styles */
-.navbar-nav .nav-link {
-    color: var(--ana-mavi) !important;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin: 0 15px;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-    .navbar-nav .nav-link::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--altin);
-        transition: width 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover::after,
-    .navbar-nav .nav-item.active .nav-link::after {
-        width: 100%;
-    }
-
-/* Dropdown hover işlevselliği */
-.dropdown:hover .dropdown-menu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-}
-
-.dropdown-toggle.nav-link::after {
-    transition: transform 0.3s ease;
-    margin-left: 5px;
-    vertical-align: middle;
-}
-
-/* Tıklama davranışını önlemek için */
-.dropdown-toggle[data-toggle="dropdown"]::after {
-    pointer-events: none;
-}
-
-/* Dropdown Menü Güzelleştirmeleri */
-.dropdown-menu {
-    display: none;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    border: none;
-    padding: 0.8rem;
-    margin-top: 8px;
-    background-color: #ffffff;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateY(-10px);
-    visibility: hidden;
-}
-
-.dropdown-item {
-    border-radius: 8px;
-    padding: 0.7rem 1rem;
-    margin: 4px 0;
-    transition: all 0.25s ease;
-    font-weight: 500;
-    color: #424242;
-    position: relative;
-    overflow: hidden;
-}
-
-    .dropdown-item:hover {
-        background-color: #f0f7ff;
-        transform: translateX(5px);
-        color: #1e88e5;
-    }
-
-    .dropdown-item i {
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-    }
-
-    .dropdown-item:hover i {
-        transform: scale(1.2);
-    }
-
-.nav-link.dropdown-toggle[aria-expanded="true"]::after {
-    transform: rotate(180deg);
-}
-
-.nav-link.dropdown-toggle[aria-expanded="true"] {
-    color: #1e88e5;
 }
 
 /* Search Box */
