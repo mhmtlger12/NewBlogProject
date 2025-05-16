@@ -1,0 +1,143 @@
+@using Microsoft.Extensions.Options
+@using ProgrammersBlog.Entities.Concrete
+@model IList<ProgrammersBlog.Entities.Concrete.Menu>
+@inject IOptionsSnapshot<WebsiteInfo> WebsiteInfo
+@{
+    var websiteInfo = WebsiteInfo.Value;
+}
+
+<header class="navigation py-3">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand mugla-logo" asp-controller="Home" asp-action="Index">
+                <div class="logo-amblem"></div>
+                <div class="logo-yazi">
+                    <h1 class="logo-baslik">MUĞLA</h1>
+                    <div class="logo-slogan">Ege'nin Kalbinde Bir Cennet</div>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    @foreach (var menu in Model.Where(m => m.ParentId == null).OrderBy(m => m.Order))
+                    {
+                        var hasSubMenus = Model.Any(m => m.ParentId == menu.Id);
+                        
+                        if (!hasSubMenus)
+                        {
+                            <li class="nav-item">
+                                @if (menu.Name.ToLower() == "hakkımızda")
+                                {
+                                    <a class="nav-link" href="@Url.Action("About", "Home")">
+                                        @if (!string.IsNullOrEmpty(menu.Icon))
+                                        {
+                                            <i class="@menu.Icon me-1"></i>
+                                        }
+                                        @menu.Name
+                                    </a>
+                                }
+                                else if (menu.Name.ToLower() == "iletişim")
+                                {
+                                    <a class="nav-link" href="@Url.Action("Contact", "Home")">
+                                        @if (!string.IsNullOrEmpty(menu.Icon))
+                                        {
+                                            <i class="@menu.Icon me-1"></i>
+                                        }
+                                        @menu.Name
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a class="nav-link" href="@Url.Action("Index", "Home", new { menuId = menu.Id })">
+                                        @if (!string.IsNullOrEmpty(menu.Icon))
+                                        {
+                                            <i class="@menu.Icon me-1"></i>
+                                        }
+                                        @menu.Name
+                                    </a>
+                                }
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    @if (!string.IsNullOrEmpty(menu.Icon))
+                                    {
+                                        <i class="@menu.Icon me-1"></i>
+                                    }
+                                    @menu.Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-animated">
+                                    @{
+                                        // Kullanılacak ikon ve renk çeşitleri
+                                        string[] colors = new string[] {
+                                            "text-primary",
+                                            "text-info",
+                                            "text-success",
+                                            "text-danger",
+                                            "text-warning"
+                                        };
+                                    }
+
+                                    @foreach (var subMenu in Model.Where(m => m.ParentId == menu.Id).OrderBy(m => m.Order))
+                                    {
+                                        // Her alt menü için döngüsel olarak farklı renk seçimi
+                                        string color = colors[subMenu.Order % colors.Length];
+
+                                        <li>
+                                            @if (subMenu.Name.ToLower() == "hakkımızda")
+                                            {
+                                                <a class="dropdown-item d-flex align-items-center" href="@Url.Action("About", "Home")">
+                                                    @if (!string.IsNullOrEmpty(subMenu.Icon))
+                                                    {
+                                                        <i class="@subMenu.Icon me-2 @color"></i>
+                                                    }
+                                                    <span>@subMenu.Name</span>
+                                                </a>
+                                            }
+                                            else if (subMenu.Name.ToLower() == "iletişim")
+                                            {
+                                                <a class="dropdown-item d-flex align-items-center" href="@Url.Action("Contact", "Home")">
+                                                    @if (!string.IsNullOrEmpty(subMenu.Icon))
+                                                    {
+                                                        <i class="@subMenu.Icon me-2 @color"></i>
+                                                    }
+                                                    <span>@subMenu.Name</span>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a class="dropdown-item d-flex align-items-center" href="@Url.Action("Index", "Home", new { menuId = subMenu.Id })">
+                                                    @if (!string.IsNullOrEmpty(subMenu.Icon))
+                                                    {
+                                                        <i class="@subMenu.Icon me-2 @color"></i>
+                                                    }
+                                                    <span>@subMenu.Name</span>
+                                                </a>
+                                            }
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                    }
+                </ul>
+
+                <!-- Sosyal Medya Linkleri -->
+                <div class="d-flex p-3">
+                    <div class="social-icons d-flex gap-3">
+                        <a href="#" class="fs-5 social-icon text-facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-5 social-icon text-instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="fs-5 social-icon text-twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5 social-icon text-linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

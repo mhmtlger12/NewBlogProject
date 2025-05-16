@@ -1,0 +1,213 @@
+﻿@model ProgrammersBlog.Entities.Concrete.SmtpSettings
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "E-Posta Ayarları";
+}
+
+<div class="container-fluid py-4">
+    <div class="row justify-content-center">
+        <div class="col-xxl-6 col-lg-8 col-md-10">
+            <!-- Başlık Kartı -->
+            <div class="card settings-header-card mb-4 border-0">
+                <div class="card-body p-4 text-center">
+                    <div class="avatar avatar-xl bg-soft-primary rounded-circle mb-3">
+                        <i class="fas fa-envelope fa-lg text-primary"></i>
+                    </div>
+                    <h2 class="mb-1 text-dark">E-Posta Ayarları</h2>
+                    <p class="text-muted mb-0">SMTP bilgilerinizi güncelleyin ve e-posta gönderimini yapılandırın</p>
+                </div>
+            </div>
+
+            <!-- Ayarlar Formu -->
+            <div class="card shadow-sm border">
+                <div class="card-body p-4 p-lg-5">
+                    <form asp-controller="Options" asp-action="EmailSettings" method="post" id="email-settings-form">
+                        <div asp-validation-summary="All" class="alert alert-light-danger mb-4 border border-danger border-2 border-start-0 border-end-0"></div>
+
+                        <!-- SMTP Bilgileri -->
+                        <div class="mb-5">
+                            <h5 class="section-title mb-4 text-dark">
+                                <i class="fas fa-server me-2 text-primary"></i>SMTP Bilgileri
+                            </h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="Server" class="form-label fw-medium">Sunucu Adresi*</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0"><i class="fas fa-network-wired text-muted"></i></span>
+                                        <input asp-for="Server" class="form-control border-start-0" placeholder="smtp.example.com">
+                                    </div>
+                                    <span asp-validation-for="Server" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Port" class="form-label fw-medium">Port Numarası*</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0"><i class="fas fa-plug text-muted"></i></span>
+                                        <input type="number" asp-for="Port" class="form-control border-start-0" placeholder="587">
+                                    </div>
+                                    <span asp-validation-for="Port" class="text-danger small"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gönderen Bilgileri -->
+                        <div class="mb-5">
+                            <h5 class="section-title mb-4 text-dark">
+                                <i class="fas fa-user-circle me-2 text-primary"></i>Gönderen Bilgileri
+                            </h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="SenderName" class="form-label fw-medium">Gönderen Adı</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0"><i class="fas fa-signature text-muted"></i></span>
+                                        <input asp-for="SenderName" class="form-control border-start-0" placeholder="Örn: ProgrammersBlog">
+                                    </div>
+                                    <span asp-validation-for="SenderName" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="SenderEmail" class="form-label fw-medium">Gönderen E-Posta*</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0"><i class="fas fa-at text-muted"></i></span>
+                                        <input asp-for="SenderEmail" class="form-control border-start-0" placeholder="ornek@domain.com">
+                                    </div>
+                                    <span asp-validation-for="SenderEmail" class="text-danger small"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Kimlik Doğrulama -->
+                        <div class="mb-4">
+                            <h5 class="section-title mb-4 text-dark">
+                                <i class="fas fa-shield-alt me-2 text-primary"></i>Kimlik Doğrulama
+                            </h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="Username" class="form-label fw-medium">Kullanıcı Adı*</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0"><i class="fas fa-user-tie text-muted"></i></span>
+                                        <input asp-for="Username" class="form-control border-start-0" placeholder="E-posta veya kullanıcı adı">
+                                    </div>
+                                    <span asp-validation-for="Username" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Password" class="form-label fw-medium">Şifre*</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0"><i class="fas fa-key text-muted"></i></span>
+                                        <input type="password" asp-for="Password" class="form-control border-start-0" id="passwordField" placeholder="SMTP şifreniz">
+                                        <button class="btn btn-light border-start-0" type="button" id="togglePassword">
+                                            <i class="fas fa-eye" id="eyeIcon"></i>
+                                        </button>
+                                    </div>
+                                    <span asp-validation-for="Password" class="text-danger small"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Butonları -->
+                        <div class="d-flex justify-content-between mt-5 pt-4 border-top">
+                            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary px-4">
+                                <i class="fas fa-arrow-left me-2"></i>Vazgeç
+                            </a>
+                            <button type="submit" class="btn btn-primary px-4">
+                                <i class="fas fa-save me-2"></i>Ayarları Kaydet
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .settings-header-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .avatar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(13,110,253,0.1) !important;
+        }
+
+        .section-title {
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+            .section-title:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 40px;
+                height: 2px;
+                background: #0d6efd;
+                border-radius: 2px;
+            }
+
+        .alert-light-danger {
+            background-color: rgba(220,53,69,0.05);
+            color: #dc3545;
+        }
+
+        .input-group-text {
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus, .form-control:focus + .input-group-text {
+            border-color: #86b7fe;
+            box-shadow: 0 0 0 0.25rem rgba(13,110,253,0.25);
+        }
+
+        .bg-soft-primary {
+            background-color: rgba(13,110,253,0.1) !important;
+        }
+
+        #togglePassword {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+            #togglePassword:hover {
+                background-color: #f1f1f1;
+            }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Şifre göster/gizle
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordField = document.getElementById('passwordField');
+            const eyeIcon = document.getElementById('eyeIcon');
+
+            if (togglePassword) {
+                togglePassword.addEventListener('click', function() {
+                    const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordField.setAttribute('type', type);
+                    eyeIcon.classList.toggle('fa-eye-slash');
+                });
+            }
+
+            // Form gönderiminde yükleniyor efekti
+            const form = document.getElementById('email-settings-form');
+            if (form) {
+                form.addEventListener('submit', function() {
+                    const submitButton = this.querySelector('button[type="submit"]');
+                    if (submitButton) {
+                        submitButton.innerHTML = '<i class="fas fa-circle-notch fa-spin me-2"></i> Kaydediliyor...';
+                        submitButton.disabled = true;
+                    }
+                });
+            }
+        });
+    </script>
+}

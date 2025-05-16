@@ -1,0 +1,593 @@
+@model ProgrammersBlog.Mvc.Models.ArticleDetailViewModel
+@{
+    ViewData["Title"] = Model.ArticleDto.Article.Title;
+    Layout = "_articleLayout";
+    ViewBag.Description = Model.ArticleDto.Article.SeoDescription;
+    ViewBag.Author = Model.ArticleDto.Article.SeoAuthor;
+    ViewBag.Tags = Model.ArticleDto.Article.SeoTags;
+}
+
+<!-- CSRF Token -->
+@Html.AntiForgeryToken()
+
+<!-- Main Article Container Start -->
+<div class="col-lg-8 mx-auto">
+    <!-- Article Detail Card Start -->
+    <article class="article-detail">
+        <!-- Breadcrumb Navigation Start -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb bg-light p-2 rounded">
+                <li class="breadcrumb-item">
+                    <a asp-controller="Home" asp-action="Index" class="text-decoration-none">
+                        <i class="bi bi-house-door me-1"></i> Anasayfa
+                    </a>
+                </li>
+                <li class="breadcrumb-item active text-primary" aria-current="page">
+                    @Model.ArticleDto.Article.Title
+                </li>
+            </ol>
+        </nav>
+        <!-- Breadcrumb Navigation End -->
+        <!-- Article Title Start -->
+        <h1 class="article-title fw-bold mb-3">@Model.ArticleDto.Article.Title</h1>
+        <!-- Article Title End -->
+        <!-- Article Metadata Start -->
+        <div class="article-meta mb-4">
+            <span class="text-muted me-3">
+                <i class="bi bi-person-fill"></i> @Model.ArticleDto.Article.User.UserName
+            </span>
+            <span class="text-muted me-3">
+                <i class="bi bi-calendar3"></i> @Model.ArticleDto.Article.CreatedDate.ToString("dd MMMM yyyy")
+            </span>
+            <span class="text-muted">
+                <i class="bi bi-eye-fill"></i> @Model.ArticleDto.Article.ViewsCount
+            </span>
+            <span class="text-muted ms-3">
+                <i class="bi bi-chat-left-text-fill"></i> @Model.ArticleDto.Article.CommentCount
+            </span>
+        </div>
+        <!-- Article Metadata End -->
+    @*     <!-- Article Thumbnail Start -->
+        <div class="article-thumbnail mb-4">
+            <img src="~/img/@Model.ArticleDto.Article.Thumbnail" alt="@Model.ArticleDto.Article.Title"
+                 class="img-fluid rounded shadow float-start me-3"
+                 style="max-height: 100px; max-width: 250px;" loading="lazy">
+        </div>
+        <!-- Article Thumbnail End --> *@
+        <!-- Article Content Start -->
+        <div class="article-content mb-4">
+            @Html.Raw(Model.ArticleDto.Article.Content)
+        </div>
+        <!-- Article Content End -->
+        <!-- Article Statistics Start -->
+        <div class="article-stats mt-4 pt-3 border-top">
+            <div class="row">
+                <div class="col-md-6 mb-2 mb-md-0">
+                    <div class="d-flex flex-wrap gap-3">
+                        <span class="badge bg-light text-dark">
+                            <i class="bi bi-eye-fill text-primary me-1"></i> @Model.ArticleDto.Article.ViewsCount okunma
+                        </span>
+                        <span class="badge bg-light text-dark">
+                            <i class="bi bi-chat-left-text-fill text-primary me-1"></i> @Model.ArticleDto.Article.CommentCount yorum
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small class="text-muted">
+                        <i class="bi bi-arrow-clockwise me-1"></i>
+                        Son güncelleme: @Model.ArticleDto.Article.ModifiedDate.ToString("dd MMM yyyy HH:mm")
+                    </small>
+                </div>
+            </div>
+        </div>
+        <!-- Article Statistics End -->
+        <!-- Article Tags Start -->
+        <div class="article-tags mt-4">
+            @if (!string.IsNullOrEmpty(Model.ArticleDto.Article.SeoTags))
+            {
+                var tags = Model.ArticleDto.Article.SeoTags.Split(',');
+                foreach (var tag in tags)
+                {
+                    <a href="#" class="btn btn-sm btn-outline-secondary me-2 mb-2 rounded-pill">
+                        <i class="bi bi-tag-fill me-1"></i> @tag.Trim()
+                    </a>
+                }
+            }
+        </div>
+        <!-- Article Tags End -->
+        <!-- Social Share Buttons Start -->
+        <div class="social-share mt-4 pt-3 border-top">
+            <h5 class="mb-3"><i class="bi bi-share-fill me-2"></i>Paylaş</h5>
+            <div class="d-flex gap-2">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=@Context.Request.Path"
+                   class="btn btn-sm btn-outline-primary rounded-pill" target="_blank">
+                    <i class="bi bi-facebook me-1"></i> Facebook
+                </a>
+                <a href="https://twitter.com/intent/tweet?text=@Model.ArticleDto.Article.Title&url=@Context.Request.Path"
+                   class="btn btn-sm btn-outline-info rounded-pill" target="_blank">
+                    <i class="bi bi-twitter me-1"></i> Twitter
+                </a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=@Context.Request.Path&title=@Model.ArticleDto.Article.Title"
+                   class="btn btn-sm btn-outline-secondary rounded-pill" target="_blank">
+                    <i class="bi bi-linkedin me-1"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+        <!-- Social Share Buttons End -->
+    </article>
+    <!-- Article Detail Card End -->
+    <!-- Comments Section Start -->
+    <section class="comments mt-5 pt-4 border-top">
+        <!-- Comments Header Start -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="mb-0">
+                <i class="bi bi-chat-left-text-fill text-primary me-2"></i>
+                Yorumlar (@Model.ArticleDto.Article.CommentCount)
+            </h3>
+            <button class="btn btn-primary rounded-pill" data-bs-toggle="collapse" data-bs-target="#commentForm">
+                <i class="bi bi-plus-circle me-2"></i> Yorum Ekle
+            </button>
+        </div>
+        <!-- Comments Header End -->
+        <!-- Comment Form Start -->
+        <partial name="~/Views/Comment/_CommentAddPartial.cshtml" model="new ProgrammersBlog.Entities.Dtos.Comments.CommentAddDto
+    {
+        ArticleId =  Model.ArticleDto.Article.Id
+    }" />
+        <!-- Comment Form End -->
+        <!-- Comment List Start -->
+        @if (Model.ArticleDto.Article.Comments.Any())
+        {
+            <div class="comment-list">
+                @{
+                    var colorPalettes = new List<(string bg, string text)>
+            {
+            ("#fce4ec", "#c2185b"),    // Pembe
+            ("#e3f2fd", "#1565c0"),    // Mavi
+            ("#f3e5f5", "#6a1b9a"),    // Mor
+            ("#fff3e0", "#ef6c00"),    // Turuncu
+            ("#e8f5e9", "#2e7d32"),    // Yeşil
+            ("#ede7f6", "#512da8"),    // Lila
+            ("#f1f8e9", "#689f38"),    // Zümrüt
+            ("#fbe9e7", "#d84315"),    // Kızıl
+            ("#e0f7fa", "#00838f"),    // Camgöbeği
+            ("#fff8e1", "#ff6f00"),    // Amber
+            ("#edeef7", "#3949ab"),    // Kobalt
+            ("#f9fbe7", "#827717"),    // Zeytin
+            ("#ffebee", "#d81b60"),    // Fuşya
+            ("#e0f2f1", "#00796b"),    // Teal
+            ("#e1f5fe", "#0288d1")     // Gök Mavi
+            };
+
+                    int colorIndex = 0;
+                    var now = DateTime.Now;
+                }
+
+                @foreach (var comment in Model.ArticleDto.Article.Comments.Where(c => c.ParentCommentId == null))
+                {
+                    var palette = colorPalettes[colorIndex % colorPalettes.Count];
+                    colorIndex++;
+                    var isNew = (now - comment.CreatedDate).TotalHours < 24;
+
+                    <div class="card mb-3 border-start border-3 comment-card"
+                         style="border-color: @palette.text !important; transition: all 0.3s ease;"
+                         data-aos="fade-up" data-aos-delay="@(colorIndex * 100)" data-comment-id="@comment.Id">
+                        <div class="card-body" style="background-color: @palette.bg;">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="text-white rounded-circle d-flex align-items-center justify-content-center me-3 avatar-circle"
+                                     style="width: 40px; height: 40px; background-color: @palette.text;">
+                                    @comment.CreatedByName[0].ToString().ToUpper()
+                                </div>
+                                <div class="flex-grow-1">
+                                    <div class="d-flex align-items-center">
+                                        <h6 class="mb-0 fw-bold" style="color: @palette.text;">@comment.CreatedByName</h6>
+                                        @if (isNew)
+                                        {
+                                            <span class="badge ms-2 new-comment-badge"
+                                                  style="background-color: @palette.text; animation: pulse 1.5s infinite;">Yeni</span>
+                                        }
+                                    </div>
+                                    <small class="text-muted">
+                                        @{
+                                            var timeSpan = now - comment.CreatedDate;
+                                            string timeText;
+
+                                            if (timeSpan.TotalMinutes < 60)
+                                                timeText = $"{Math.Floor(timeSpan.TotalMinutes)} dakika önce";
+                                            else if (timeSpan.TotalHours < 24)
+                                                timeText = $"{Math.Floor(timeSpan.TotalHours)} saat önce";
+                                            else
+                                                timeText = comment.CreatedDate.ToString("dd MMM yyyy HH:mm");
+                                        }
+                                        @timeText
+                                    </small>
+                                </div>
+                            </div>
+                            <p class="mb-2 ps-4 comment-text">@comment.Text</p>
+                            <div class="d-flex mt-2">
+                                <button class="btn btn-sm btn-link p-0 me-3 like-reply-button" 
+                                        data-comment-id="@comment.Id"
+                                        style="color: @palette.text; font-size: 0.8rem;">
+                                    <i class="bi bi-heart me-1"></i> Beğen <span class="like-count">@comment.LikeCount</span>
+                                </button>
+                                <button class="btn btn-sm btn-link p-0 me-3 reply-button" 
+                                        data-comment-id="@comment.Id"
+                                        style="color: @palette.text; font-size: 0.8rem;">
+                                    <i class="bi bi-reply me-1"></i> Yanıtla
+                                </button>
+                                @{
+                                    var replies = Model.ArticleDto.Article.Comments.Where(c => c.ParentCommentId == comment.Id).ToList();
+                                    if (replies.Any())
+                                    {
+                                        <button class="btn btn-sm btn-link p-0 me-3 toggle-replies" 
+                                                data-comment-id="@comment.Id"
+                                                style="color: @palette.text; font-size: 0.8rem;">
+                                            <i class="bi bi-chevron-down toggle-icon me-1"></i> 
+                                            <span class="toggle-text">Yanıtları gizle</span>
+                                        </button>
+                                    }
+                                }
+                            </div>
+
+                            <!-- Yanıt Formu (Başlangıçta gizli) -->
+                            <div class="reply-form mt-3 ps-4" id="reply-form-@comment.Id" style="display:none;">
+                                <div class="card border-primary">
+                                    <div class="card-body form-card">
+                                        <h6 class="card-title mb-2">Yanıtınızı Yazın</h6>
+                                        <form class="comment-reply-form" data-parent-id="@comment.Id">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="ArticleId" value="@Model.ArticleDto.Article.Id" />
+                                            <input type="hidden" name="ParentCommentId" value="@comment.Id" />
+                                            <div class="mb-2">
+                                                <input type="text" class="form-control form-control-sm" name="CreatedByName" placeholder="Adınız" required>
+                                            </div>
+                                            <div class="mb-2">
+                                                <textarea class="form-control form-control-sm" name="Text" rows="3" placeholder="Yanıtınız..." required></textarea>
+                                            </div>
+                                            <div class="d-flex justify-content-end gap-2">
+                                                <button type="button" class="btn btn-sm btn-secondary cancel-reply">İptal</button>
+                                                <button type="button" class="btn btn-sm btn-primary send-reply">Gönder</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            @{
+                                var commentReplies = Model.ArticleDto.Article.Comments.Where(c => c.ParentCommentId == comment.Id).ToList();
+                                if (commentReplies.Any())
+                                {
+                                    <div class="replies">
+                                        @{
+                                            var replyIndex = 0;
+                                        }
+                                        @foreach (var reply in commentReplies)
+                                        {
+                                            var replyPalette = colorPalettes[replyIndex % colorPalettes.Count];
+                                            replyIndex++;
+
+                                            <div class="card border-start border-2 reply-card" 
+                                                 style="border-color: @replyPalette.text !important; background-color: @replyPalette.bg;">
+                                                <div class="card-body py-2 px-3">
+                                                    <div class="d-flex align-items-center mb-1">
+                                                        <div class="text-white rounded-circle d-flex align-items-center justify-content-center me-2 reply-avatar"
+                                                             style="width: 30px; height: 30px; background-color: @replyPalette.text; font-size: 0.8rem;">
+                                                            @reply.CreatedByName[0].ToString().ToUpper()
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0 fs-6 fw-bold" style="color: @replyPalette.text;">
+                                                                @reply.CreatedByName
+                                                            </h6>
+                                                            <small class="text-muted" style="font-size: 0.75rem;">
+                                                                @{
+                                                                    var timeDiff = now - reply.CreatedDate;
+                                                                    if (timeDiff.TotalMinutes < 1)
+                                                                    {
+                                                                        @:Şimdi
+                                                                    }
+                                                                    else if (timeDiff.TotalHours < 1)
+                                                                    {
+                                                                        @:@((int)timeDiff.TotalMinutes) dakika önce
+                                                                    }
+                                                                    else if (timeDiff.TotalDays < 1)
+                                                                    {
+                                                                        @:@((int)timeDiff.TotalHours) saat önce
+                                                                    }
+                                                                    else if (timeDiff.TotalDays < 7)
+                                                                    {
+                                                                        @:@((int)timeDiff.TotalDays) gün önce
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        @reply.CreatedDate.ToString("dd MMM yyyy")
+                                                                    }
+                                                                }
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="comment-content">
+                                                    <p class="mb-1 ps-4 reply-text" style="font-size: 0.9rem;">
+                                                        @if (reply.Text.Length > 200)
+                                                        {
+                                                            <span class="short-text">@(reply.Text.Substring(0, 200))...</span>
+                                                            <span class="full-text" style="display: none;">@reply.Text</span>
+                                                            <button class="toggle-text btn btn-link p-0" style="color: @replyPalette.text; font-size: 0.8rem;">
+                                                                Devamını göster
+                                                            </button>
+                                                        }
+                                                        else
+                                                        {
+                                                            @reply.Text
+                                                        }
+                                                    </p>
+                                                    </div>
+                                                    <div class="d-flex mt-2 ps-4">
+                                                        <button class="btn btn-sm btn-link p-0 me-3 like-reply-button" 
+                                                                data-comment-id="@reply.Id"
+                                                                style="color: @replyPalette.text; font-size: 0.8rem;">
+                                                            <i class="bi bi-heart me-1"></i> Beğen <span class="like-count">@reply.LikeCount</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-light text-center py-4">
+                <i class="bi bi-info-circle-fill me-2"></i>
+                Henüz yorum yapılmamış. İlk yorumu siz yazın!
+            </div>
+        }
+        <!-- Comment List End -->
+        <!-- Comment List End -->
+    
+    </section>
+    <!-- Comments Section End -->
+</div>
+<!-- Main Article Container End -->
+
+
+
+<!-- Right Sidebar Partial Start -->
+
+<partial name="_ArticleDetailRightSideBarPartial" model="@Model.ArticleDetailRightSideBarViewModel" />
+<!-- Right Sidebar Partial End -->
+<!-- Scripts Section Start -->
+@section Scripts {
+    <!-- Toastr CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Toastr JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" crossorigin="anonymous"></script>
+    <script src="~/Mugla/Js/articleDetail.js" type="text/ecmascript"></script>
+    <script>
+        $(document).ready(function() {
+            // Kartlar için animasyon
+            $('.comment-card').each(function(index) {
+                var $this = $(this);
+                setTimeout(function() {
+                    $this.css('opacity', '1');
+                }, index * 150);
+            });
+
+            // Uzun yorumlar için "devamını göster"
+            function initializeExpandableText() {
+                $('.comment-text, .reply-text').each(function() {
+                    var $this = $(this);
+                    // Scroll height kontrolü için geçici olarak max-height'i kaldır
+                    $this.css('max-height', 'none');
+                    var fullHeight = $this[0].scrollHeight;
+                    $this.css('max-height', '');
+                    
+                    if (fullHeight > 100) { // 100px bizim max-height değerimiz
+                        if (!$this.next().hasClass('show-more')) {
+                            $this.after('<div class="show-more mt-2">Devamını göster <i class="bi bi-chevron-down"></i></div>');
+                        }
+                    }
+                });
+            }
+
+            // Sayfa yüklendiğinde ve yeni yorumlar eklendiğinde çalıştır
+            initializeExpandableText();
+
+            $(document).on('click', '.show-more', function() {
+                var $text = $(this).prev('.comment-text, .reply-text');
+                $text.toggleClass('expanded');
+                $(this).html($text.hasClass('expanded') ?
+                    'Daha az göster <i class="bi bi-chevron-up"></i>' :
+                    'Devamını göster <i class="bi bi-chevron-down"></i>');
+            });
+        });
+    </script>
+}
+<!-- Scripts Section End -->
+@section Styles {
+    <!-- CSS Styles Start -->
+    <style>
+       
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .article-content p {
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
+        .breadcrumb {
+            padding: 0.75rem 1rem;
+        }
+
+        .article-title {
+            font-size: 2rem;
+            line-height: 1.2;
+        }
+
+        .comment-list .card {
+            transition: all 0.2s ease;
+        }
+
+            .comment-list .card:hover {
+                transform: translateY(-2px);
+            }
+    </style>
+    <!-- CSS Comment-->
+    <style>
+        .comment-card {
+            opacity: 0;
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .comment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+
+        .avatar-circle {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+
+        .new-comment-badge {
+            box-shadow: 0 0 6px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .new-comment-badge:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 8px rgba(0,0,0,0.3);
+        }
+
+        .comment-card:hover .avatar-circle {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .like-reply-button.active i {
+            color: #e91e63;
+            transform: scale(1.2);
+            transition: transform 0.2s ease;
+        }
+
+        .like-button:hover, .reply-button:hover, .like-reply-button:hover {
+            background-color: rgba(0,0,0,0.08);
+        }
+        
+        .like-button.active, .like-reply-button.active {
+            background-color: rgba(255,0,0,0.05);
+        }
+        
+        .like-button.active i, .like-reply-button.active i {
+            color: #e91e63;
+        }
+        
+        .reply-form {
+            transition: all 0.3s ease;
+        }
+        
+        .replies {
+            position: relative;
+            padding-left: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .replies::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(0,0,0,0.1);
+            border-radius: 1px;
+        }
+
+        .reply-card {
+            transition: all 0.3s ease;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .reply-card::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 1rem;
+            width: 1rem;
+            height: 2px;
+            background: rgba(0,0,0,0.1);
+            border-radius: 1px;
+        }
+        
+        .reply-card:hover {
+            opacity: 1;
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .reply-avatar {
+            transition: transform 0.3s ease;
+        }
+        
+        .reply-card:hover .reply-avatar {
+            transform: scale(1.1);
+        }
+        
+        .reply-text {
+            line-height: 1.4;
+        }
+
+
+
+
+        /* Uzun yorumlar için */
+        .comment-text {
+            max-height: 100px;
+            overflow: hidden;
+            position: relative;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .comment-text.expanded {
+            max-height: 1000px; /* Yeterince büyük bir değer */
+        }
+
+        .show-more {
+            color: #0066cc;
+            cursor: pointer;
+            font-weight: 500;
+            display: inline-block;
+            padding: 4px 8px;
+            margin-top: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .show-more:hover {
+            background-color: rgba(0,102,204,0.1);
+            border-radius: 4px;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <!-- CSS Styles End -->
+    <link href="~/AdminLTE/css/table-css.css" rel="stylesheet" />
+}

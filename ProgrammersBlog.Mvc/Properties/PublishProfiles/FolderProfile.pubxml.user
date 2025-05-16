@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\gitme\Desktop\Publish</_PublishTargetUrl>
+    <History>True|2025-04-27T18:18:22.3561774Z||;True|2025-04-26T23:02:55.0788949+03:00||;True|2025-04-26T15:04:56.3348468+03:00||;True|2025-04-26T14:59:36.2804179+03:00||;True|2025-04-26T14:32:02.7098742+03:00||;True|2025-04-26T02:05:46.7095612+03:00||;True|2025-04-25T21:08:23.6135776+03:00||;True|2025-04-25T20:48:44.3956382+03:00||;True|2025-04-24T00:04:19.5862608+03:00||;True|2025-04-23T23:57:44.2325075+03:00||;True|2025-04-23T18:41:34.0994018+03:00||;True|2025-04-23T02:50:50.3635967+03:00||;True|2025-04-21T23:35:19.9966222+03:00||;True|2025-04-20T23:19:36.5259867+03:00||;True|2025-04-20T23:16:03.4709016+03:00||;True|2025-04-20T23:05:34.2190096+03:00||;True|2025-04-20T22:46:59.8818201+03:00||;True|2025-04-20T22:42:16.3965767+03:00||;True|2025-04-20T22:02:23.2946538+03:00||;True|2025-04-20T21:45:17.2582821+03:00||;</History>
+    <LastFailureDetails />
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=DESKTOP-3KDSC0I\SQLEXPRESS%3bDatabase=ProgrammersBlog%3bTrusted_Connection=True%3bMultipleActiveResultSets=True%3bTrustServerCertificate=True%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

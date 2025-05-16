@@ -1,0 +1,91 @@
+﻿<header class="navigation py-3">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand mugla-logo" asp-controller="Home" asp-action="Index">
+                <div class="logo-sembol"></div>
+                <div class="logo-yazi">
+                    <h1 class="logo-baslik">MUĞLA</h1>
+                    <div class="logo-slogan">Ege'nin Kalbinde Bir Cennet</div>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gezi Rehberi
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="Plajlar" asp-action="Index">Plajlar</a></li>
+                            <li><a class="dropdown-item" asp-controller="TarihiYerler" asp-action="Index">Tarihi Yerler</a></li>
+                            <li><a class="dropdown-item" asp-controller="DogaYuruyusleri" asp-action="Index">Doğa Yürüyüşleri</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Kategoriler
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="Article" asp-action="Category" asp-route-category="Tarih">Tarih</a></li>
+                            <li><a class="dropdown-item" asp-controller="Article" asp-action="Category" asp-route-category="Kultur">Kültür</a></li>
+                            <li><a class="dropdown-item" asp-controller="Article" asp-action="Category" asp-route-category="Yemek">Yemek</a></li>
+                            <li><a class="dropdown-item" asp-controller="Article" asp-action="Category" asp-route-category="Etkinlikler">Etkinlikler</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="About">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Contact">İletişim</a>
+                    </li>
+                </ul>
+
+                <!-- Sosyal Medya Linkleri -->
+                <div class="d-flex p-3">
+                    <div class="social-icons d-flex gap-3">
+                        <a href="#" class="fs-5 social-icon text-facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-5 social-icon text-instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="fs-5 social-icon text-twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5 social-icon text-linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+
+</header>
+<style>
+    .social-icon {
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+            opacity: 0.8;
+        }
+
+    .text-facebook {
+        color: #3b5998;
+    }
+
+    .text-instagram {
+        color: #E1306C;
+    }
+
+    .text-twitter {
+        color: #1DA1F2;
+    }
+
+    .text-linkedin {
+        color: #0077b5;
+    }
+</style>

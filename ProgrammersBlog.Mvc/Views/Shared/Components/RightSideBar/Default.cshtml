@@ -1,0 +1,198 @@
+@model ProgrammersBlog.Mvc.Models.RightSideBarViewModel
+
+@functions {
+    // Menü adını URL-friendly hale getiren yardımcı metot
+    string ToUrlFriendly(string text)
+    {
+        if (string.IsNullOrEmpty(text)) return "";
+        
+        // Türkçe karakterleri çevir
+        return text.ToLower()
+            .Replace("ç", "c")
+            .Replace("ğ", "g")
+            .Replace("ı", "i")
+            .Replace("ö", "o")
+            .Replace("ş", "s")
+            .Replace("ü", "u")
+            .Replace(" ", "-")
+            .Replace(".", "")
+            .Replace(",", "")
+            .Replace(";", "")
+            .Replace("'", "")
+            .Replace("\"", "")
+            .Replace(":", "")
+            .Replace("!", "")
+            .Replace("?", "")
+            .Trim('-');
+    }
+}
+<div class="col-lg-4">
+    <!-- Arama Widget'ı -->
+    <div class="widget-card">
+        <h3 class="widget-title">Blog'da Ara</h3>
+        <form class="d-flex" role="search" asp-controller="Article" asp-action="Search" method="get">
+            <input class="form-control me-2" type="search" name="keyword" placeholder="Anahtar kelime..." aria-label="Search">
+            <button class="btn btn-primary" type="submit">Ara</button>
+        </form>
+    </div>
+    <!-- Popüler Makaleler Widget'ı -->
+    <div class="widget-card">
+        <h3 class="widget-title">Popüler Makaleler</h3>
+        @for (int i = 0; i < Model.Articles.Count; i++)
+        {
+            var postClass = i == 0
+            ? "popular-post border border-primary-subtle shadow-sm rounded p-2 bg-light"
+            : "popular-post";
+            <div class="@postClass">
+                <img src="~/img/@Model.Articles[i].Thumbnail" alt="Popular Post" class="popular-post-img rounded">
+                <div>
+                    <h4 class="popular-post-title mb-1">
+                        <a class="@(i == 0 ? "text-primary fw-semibold" : "")"
+                           asp-controller="Article"
+                           asp-action="Detail"
+                           asp-route-articleId="@Model.Articles[i].Id">
+                            @Model.Articles[i].Title
+                        </a>
+                    </h4>
+                    <span class="popular-post-date small text-muted">
+                        <i class="bi bi-calendar3"></i> @Model.Articles[i].CreatedDate.ToString("dd MMM yyyy")
+                    </span>
+                </div>
+            </div>
+        }
+    </div>
+    <!-- Menüler Widget'ı -->
+    <div class="widget-card">
+        <h3 class="widget-title">Menüler</h3>
+        <ul class="category-list">
+            <li><a asp-controller="Home" asp-action="Index">Hepsi <span class="category-count">@Model.Articles.Count</span></a></li>
+            @foreach (var menu in Model.Menus.Where(m => m.ParentId == null).OrderBy(m => m.Order))
+            {
+                var subMenus = Model.Menus.Where(m => m.ParentId == menu.Id).ToList();
+                var articleCount = Model.Articles.Count(a => a.MenuId == menu.Id);
+                
+                <li>
+                    @if (menu.Name.ToLower().Trim() == "ana sayfa" || menu.Name.ToLower().Trim() == "anasayfa")
+                    {
+                        <a href="/">
+                            @menu.Name <span class="category-count">@articleCount</span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/menu/@ToUrlFriendly(menu.Name)">
+                            @menu.Name <span class="category-count">@articleCount</span>
+                        </a>
+                    }
+                    
+                    @if (subMenus.Any())
+                    {
+                        <ul class="submenu-list ps-3 mt-1">
+                            @foreach (var subMenu in subMenus.OrderBy(m => m.Order))
+                            {
+                                var subArticleCount = Model.Articles.Count(a => a.MenuId == subMenu.Id);
+                                <li>
+                                    <a href="/menu/@ToUrlFriendly(subMenu.Name)">
+                                        <i class="bi bi-arrow-right-short"></i> @subMenu.Name <span class="category-count">@subArticleCount</span>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+    <!-- E-Bülten Aboneliği -->
+    <div class="widget-card">
+        <h3 class="widget-title">E-Bülten'e Abone Olun</h3>
+        <p>Muğla ile ilgili en güncel bilgiler ve özel teklifler için abone olun.</p>
+        <form class="newsletter-form">
+            <div class="input-group mb-3">
+                <input type="email" class="form-control" placeholder="E-posta adresiniz" aria-label="Email">
+                <button class="btn btn-primary" type="submit">Abone Ol</button>
+            </div>
+        </form>
+    </div>
+    <!-- Etiketler Widget'ı -->
+    <div class="widget-card" style="font-family: sans-serif;">
+        <h3 class="widget-title d-flex align-items-center justify-content-between">
+            Etiketler
+            <span style="font-size: 0.75em; color: #888; margin-left: 10px;">
+                <i class="fas fa-lightbulb" style="color: #ffc107;"></i> Tıkla ve keşfet 🌟
+            </span>
+        </h3>
+
+        <div class="d-flex flex-wrap gap-2" id="etiketler">
+            <a class="btn btn-sm" style="background-color:#fce4ec; color:#c2185b;" title="Deniz kenarı tatilleri">#Plaj</a>
+            <a class="btn btn-sm" style="background-color:#e3f2fd; color:#1565c0;" title="Tekne gezileri">#Tekne</a>
+            <a class="btn btn-sm" style="background-color:#f3e5f5; color:#6a1b9a;" title="Antik şehirler">#Antik</a>
+            <a class="btn btn-sm" style="background-color:#fff3e0; color:#ef6c00;" title="Yemek turları">#Yemek</a>
+            <a class="btn btn-sm" style="background-color:#e8f5e9; color:#2e7d32;" title="Kültürel etkinlikler">#Kültür</a>
+            <a class="btn btn-sm" style="background-color:#ede7f6; color:#512da8;" title="Oteller ve konaklama">#Otel</a>
+            <a class="btn btn-sm" style="background-color:#f1f8e9; color:#689f38;" title="Fethiye rehberi">#Fethiye</a>
+            <a class="btn btn-sm" style="background-color:#fbe9e7; color:#d84315;" title="Bodrum gezilecek yerler">#Bodrum</a>
+            <a class="btn btn-sm" style="background-color:#e0f7fa; color:#00838f;" title="Marmaris'te tatil">#Marmaris</a>
+            <a class="btn btn-sm" style="background-color:#fff8e1; color:#ff6f00;" title="Festival programları">#Festival</a>
+            <a class="btn btn-sm" style="background-color:#edeef7; color:#3949ab;" title="Doğa yürüyüşü">#Trekking</a>
+            <a class="btn btn-sm" style="background-color:#f9fbe7; color:#827717;" title="Kamp alanları">#Kamp</a>
+            <a class="btn btn-sm" style="background-color:#ffebee; color:#d81b60;" title="Balayı rotaları">#Balayı</a>
+            <a class="btn btn-sm" style="background-color:#e0f2f1; color:#00796b;" title="Gece kulüpleri">#GeceHayatı</a>
+            <a class="btn btn-sm" style="background-color:#e1f5fe; color:#0288d1;" title="Müzik festivalleri">#Müzik</a>
+            <a class="btn btn-sm" style="background-color:#fce4ec; color:#880e4f;" title="Deniz kenarı rotaları">#Sahil</a>
+            <a class="btn btn-sm" style="background-color:#ede7f6; color:#4527a0;" title="Tatil köyleri">#Resort</a>
+            <a class="btn btn-sm" style="background-color:#f1f8e9; color:#33691e;" title="Manzara noktaları">#Manzara</a>
+            <a class="btn btn-sm" style="background-color:#fff3e0; color:#e65100;" title="Yaz tatili önerileri">#YazTatili</a>
+            <a class="btn btn-sm" style="background-color:#fbe9e7; color:#bf360c;" title="Kahvaltı mekanları">#Kahvaltı</a>
+        </div>
+
+        <div class="mt-3">
+            <button onclick="rastgeleEtiketSec()" class="btn btn-sm btn-success">🎲 Rastgele Etiket Seç</button>
+        </div>
+
+        <div id="etiketAcilama" style="margin-top: 15px; font-size: 0.95em; color: #555;"></div>
+        <div id="mesajKutusu" style="margin-top: 10px; font-style: italic; color: #777;"></div>
+
+        <script>
+            const etiketMesajlari = {
+                "#Plaj": ["Dalga seslerini dinle… 🌊", "Güneşin altında kumlarla dans et! ☀️", "Bugün plajda sadece sen ve huzur var."],
+                "#Tekne": ["Rüzgarla yarış, rotanı kalbin çizsin. ⛵", "Denizin ortasında bir gün her şeyi değiştirir. 🌅", "Martılar bile seni takip edecek!"],
+                "#Antik": ["Taşlara dokun, binlerce yıl öncesiyle tanış. 🏛️", "Zaman yolculuğu gerçek olabilir…", "Bir uygarlığın hikayesine adım at."],
+                "#Yemek": ["Yeni tatlar keşfetmek de bir seyahat biçimi! 🍜", "Bu gezi damakta iz bırakacak. 😋", "Lezzetli bir keşif başlasın!"],
+                "#Kültür": ["Her sokak bir hikâye anlatır…", "Yerel müzikleri dinle, ruhun dans etsin! 🎭", "Kültür, bir yolculuğun kalbidir."],
+                "#Otel": ["Konforun adresi burası. 🛏️", "Dinlenmeye vakit ayır, bedenin de tatil yapmalı.", "Sıcak bir karşılama seni bekliyor."],
+                "#Fethiye": ["Fethiye’nin turkuazına doyamazsın! 💙", "Kelebekler Vadisi seni çağırıyor!", "Likya Yolu’na adım at, efsaneler seninle."],
+                "#Bodrum": ["Beyaz evler, mavi kapılar… Bodrum ruhu! 🎨", "Akşamları Bodrum başka güzeldir…", "Gündüz deniz, gece eğlence!"],
+                "#Marmaris": ["Çam ormanları ve deniz burada buluşur. 🌲🌊", "Marmaris’te gün doğumu izlenir!", "Marinada bir yürüyüşe ne dersin?"],
+                "#Festival": ["Ritmi yakala, dans et, unut her şeyi! 🥳", "Festival enerjisi bir başkadır!", "Işıklar, müzik ve sen…"],
+                "#Trekking": ["Patikaları takip et, nefesin açılır. 🥾", "Doğada yürüdükçe zihnin de açılır.", "Her adım yeni bir manzara demek."],
+                "#Kamp": ["Yıldızlar altında uyumaya hazır mısın? ✨", "Kamp ateşi etrafında anılar birikir.", "Doğa dostlarını unutma!"],
+                "#Balayı": ["Aşkın rotası şimdi başlıyor. 💍", "Hayal gibi bir tatil sizi bekliyor!", "Birlikte keşfetmenin tadı başka."],
+                "#GeceHayatı": ["Işıklar yansın, gece başlasın! 💃", "Dans, müzik ve sen – geceye hazırsın.", "Sokaklar sabaha kadar senin!"],
+                "#Müzik": ["Ritmi kalbinde hisset. 🎶", "Her festival bir başka hayat!", "Müziğin peşinden git."],
+                "#Sahil": ["Ayaklarını denize uzat, dertleri bırak. 🌴", "Sahilde geçirilen her dakika özeldir.", "Kokusu bile huzur verir…"],
+                "#Resort": ["Her şey dahil bir huzur! 🏖️", "Şimdi tamamen sana ait bir an.", "Yalnızca keyif var, sorumluluk yok."],
+                "#Manzara": ["Manzara karşısında sessiz kalmak bile yetmez. 🏞️", "Ufka bak, içini dinle.", "Görmekle kalma, hisset."],
+                "#YazTatili": ["Güneş, deniz ve yazlık elbiseler! ☀️👗", "Yaz senin ruh halin olsun.", "En güzel anlar şimdi başlasın!"],
+                "#Kahvaltı": ["Bir kahvaltı dünyayı değiştirir. ☕🍳", "Güne zengin başla!", "Menemen mi, serpme mi? Karar senin!"]
+            };
+
+            function rastgeleEtiketSec() {
+                const etiketler = document.querySelectorAll('#etiketler a');
+                etiketler.forEach(et => et.style.outline = 'none');
+
+                const rastgele = etiketler[Math.floor(Math.random() * etiketler.length)];
+                rastgele.style.outline = '3px solid #ff4081';
+                rastgele.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                const etiketAdi = rastgele.textContent.trim();
+                const aciklama = rastgele.getAttribute("title");
+                const mesajlar = etiketMesajlari[etiketAdi] || ["Bu etiketle ilgili maceran seni bekliyor!"];
+                const mesaj = mesajlar[Math.floor(Math.random() * mesajlar.length)];
+
+                document.getElementById("etiketAcilama").innerHTML = `<strong>${etiketAdi}</strong>: ${aciklama}`;
+                document.getElementById("mesajKutusu").innerText = mesaj;
+            }
+        </script>
+    </div>
+</div>

@@ -1,0 +1,193 @@
+@using System.Text.RegularExpressions
+@model ProgrammersBlog.Mvc.Models.ArticleSearchViewModel
+@{
+    ViewData["Title"] = "Arama Sonuçları";
+    Layout = "_Layout";
+    Regex regex = new Regex(@"<[^>]+>");
+}
+<link href="~/Mugla/css/Index.css" rel="stylesheet" />
+
+<!-- Ana İçerik -->
+<div class="col-lg-8">
+    <input type="hidden" id="keyword" value="@Model.Keyword" />
+    <input type="hidden" id="current-page" value="@Model.ArticleListDto.CurrentPage" />
+
+    <!-- Başlık ve Filtreleme Alanı -->
+    <div class="filter-card mb-4 p-4">
+        <div class="filter-actions">
+            <div class="section-title-container">
+                <!-- Animasyonlu Çizgi -->
+                <div class="line-animation"></div>
+                <!-- Animasyonlu İkon -->
+                <div class="animated-icon">
+                    <i class="bi bi-journal-text text-primary" style="font-size: 1.4rem;"></i>
+                </div>
+                <h2 class="section-title mb-0">Son Yazılar</h2>
+            </div>
+
+            <div class="filter-controls">
+                <!-- Sıralama Seçimi - Yenilenmiş Tasarım -->
+                <div class="sort-selector">
+                    <i class="bi bi-sort-down selector-icon"></i>
+                    <span class="selector-label">Sıralama:</span>
+                    <select class="form-select-sm" id="select-is-ascending">
+                        <option selected="@(!Model.ArticleListDto.IsAscending)" value="false">En Yeni</option>
+                        <option selected="@(Model.ArticleListDto.IsAscending)" value="true">En Eski</option>
+                    </select>
+                </div>
+
+                <!-- Sayfa Boyutu Seçimi - Yeni Tasarım -->
+                <div class="page-size-selector">
+                    <i class="bi bi-grid selector-icon"></i>
+                    <span class="selector-label">Gösterim:</span>
+                    <select class="form-select-sm" id="select-page-size">
+                        <option selected="@(Model.ArticleListDto.PageSize == 5)" value="5">5</option>
+                        <option selected="@(Model.ArticleListDto.PageSize == 10)" value="10">10</option>
+                        <option selected="@(Model.ArticleListDto.PageSize == 20)" value="20">20</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="mb-5">
+        <div class="row">
+            @foreach (var article in Model.ArticleListDto.Articles)
+            {
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 article-card">
+                        <img src="~/img/@article.Thumbnail" class="card-img-top" alt="@article.Title">
+                        <div class="card-body">
+                            <div class="category-badge mb-2">
+                                <span class="badge bg-primary">@article.Menu.Name</span>
+                            </div>
+                            <h5 class="card-title">@article.Title</h5>
+                            <p class="card-text">
+                                @{
+                                    string cleanedContent = regex.Replace(article.Content, "");
+                                    cleanedContent = cleanedContent.Length > 250 ? cleanedContent.Substring(0, 250) + "..." : cleanedContent;
+                                }
+                                @Html.Raw(cleanedContent)
+                            </p>
+
+                            <!-- Yazar ve Tarih Bilgisi -->
+                            <div class="author-info-container">
+                                <div class="author-avatar">
+                                    <i class="bi bi-person"></i>
+                                </div>
+                                <div class="author-details">
+                                    <div class="author-name">@article.User.UserName tarafından</div>
+                                    <div class="publish-date"><i class="bi bi-calendar3"></i> @article.Date.ToShortDateString() tarihinde kaleme alındı</div>
+                                </div>
+                            </div>
+
+                            <!-- Daha Hafif Devamını Oku Butonu - El İşareti ile -->
+                            <div class="read-more-container">
+                                <a asp-controller="Article" asp-action="Detail" asp-route-articleId="@article.Id" class="read-more-btn">
+                                    Devamını Oku <i class="bi bi-arrow-right-short"></i><i class="bi bi-hand-index hand-icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Geliştirilmiş Sayfalama -->
+        <nav class="mt-4" aria-label="Sayfalama">
+            <ul class="pagination justify-content-center mb-4">
+                @{
+                    var baseQuery = $"?isAscending={Model.ArticleListDto.IsAscending}&pageSize={Model.ArticleListDto.PageSize}&keyword={Model.Keyword}";
+                    if (Model.ArticleListDto.MenuId.HasValue)
+                    {
+                        baseQuery += $"&menuId={Model.ArticleListDto.MenuId.Value}";
+                    }
+                }
+
+                @if (Model.ArticleListDto.ShowPrevious)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@baseQuery&currentPage=@(Model.ArticleListDto.CurrentPage-1)">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="d-none d-sm-inline">Önceki</span>
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="d-none d-sm-inline">Önceki</span>
+                        </span>
+                    </li>
+                }
+
+                @for (int i = 1; i <= Model.ArticleListDto.TotalPages; i++)
+                {
+                    <li class="page-item @(i == Model.ArticleListDto.CurrentPage ? "active" : "")">
+                        <a class="page-link" href="@baseQuery&currentPage=@i">@i</a>
+                    </li>
+                }
+
+                @if (Model.ArticleListDto.ShowNext)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@baseQuery&currentPage=@(Model.ArticleListDto.CurrentPage+1)">
+                            <span class="d-none d-sm-inline">Sonraki</span>
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link">
+                            <span class="d-none d-sm-inline">Sonraki</span>
+                            <span aria-hidden="true">&raquo;</span>
+                        </span>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </section>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+          const selectPageSize = $('#select-page-size');
+          const selectIsAscending = $('#select-is-ascending');
+          const keyword = $('#keyword').val(); // Keyword değerini doğru bir şekilde al
+          const categoryId = $('#category-id').val();
+
+          function reloadWithParams() {
+              const params = new URLSearchParams({
+                  pageSize: selectPageSize.val(),
+                  isAscending: selectIsAscending.val(),
+                  keyword: keyword, // Burada keyword değerini kullan
+                  currentPage: 1 // Her filtre değişikliğinde 1. sayfaya dön
+              });
+
+              if (categoryId) params.set('menuId', categoryId);
+
+              window.location.href = `?${params.toString()}`;
+          }
+
+          selectPageSize.on('change', reloadWithParams);
+          selectIsAscending.on('change', reloadWithParams);
+
+          // Devamını oku butonu efekti - animasyon iyileştirildi
+          $('.read-more-btn').hover(
+              function() {
+                  $(this).find('.bi-arrow-right-short').css('transform', 'translateX(4px)');
+                  $(this).find('.hand-icon').css('opacity', '1');
+              },
+              function() {
+                  $(this).find('.bi-arrow-right-short').css('transform', 'translateX(0)');
+                  $(this).find('.hand-icon').css('opacity', '0.7');
+              }
+          );
+        });
+    </script>
+}

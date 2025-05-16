@@ -1,0 +1,197 @@
+﻿@model ProgrammersBlog.Entities.Concrete.WebsiteInfo
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Genel Ayarlar";
+}
+
+<div class="container-fluid py-4">
+    <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-10">
+            <!-- Başlık Kartı -->
+            <div class="card settings-header-card mb-4 border-0">
+                <div class="card-body p-4 text-center">
+                    <div class="avatar avatar-xl bg-soft-primary rounded-circle mb-3">
+                        <i class="fas fa-cog fa-lg text-primary"></i>
+                    </div>
+                    <h2 class="mb-1 text-dark">Genel Site Ayarları</h2>
+                    <p class="text-muted mb-0">Web sitenizin temel bilgilerini ve SEO ayarlarını yönetin</p>
+                </div>
+            </div>
+
+            <!-- Ayarlar Formu -->
+            <div class="card shadow-sm border">
+                <div class="card-body p-4 p-lg-5">
+                    <form asp-controller="Options" asp-action="GeneralSettings" method="post" id="form-generalsettings-update">
+                        <div asp-validation-summary="All" class="alert alert-light-danger mb-4 border border-danger border-2 border-start-0 border-end-0"></div>
+
+                        <!-- Site Bilgileri -->
+                        <div class="mb-5">
+                            <h5 class="section-title mb-4 text-dark">
+                                <i class="fas fa-globe me-2 text-primary"></i>Site Bilgileri
+                            </h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="Title" class="form-label fw-medium">Site Başlığı*</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0"><i class="fas fa-heading text-muted"></i></span>
+                                        <input asp-for="Title" class="form-control border-start-0" placeholder="Sitenizin ana başlığı">
+                                    </div>
+                                    <span asp-validation-for="Title" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="MenuTitle" class="form-label fw-medium">Menü Başlığı</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0"><i class="fas fa-bars text-muted"></i></span>
+                                        <input asp-for="MenuTitle" class="form-control border-start-0" placeholder="Menüde görünecek kısa başlık">
+                                    </div>
+                                    <span asp-validation-for="MenuTitle" class="text-danger small"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SEO Ayarları -->
+                        <div class="mb-4">
+                            <h5 class="section-title mb-4 text-dark">
+                                <i class="fas fa-search me-2 text-primary"></i>SEO Ayarları
+                            </h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="SeoAuthor" class="form-label fw-medium">SEO Yazarı</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0"><i class="fas fa-user-edit text-muted"></i></span>
+                                        <input asp-for="SeoAuthor" class="form-control border-start-0" placeholder="İçerik yazarı/yayıncı">
+                                    </div>
+                                    <span asp-validation-for="SeoAuthor" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="SeoTags" class="form-label fw-medium">SEO Etiketleri</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0"><i class="fas fa-tags text-muted"></i></span>
+                                        <input asp-for="SeoTags" class="form-control border-start-0" placeholder="Virgülle ayrılmış anahtar kelimeler">
+                                    </div>
+                                    <small class="text-muted">Örnek: blog, yazılım, programlama</small>
+                                    <span asp-validation-for="SeoTags" class="text-danger small"></span>
+                                </div>
+                                <div class="col-12">
+                                    <label asp-for="SeoDescription" class="form-label fw-medium">SEO Açıklaması*</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 align-items-start pt-2"><i class="fas fa-align-left text-muted"></i></span>
+                                        <textarea asp-for="SeoDescription" class="form-control border-start-0" rows="3" placeholder="Sitenizin kısa açıklaması (150-160 karakter)"></textarea>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span asp-validation-for="SeoDescription" class="text-danger small"></span>
+                                        <small class="text-muted text-end"><span id="charCount">0</span>/160 karakter</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Butonları -->
+                        <div class="d-flex justify-content-between mt-5 pt-4 border-top">
+                            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary px-4">
+                                <i class="fas fa-arrow-left me-2"></i>Vazgeç
+                            </a>
+                            <button type="submit" class="btn btn-primary px-4">
+                                <i class="fas fa-save me-2"></i>Ayarları Kaydet
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .settings-header-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .avatar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(13,110,253,0.1) !important;
+        }
+
+        .section-title {
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+            .section-title:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 40px;
+                height: 2px;
+                background: #0d6efd;
+                border-radius: 2px;
+            }
+
+        .alert-light-danger {
+            background-color: rgba(220,53,69,0.05);
+            color: #dc3545;
+        }
+
+        .input-group-text {
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus, .form-control:focus + .input-group-text {
+            border-color: #86b7fe;
+            box-shadow: 0 0 0 0.25rem rgba(13,110,253,0.25);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .bg-soft-primary {
+            background-color: rgba(13,110,253,0.1) !important;
+        }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Karakter sayacı
+            const seoDesc = document.querySelector('[asp-for="SeoDescription"]');
+            const charCount = document.getElementById('charCount');
+
+            if (seoDesc && charCount) {
+                seoDesc.addEventListener('input', function() {
+                    charCount.textContent = this.value.length;
+                    if (this.value.length > 160) {
+                        charCount.classList.add('text-danger');
+                    } else {
+                        charCount.classList.remove('text-danger');
+                    }
+                });
+                // Başlangıç değeri
+                charCount.textContent = seoDesc.value.length;
+            }
+
+            // Form gönderiminde yükleniyor efekti
+            const form = document.getElementById('form-generalsettings-update');
+            if (form) {
+                form.addEventListener('submit', function() {
+                    const submitButton = this.querySelector('button[type="submit"]');
+                    if (submitButton) {
+                        submitButton.innerHTML = '<i class="fas fa-circle-notch fa-spin me-2"></i> Kaydediliyor...';
+                        submitButton.disabled = true;
+                    }
+                });
+            }
+        });
+    </script>
+}

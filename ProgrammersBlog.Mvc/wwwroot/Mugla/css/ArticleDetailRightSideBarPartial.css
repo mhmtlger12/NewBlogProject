@@ -1,0 +1,203 @@
+﻿
+.widget-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.widget-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.widget-title {
+    position: relative;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* Animasyonlu Kullanıcı İkon Stilleri - Profesyonel Tema */
+.user-icon-container {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px;
+}
+
+.user-icon-inner {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(121, 134, 203, 0.85), rgba(85, 103, 158, 0.85));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(85, 103, 158, 0.25);
+    animation: softPulse 4s infinite ease-in-out;
+}
+
+    .user-icon-inner i {
+        font-size: 40px;
+        color: #ffffff;
+    }
+
+.user-icon-ring {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid rgba(121, 134, 203, 0.4);
+    z-index: 1;
+    animation: softRotate 15s linear infinite;
+}
+
+    .user-icon-ring:before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: 48px;
+        width: 6px;
+        height: 6px;
+        background-color: rgba(121, 134, 203, 0.8);
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(121, 134, 203, 0.4);
+    }
+
+.admin-badge {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 3;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+@keyframes softPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(121, 134, 203, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(121, 134, 203, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(121, 134, 203, 0);
+    }
+}
+
+@keyframes softRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Sosyal Medya İkonları için CSS */
+.d-flex.justify-content-center.gap-3 a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+}
+
+    .d-flex.justify-content-center.gap-3 a:hover {
+        transform: translateY(-3px) scale(1.1);
+        background-color: #e9ecef;
+    }
+
+    .d-flex.justify-content-center.gap-3 a i {
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+    }
+
+    .d-flex.justify-content-center.gap-3 a:hover i.bi-linkedin {
+        color: #0077b5;
+    }
+
+    .d-flex.justify-content-center.gap-3 a:hover i.bi-github {
+        color: #333;
+    }
+
+    .d-flex.justify-content-center.gap-3 a:hover i.bi-twitter {
+        color: #1da1f2;
+    }
+
+    .d-flex.justify-content-center.gap-3 a:hover i.bi-facebook {
+        color: #1877f2;
+    }
+
+    .d-flex.justify-content-center.gap-3 a:hover i.bi-instagram {
+        color: #e1306c;
+    }
+
+    .d-flex.justify-content-center.gap-3 a:hover i.bi-youtube {
+        color: #ff0000;
+    }
+
+    .d-flex.justify-content-center.gap-3 a:hover i.bi-house-door {
+        color: #28a745;
+    }
+/* Diğer stil tanımlamaları */
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .category-list li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #f5f5f5;
+    }
+
+        .category-list li:last-child {
+            border-bottom: none;
+        }
+
+    .category-list a {
+        display: flex;
+        justify-content: space-between;
+        color: #495057;
+        text-decoration: none;
+    }
+
+        .category-list a:hover {
+            color: #007bff;
+        }
+
+.category-count {
+    background-color: #f8f9fa;
+    padding: 0.2rem 0.5rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: #6c757d;
+}

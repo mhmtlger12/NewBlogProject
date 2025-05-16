@@ -1,0 +1,43 @@
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Services.deps.json
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Services.dll
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Services.pdb
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Services.xml
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Data.dll
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Entities.dll
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Shared.dll
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Data.pdb
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Entities.pdb
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Shared.pdb
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.csproj.AssemblyReference.cache
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.AssemblyInfoInputs.cache
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.AssemblyInfo.cs
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.csproj.CoreCompileInputs.cache
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.sourcelink.json
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\obj\Debug\net8.0\Programm.AD5AD32B.Up2Date
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.dll
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\obj\Debug\net8.0\refint\ProgrammersBlog.Services.dll
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.xml
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.pdb
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Services\obj\Debug\net8.0\ref\ProgrammersBlog.Services.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.csproj.AssemblyReference.cache
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.AssemblyInfoInputs.cache
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.AssemblyInfo.cs
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.csproj.CoreCompileInputs.cache
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\obj\Debug\net8.0\refint\ProgrammersBlog.Services.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.xml
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\obj\Debug\net8.0\ProgrammersBlog.Services.pdb
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Services.deps.json
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Services.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Services.pdb
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Services.xml
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Data.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Entities.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Shared.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Data.pdb
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Entities.pdb
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\bin\Debug\net8.0\ProgrammersBlog.Shared.pdb
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\obj\Debug\net8.0\Programm.AD5AD32B.Up2Date
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Services\obj\Debug\net8.0\ref\ProgrammersBlog.Services.dll

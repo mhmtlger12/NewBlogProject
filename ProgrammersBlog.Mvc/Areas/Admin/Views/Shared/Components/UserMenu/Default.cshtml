@@ -1,0 +1,49 @@
+﻿@model ProgrammersBlog.Mvc.Areas.Admin.Models.UserViewModel
+<div class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle d-flex align-items-center single-click"
+       id="userDropdown"
+       href="#"
+       role="button"
+       data-bs-toggle="dropdown"
+       aria-haspopup="true"
+       aria-expanded="false"
+       data-bs-auto-close="true">
+        <i class="fas fa-user fa-fw text-primary me-2"></i> @Model.User.UserName
+    </a>
+    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+        <a class="dropdown-item d-flex align-items-center" asp-area="Admin" asp-controller="User" asp-action="ChangeDetails">
+            <i class="fas fa-user-cog me-2"></i> Profil Düzenleme
+        </a>
+        <a class="dropdown-item d-flex align-items-center" asp-area="Admin" asp-controller="User" asp-action="PasswordChange">
+            <i class="fas fa-key me-2"></i> Şifre Değiştir
+        </a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item d-flex align-items-center" asp-area="Admin" asp-controller="Auth" asp-action="Logout">
+            <i class="fas fa-sign-out-alt me-2"></i> Çıkış Yap
+        </a>
+    </div>
+</div>
+
+@* 
+    Eski kod
+@model ProgrammersBlog.Mvc.Areas.Admin.Models.UserViewModel
+<ul class="navbar-nav ml-auto ml-md-0">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button"
+           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user fa-fw text-primary"></i> @Model.User.UserName
+        </a>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            <a class="dropdown-item" href="#">
+                <i class="fas fa-user-cog me-2 text-secondary"></i> Profil Düzenleme
+            </a>
+            <a class="dropdown-item" href="#">
+                <i class="fas fa-key me-2 text-secondary"></i> Şifre Değiştir
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="login.html">
+                <i class="fas fa-sign-out-alt me-2 text-secondary"></i> Çıkış Yap
+            </a>
+        </div>
+    </li>
+</ul> *@

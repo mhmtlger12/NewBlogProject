@@ -1,0 +1,25 @@
+﻿@using ProgrammersBlog.Shared.Entities.Concrete
+@{
+    Layout = "_ErrorLayout";
+    ViewBag.Title = "Sunucu Hatası (500)";
+    MvcErrorModel errorModel = ViewData["MvcErrorModel"] as MvcErrorModel;
+}
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center">
+        <h1 class="display-1 fw-bold text-danger">500</h1>
+        <h2 class="mb-3 text-white">Sunucu Hatası</h2>
+        <p class="lead text-white mb-4">
+            @(string.IsNullOrWhiteSpace(errorModel?.Message)
+                ? "Üzgünüz, işleminiz sırasında beklenmedik bir hata oluştu. Lütfen daha sonra tekrar deneyiniz."
+                : errorModel.Message)
+        </p>
+        @if (errorModel.Detail!=null)
+        {
+            <p class="lead text-white mb-4">
+                <strong>Hata Detayı:</strong> @errorModel.Detail</p>
+        }
+        <a asp-controller="Home" asp-action="Index" class="btn btn-warning btn-lg px-4 shadow">
+            <i class="bi bi-arrow-left-circle me-2"></i> Anasayfa'ya Dön
+        </a>
+    </div>
+</div>

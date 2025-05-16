@@ -1,0 +1,1081 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\gitme\\.nuget\\packages\\ntoastnotify\\8.0.0\\contentFiles\\any\\net6.0\\wwwroot\\noty.js",
+      "PackagePath": "staticwebassets\\noty.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\.nuget\\packages\\ntoastnotify\\8.0.0\\contentFiles\\any\\net6.0\\wwwroot\\toastr.js",
+      "PackagePath": "staticwebassets\\toastr.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\assets\\demo\\chart-area-demo3.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\assets\\demo\\chart-area-demo3.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\assets\\demo\\chart-bar-demo3.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\assets\\demo\\chart-bar-demo3.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\assets\\demo\\chart-pie-demo.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\assets\\demo\\chart-pie-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\assets\\demo\\datatables-demo.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\assets\\demo\\datatables-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\assets\\img\\error-404-monochrome.svg",
+      "PackagePath": "staticwebassets\\AdminLTE\\assets\\img\\error-404-monochrome.svg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\css\\AdminHome.css",
+      "PackagePath": "staticwebassets\\AdminLTE\\css\\AdminHome.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\css\\AdminWeather.css",
+      "PackagePath": "staticwebassets\\AdminLTE\\css\\AdminWeather.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\css\\UserLogin.css",
+      "PackagePath": "staticwebassets\\AdminLTE\\css\\UserLogin.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\css\\httpErrorBgAnimation.css",
+      "PackagePath": "staticwebassets\\AdminLTE\\css\\httpErrorBgAnimation.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\css\\select2-bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\AdminLTE\\css\\select2-bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\css\\site.css",
+      "PackagePath": "staticwebassets\\AdminLTE\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\css\\styles.css",
+      "PackagePath": "staticwebassets\\AdminLTE\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\css\\table-css.css",
+      "PackagePath": "staticwebassets\\AdminLTE\\css\\table-css.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\HomeIndex.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\HomeIndex.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\articleAdd.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\articleAdd.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\articleIndex.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\articleIndex.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\articleRightSideBarWidgetSettings.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\articleRightSideBarWidgetSettings.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\categoryIndex-HTML.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\categoryIndex-HTML.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\categoryIndex.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\categoryIndex.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\commentIndex.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\commentIndex.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\deletedArticles.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\deletedArticles.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\deletedCategories.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\deletedCategories.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\deletedComments.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\deletedComments.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\roleIndex.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\roleIndex.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\scripts.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\site.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\userIndex.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\userIndex.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\css\\main.css",
+      "PackagePath": "staticwebassets\\ComingSoon\\css\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\css\\util.css",
+      "PackagePath": "staticwebassets\\ComingSoon\\css\\util.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Lato\\Lato-Black.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Lato\\Lato-Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Lato\\Lato-BlackItalic.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Lato\\Lato-BlackItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Lato\\Lato-Bold.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Lato\\Lato-Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Lato\\Lato-BoldItalic.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Lato\\Lato-BoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Lato\\Lato-Hairline.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Lato\\Lato-Hairline.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Lato\\Lato-HairlineItalic.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Lato\\Lato-HairlineItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Lato\\Lato-Italic.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Lato\\Lato-Italic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Lato\\Lato-Light.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Lato\\Lato-Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Lato\\Lato-LightItalic.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Lato\\Lato-LightItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Lato\\Lato-Regular.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Lato\\Lato-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Lato\\OFL.txt",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Lato\\OFL.txt"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-Black.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-BlackItalic.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-BlackItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-Bold.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-BoldItalic.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-BoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-ExtraBold.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-ExtraBold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-ExtraBoldItalic.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-ExtraBoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-ExtraLight.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-ExtraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-ExtraLightItalic.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-ExtraLightItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-Italic.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-Italic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-Light.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-LightItalic.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-LightItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-Medium.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-MediumItalic.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-MediumItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-Regular.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-SemiBold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-SemiBoldItalic.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-SemiBoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-Thin.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-Thin.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\Poppins\\Poppins-ThinItalic.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\Poppins\\Poppins-ThinItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\HELP-US-OUT.txt",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\HELP-US-OUT.txt"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\css\\font-awesome.css",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\css\\font-awesome.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\animated.less",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\animated.less"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\bordered-pulled.less",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\bordered-pulled.less"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\core.less",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\core.less"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\fixed-width.less",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\fixed-width.less"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\font-awesome.less",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\font-awesome.less"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\icons.less",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\icons.less"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\larger.less",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\larger.less"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\list.less",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\list.less"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\mixins.less",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\mixins.less"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\path.less",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\path.less"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\rotated-flipped.less",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\rotated-flipped.less"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\screen-reader.less",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\screen-reader.less"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\stacked.less",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\stacked.less"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\variables.less",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\less\\variables.less"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_animated.scss",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_animated.scss"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_bordered-pulled.scss",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_bordered-pulled.scss"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_core.scss",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_core.scss"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_fixed-width.scss",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_fixed-width.scss"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_icons.scss",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_icons.scss"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_larger.scss",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_larger.scss"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_list.scss",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_list.scss"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_path.scss",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_path.scss"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_rotated-flipped.scss",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_rotated-flipped.scss"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_screen-reader.scss"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_stacked.scss",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_stacked.scss"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\font-awesome.scss",
+      "PackagePath": "staticwebassets\\ComingSoon\\fonts\\font-awesome-4.7.0\\scss\\font-awesome.scss"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\images\\bg01.jpg",
+      "PackagePath": "staticwebassets\\ComingSoon\\images\\bg01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\images\\bg02.jpg",
+      "PackagePath": "staticwebassets\\ComingSoon\\images\\bg02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\images\\bg03.jpg",
+      "PackagePath": "staticwebassets\\ComingSoon\\images\\bg03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\images\\icons\\favicon.ico",
+      "PackagePath": "staticwebassets\\ComingSoon\\images\\icons\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\images\\icons\\logo.png",
+      "PackagePath": "staticwebassets\\ComingSoon\\images\\icons\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\images\\icons\\video-16-9.jpg",
+      "PackagePath": "staticwebassets\\ComingSoon\\images\\icons\\video-16-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\js\\main.js",
+      "PackagePath": "staticwebassets\\ComingSoon\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\animate\\animate.css",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\animate\\animate.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\js\\popper.js",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\js\\popper.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\js\\popper.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\bootstrap\\js\\tooltip.js",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\bootstrap\\js\\tooltip.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\countdowntime\\countdowntime.js",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\countdowntime\\countdowntime.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\countdowntime\\moment-timezone-with-data.min.js",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\countdowntime\\moment-timezone-with-data.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\countdowntime\\moment-timezone.min.js",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\countdowntime\\moment-timezone.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\countdowntime\\moment.min.js",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\countdowntime\\moment.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\jquery\\jquery-3.2.1.min.js",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\jquery\\jquery-3.2.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\select2\\select2.css",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\select2\\select2.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\select2\\select2.js",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\select2\\select2.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\select2\\select2.min.css",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\select2\\select2.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\select2\\select2.min.js",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\select2\\select2.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\ComingSoon\\vendor\\tilt\\tilt.jquery.min.js",
+      "PackagePath": "staticwebassets\\ComingSoon\\vendor\\tilt\\tilt.jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\About.css",
+      "PackagePath": "staticwebassets\\Mugla\\css\\About.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\ArticleDetailRightSideBarPartial.css",
+      "PackagePath": "staticwebassets\\Mugla\\css\\ArticleDetailRightSideBarPartial.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\Contact.css",
+      "PackagePath": "staticwebassets\\Mugla\\css\\Contact.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\Index.css",
+      "PackagePath": "staticwebassets\\Mugla\\css\\Index.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\bottom-right-popup.css",
+      "PackagePath": "staticwebassets\\Mugla\\css\\bottom-right-popup.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\breadcrumb.css",
+      "PackagePath": "staticwebassets\\Mugla\\css\\breadcrumb.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\error-page-bg-animation.css",
+      "PackagePath": "staticwebassets\\Mugla\\css\\error-page-bg-animation.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\logo.css",
+      "PackagePath": "staticwebassets\\Mugla\\css\\logo.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\logo.css.map",
+      "PackagePath": "staticwebassets\\Mugla\\css\\logo.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\style.css",
+      "PackagePath": "staticwebassets\\Mugla\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\style.css.map",
+      "PackagePath": "staticwebassets\\Mugla\\css\\style.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\404.png",
+      "PackagePath": "staticwebassets\\Mugla\\images\\404.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\author.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\author.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\favicon.png",
+      "PackagePath": "staticwebassets\\Mugla\\images\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\header.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\header.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\logo-white.png",
+      "PackagePath": "staticwebassets\\Mugla\\images\\logo-white.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\logo.png",
+      "PackagePath": "staticwebassets\\Mugla\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\cr-1.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\cr-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\cr-2.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\cr-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\indir7.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\indir7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\ls-2.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\ls-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\mugla1.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\mugla1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\mugla2.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\mugla2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\mugla3.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\mugla3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\mugla4.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\mugla4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\mugla5.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\mugla5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\mugla6.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\mugla6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\post-1.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\post-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\post-2.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\post-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\post-3.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\post-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\post-4.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\post-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\post-5.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\post-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\post-6.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\post-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\post-7.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\post-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\post-8.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\post-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\images\\post\\post-9.jpg",
+      "PackagePath": "staticwebassets\\Mugla\\images\\post\\post-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\js\\Contact3.js",
+      "PackagePath": "staticwebassets\\Mugla\\js\\Contact3.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\js\\articleDetail.js",
+      "PackagePath": "staticwebassets\\Mugla\\js\\articleDetail.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\js\\script.js",
+      "PackagePath": "staticwebassets\\Mugla\\js\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\plugins\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\Mugla\\plugins\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\plugins\\bootstrap\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\Mugla\\plugins\\bootstrap\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\plugins\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\Mugla\\plugins\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\082aa17d-8405-4f56-8e05-a9a604ef18d8_Ahmet_694_20_7_22_8_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\082aa17d-8405-4f56-8e05-a9a604ef18d8_Ahmet_694_20_7_22_8_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\61c9331a-9246-44ab-9dc4-1f5e3eb4ea77_adminuser_558_10_59_21_8_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\61c9331a-9246-44ab-9dc4-1f5e3eb4ea77_adminuser_558_10_59_21_8_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\Test_552_18_10_20_8_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\Test_552_18_10_20_8_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\adminuser1_277_1_44_21_8_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\adminuser1_277_1_44_21_8_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\editoruser_980_17_45_21_8_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\editoruser_980_17_45_21_8_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\ tGestMakele m _  @ $½$_621_36_19_14_19_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\ tGestMakele m _  @ $½$_621_36_19_14_19_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\485_15_44_22_17_4_2025",
+      "PackagePath": "staticwebassets\\img\\postImages"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Bodrum'da Gezilecek Tarihi Mekanlar_727_51_38_22_19_4_2025.jpg",
+      "PackagePath": "staticwebassets\\img\\postImages\\Bodrum'da Gezilecek Tarihi Mekanlar_727_51_38_22_19_4_2025.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Datça Yarımadası'nın Gizli Koyları_20250419_230600.jpg",
+      "PackagePath": "staticwebassets\\img\\postImages\\Datça Yarımadası'nın Gizli Koyları_20250419_230600.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Datça Yarımadası'nın Gizli Koyları_596_2_0_23_19_4_2025.jpg",
+      "PackagePath": "staticwebassets\\img\\postImages\\Datça Yarımadası'nın Gizli Koyları_596_2_0_23_19_4_2025.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\DisplayNameDisplayNameDisplayName_254_0_1_1_18_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\DisplayNameDisplayNameDisplayName_254_0_1_1_18_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Fethiye'nin Eşsiz Koyları ve Plajları_187_10_39_22_19_4_2025.jpg",
+      "PackagePath": "staticwebassets\\img\\postImages\\Fethiye'nin Eşsiz Koyları ve Plajları_187_10_39_22_19_4_2025.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Kavaklıdere ve Yatağan'ın Doğal ve Tarihi Zenginlikleri_668_15_39_22_19_4_2025.jpg",
+      "PackagePath": "staticwebassets\\img\\postImages\\Kavaklıdere ve Yatağan'ın Doğal ve Tarihi Zenginlikleri_668_15_39_22_19_4_2025.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Köyceğiz Gölü ve Dalyan Kanalları_711_46_38_22_19_4_2025.jpg",
+      "PackagePath": "staticwebassets\\img\\postImages\\Köyceğiz Gölü ve Dalyan Kanalları_711_46_38_22_19_4_2025.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Lorem Ipsum Lorem Ipsum Lorem Ipsum_754_4_45_20_15_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\Lorem Ipsum Lorem Ipsum Lorem Ipsum_754_4_45_20_15_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Lorem Ipsum_333_44_41_20_15_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\Lorem Ipsum_333_44_41_20_15_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\LoremIpsum_598_40_37_20_15_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\LoremIpsum_598_40_37_20_15_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Marmaris'te Deniz ve Doğa Turizmi_406_29_38_22_19_4_2025.jpg",
+      "PackagePath": "staticwebassets\\img\\postImages\\Marmaris'te Deniz ve Doğa Turizmi_406_29_38_22_19_4_2025.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Milas'ın Tarihi ve Kültürel Zenginlikleri_205_24_38_22_19_4_2025.jpg",
+      "PackagePath": "staticwebassets\\img\\postImages\\Milas'ın Tarihi ve Kültürel Zenginlikleri_205_24_38_22_19_4_2025.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Muğla Merkez'de Kültür Turizmi_454_41_38_22_19_4_2025.jpg",
+      "PackagePath": "staticwebassets\\img\\postImages\\Muğla Merkez'de Kültür Turizmi_454_41_38_22_19_4_2025.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Seydikemer'in Bakir Doğası ve Kanyonları_406_0_39_22_19_4_2025.jpg",
+      "PackagePath": "staticwebassets\\img\\postImages\\Seydikemer'in Bakir Doğası ve Kanyonları_406_0_39_22_19_4_2025.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Ula ve Akyaka'da Sakin Şehir Deneyimi_331_5_39_22_19_4_2025.jpg",
+      "PackagePath": "staticwebassets\\img\\postImages\\Ula ve Akyaka'da Sakin Şehir Deneyimi_331_5_39_22_19_4_2025.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Where can I get some Where can I get some_919_5_40_22_15_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\Where can I get some Where can I get some_919_5_40_22_15_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Where does it come from_180_55_58_20_15_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\Where does it come from_180_55_58_20_15_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\adminuseradminuseradminuseradminuser_318_54_59_23_16_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\adminuseradminuseradminuseradminuser_318_54_59_23_16_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\asdadasdasdasdasdas_349_42_6_21_25_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\asdadasdasdasdasdas_349_42_6_21_25_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\dart_617_7_30_0_17_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\dart_617_7_30_0_17_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\ddddddd_929_52_44_0_18_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\ddddddd_929_52_44_0_18_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\defaultThumbnail.jpg",
+      "PackagePath": "staticwebassets\\img\\postImages\\defaultThumbnail.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\mehmet_410_31_41_23_16_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\mehmet_410_31_41_23_16_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\userImages\\defaultUser.png",
+      "PackagePath": "staticwebassets\\img\\userImages\\defaultUser.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\img\\userImages\\photouser_476_30_48_19_9_4_2025.png",
+      "PackagePath": "staticwebassets\\img\\userImages\\photouser_476_30_48_19_9_4_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\ProgrammersBlog\\ProgrammersBlog.Mvc\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.ProgrammersBlog.Mvc.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.ProgrammersBlog.Mvc.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.ProgrammersBlog.Mvc.props",
+      "PackagePath": "build\\ProgrammersBlog.Mvc.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ProgrammersBlog.Mvc.props",
+      "PackagePath": "buildMultiTargeting\\ProgrammersBlog.Mvc.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.ProgrammersBlog.Mvc.props",
+      "PackagePath": "buildTransitive\\ProgrammersBlog.Mvc.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

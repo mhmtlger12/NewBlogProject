@@ -1,0 +1,752 @@
+﻿/* Modern ve Animasyonlu Hava Durumu Widget Tasarımı - İyileştirilmiş Versiyon */
+.weather-widget-container {
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: none;
+    background: #ffffff; /* Arka planı düz beyaz yap */
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(224, 224, 230, 0.5);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+    .weather-widget-container:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(145deg, rgba(120, 180, 255, 0.08) 0%, rgba(255, 255, 255, 0) 60%);
+        z-index: 0;
+        display: none;
+    }
+
+    .weather-widget-container:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 18px 35px rgba(25, 118, 210, 0.18), 0 8px 15px rgba(25, 118, 210, 0.12);
+    }
+
+.weather-widget-header {
+    background: rgba(244, 246, 252, 0.92);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: #2c3e50;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(224, 224, 235, 0.4);
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+    .weather-widget-header .d-flex {
+        position: relative;
+    }
+
+        .weather-widget-header .d-flex i {
+            position: relative;
+            z-index: 2;
+            animation: float 4s ease-in-out infinite;
+            filter: drop-shadow(0 4px 6px rgba(243, 156, 18, 0.3));
+        }
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-8px) rotate(3deg);
+    }
+
+    75% {
+        transform: translateY(8px) rotate(-3deg);
+    }
+}
+
+.weather-widget-header .d-flex:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.25) 0%, rgba(255, 215, 0, 0.05) 60%, rgba(255, 255, 255, 0) 80%);
+    border-radius: 50%;
+    z-index: 1;
+    top: 50%;
+    left: 15px;
+    transform: translate(-50%, -50%);
+    animation: pulse 5s ease infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0.4;
+    }
+}
+
+.weather-widget-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    margin-left: 15px;
+    background: linear-gradient(90deg, #1976d2, #42a5f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.weather-widget-content {
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(247, 250, 255, 0.8) 0%, rgba(255, 255, 255, 0.95) 100%);
+    margin-top: 0;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.weather-current {
+    margin-bottom: 32px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+    .weather-current:hover {
+        transform: scale(1.03);
+    }
+
+.weather-forecast {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+    .weather-forecast:hover {
+        transform: scale(1.03);
+    }
+
+    .weather-current h6,
+    .weather-forecast h6 {
+        color: #37474f;
+        font-weight: 600;
+        margin-bottom: 22px;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+
+        .weather-current h6:after,
+        .weather-forecast h6:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, #1976d2, #42a5f5);
+            bottom: 0;
+            left: 25%;
+            border-radius: 3px;
+        }
+
+.weather-img {
+    border-radius: 15px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08), 0 5px 12px rgba(0, 0, 0, 0.05);
+    margin: 0 auto;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 14px;
+    max-width: 100%;
+    border: 1px solid rgba(233, 236, 239, 0.8);
+    width: 180px !important;
+    height: 140px !important;
+    transition: all 0.5s ease;
+    position: relative;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+    .weather-img:hover {
+        box-shadow: 0 15px 30px rgba(33, 150, 243, 0.2);
+        transform: translateY(-8px);
+    }
+
+.weather-forecast .weather-img {
+    width: 450px !important;
+    height: 150px !important;
+}
+
+/* Weather Widget Link */
+.weather-widget-link {
+    color: #1976d2;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: rgba(33, 150, 243, 0.1);
+    border: 1px solid rgba(33, 150, 243, 0.2);
+}
+
+    .weather-widget-link:hover {
+        color: #ffffff;
+        background: linear-gradient(90deg, #1976d2, #42a5f5);
+        box-shadow: 0 5px 15px rgba(33, 150, 243, 0.35);
+    }
+
+    .weather-widget-link i {
+        margin-left: 10px;
+        font-size: 16px;
+        transition: transform 0.4s ease;
+    }
+
+    .weather-widget-link:hover i {
+        transform: translateX(6px);
+    }
+
+/* İyileştirilmiş Districts Grid Tasarımı */
+.districts-container {
+    height: 100%;
+    background: #ffffff; /* Arka planı düz beyaz yap */
+    border-radius: 20px;
+    box-shadow: none; /* Gölgeyi kaldır */
+    overflow: hidden;
+    border: 1px solid rgba(224, 224, 230, 0.5);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+    .districts-container:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(145deg, rgba(120, 180, 255, 0.08) 0%, rgba(255, 255, 255, 0) 60%);
+        z-index: 0;
+        display: none; /* Pseudo-elementi tamamen kaldır */
+    }
+
+    .districts-container:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 18px 35px rgba(25, 118, 210, 0.18), 0 8px 15px rgba(25, 118, 210, 0.12);
+    }
+
+.districts-header {
+    padding: 20px 25px;
+    background: rgba(244, 246, 252, 0.92);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(224, 224, 235, 0.4);
+    display: flex;
+    align-items: center;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.districts-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    margin-left: 15px;
+    background: linear-gradient(90deg, #1976d2, #42a5f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.districts-icon {
+    font-size: 24px;
+    color: #1976d2;
+    position: relative;
+    z-index: 2;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 3px 5px rgba(25, 118, 210, 0.3));
+}
+
+    .districts-icon:after {
+        content: '';
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        background: radial-gradient(circle, rgba(33, 150, 243, 0.25) 0%, rgba(33, 150, 243, 0.05) 60%, rgba(255, 255, 255, 0) 80%);
+        border-radius: 50%;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: pulse 5s ease infinite;
+    }
+
+.districts-content {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Kart genişliğini arttırın */
+    gap: 15px;
+    max-height: 420px;
+    overflow-y: auto;
+    background: linear-gradient(to bottom, rgba(247, 250, 255, 0.8) 0%, rgba(255, 255, 255, 0.95) 100%);
+    margin-top: 0;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+    /* Scrollbar Tasarımı İyileştirilmiş */
+    .districts-content::-webkit-scrollbar {
+        width: 8px;
+        background-color: rgba(240, 245, 255, 0.8);
+        border-radius: 10px;
+    }
+
+    .districts-content::-webkit-scrollbar-thumb {
+        background-color: rgba(33, 150, 243, 0.4);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+        .districts-content::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(33, 150, 243, 0.6);
+        }
+
+/* Update the district-card class to better handle the images */
+.district-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 16px;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(233, 236, 239, 0.85);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 180px; /* Set a minimum height */
+}
+
+
+    .district-card:before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #42a5f5, transparent);
+        transform: scaleX(0);
+        transition: transform 0.8s ease;
+    }
+
+    .district-card:hover:before {
+        transform: scaleX(1);
+    }
+
+    .district-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(33, 150, 243, 0.18);
+    }
+
+.district-name {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #37474f;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-height: 40px;
+}
+
+/* Update the district-weather-img class to be responsive */
+.district-weather-img {
+    width: 100%; /* Make width 100% of the container */
+    max-width: 165px; /* But limit maximum width */
+    height: auto; /* Height auto to maintain aspect ratio */
+    object-fit: contain;
+    padding: 5px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(233, 236, 239, 0.8);
+    transition: all 0.4s ease;
+}
+.district-card:hover .district-weather-img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(33, 150, 243, 0.12);
+}
+
+.districts-link {
+    color: #1976d2;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: rgba(33, 150, 243, 0.1);
+    border: 1px solid rgba(33, 150, 243, 0.2);
+    margin-top: 15px;
+}
+
+    .districts-link:hover {
+        color: #ffffff;
+        background: linear-gradient(90deg, #1976d2, #42a5f5);
+        box-shadow: 0 5px 15px rgba(33, 150, 243, 0.35);
+    }
+
+    .districts-link i {
+        margin-left: 10px;
+        font-size: 16px;
+        transition: transform 0.4s ease;
+    }
+
+    .districts-link:hover i {
+        transform: translateX(6px);
+    }
+
+/* Geliştirilmiş Animasyonlar */
+@keyframes weatherIconFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-8px) rotate(8deg);
+    }
+
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(8px) rotate(-8deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.wi-day-sunny {
+    animation: weatherIconFloat 8s ease-in-out infinite;
+    transform-origin: center;
+    display: inline-block;
+    filter: drop-shadow(0 4px 6px rgba(243, 156, 18, 0.3));
+}
+
+/* Kartlara Geliştirilmiş Gradyan Efekti */
+.district-card:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, 0) 60%);
+    z-index: -1;
+}
+
+/* İyileştirilmiş Loading Efekti */
+.weather-img:before, .district-weather-img:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    animation: imgLoading 2s infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes imgLoading {
+    0% {
+        left: -50%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+/* Responsive İyileştirmeler - Kodda Var, Aynen Korundu */
+@media (max-width: 768px) {
+    .weather-forecast .weather-img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .districts-content {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .districts-content {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .weather-widget-header, .districts-header {
+        padding: 16px 18px;
+    }
+
+    .weather-widget-content, .districts-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .districts-content {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .district-weather-img {
+        max-height: 80px;
+        padding: 8px;
+    }
+
+    .weather-widget-title, .districts-title {
+        font-size: 16px;
+    }
+}
+
+/* Yeni Eklenen Özellikler */
+/* Hover Efektleri için Gelişmiş Geçişler */
+.weather-widget-container, .districts-container, .district-card, .weather-img, .district-weather-img {
+    transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* Kartlara Gölgeli Kenarlık Efekti */
+.district-card {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07), inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+/* Neon Efekti - Hover durumunda */
+.weather-widget-container:hover, .districts-container:hover {
+    box-shadow: none;
+    transform: none; /* Hover durumunda yükseltme efektini de kaldır */
+   
+}
+
+    .weather-current:hover, .weather-forecast:hover, .district-card:hover {
+        opacity: 1;
+    }
+
+
+/* Açılır-Kapanır Buton Stilleri */
+.btn-toggle-card {
+    background: transparent;
+    border: none;
+    color: #1976d2;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+    .btn-toggle-card:hover {
+        background: rgba(25, 118, 210, 0.1);
+    }
+
+    .btn-toggle-card:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.3);
+    }
+
+    .btn-toggle-card i {
+        transition: transform 0.4s ease;
+    }
+
+    .btn-toggle-card:hover i {
+        transform: translateY(2px);
+    }
+
+/* İkonu çevirmek için animasyon */
+.fa-chevron-up {
+    animation: rotateIcon 0.3s forwards;
+}
+
+.fa-chevron-down {
+    animation: rotateIconReverse 0.3s forwards;
+}
+
+@keyframes rotateIcon {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes rotateIconReverse {
+    from {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+/* Açılıp kapanma animasyonu */
+.card-container {
+    transition: all 0.5s ease;
+    max-height: 2000px;
+    overflow: hidden;
+}
+
+    .card-container.collapsed {
+        max-height: 0;
+        overflow: hidden;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+
+/* Buton stilleri */
+.btn-toggle-card {
+    background: rgba(25, 118, 210, 0.1);
+    border: none;
+    border-radius: 30px;
+    padding: 8px 16px;
+    color: #1976d2;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+    .btn-toggle-card:hover {
+        background: rgba(25, 118, 210, 0.2);
+    }
+
+    .btn-toggle-card i:first-child {
+        margin-right: 8px;
+    }
+
+    .btn-toggle-card .fa-chevron-down,
+    .btn-toggle-card .fa-chevron-up {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+.weather-info-box {
+    background: linear-gradient(135deg, rgba(225, 245, 254, 0.8), rgba(200, 240, 255, 0.6)) !important;
+    border-left: 5px solid rgba(3, 169, 244, 1);
+    padding: 14px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    animation: pulseEffect 3s ease-in-out infinite;
+    transition: all 0.4s ease-in-out;
+}
+
+    .weather-info-box.sunny {
+        border-left-color: #FFD54F;
+        background: linear-gradient(135deg, #FFF8E1, #FFE082);
+    }
+
+    .weather-info-box.rain {
+        border-left-color: #2196F3;
+        background: linear-gradient(135deg, #BBDEFB, #64B5F6);
+    }
+
+    .weather-info-box.snow {
+        border-left-color: #90CAF9;
+        background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+    }
+
+    .weather-info-box.stormy {
+        border-left-color: #4FC3F7;
+        background: linear-gradient(135deg, #ECEFF1, #B3E5FC);
+    }
+
+    .weather-info-box:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .weather-info-box i {
+        font-size: 22px;
+        color: rgba(3, 169, 244, 1);
+        animation: iconBounce 2s ease-in-out infinite;
+    }
+
+    .weather-info-box span {
+        font-weight: 600;
+        margin: 0 12px;
+        color: rgba(30, 30, 30, 0.9);
+    }
+
+/* Icon bounce */
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+/* Background pulse effect */
+@keyframes pulseEffect {
+    0%, 100% {
+        background-color: rgba(225, 245, 254, 0.8);
+    }
+
+    50% {
+        background-color: rgba(225, 245, 254, 0.95);
+    }
+}
+
+/* Optional fade-out class (if needed) */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}

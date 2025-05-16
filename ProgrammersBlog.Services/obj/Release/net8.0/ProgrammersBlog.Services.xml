@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProgrammersBlog.Services</name>
+    </assembly>
+    <members>
+        <member name="M:ProgrammersBlog.Services.Abstract.IArticleService.GetAsync(System.Guid)">
+            <summary>
+            Belirtilen ID'ye sahip makaleyi getirir.
+            </summary>
+            <param name="articleId">Makale ID</param>
+            <returns>İçinde makale nesnesi bulunan işlem sonucu</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.IArticleService.GetAllAsync">
+            <summary>
+            Tüm makaleleri getirir.
+            </summary>
+            <returns>Makale listesi</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.IArticleService.GetAllByCategoryAsync(System.Guid)">
+            <summary>
+            Belirli bir kategoriye ait tüm makaleleri getirir.
+            </summary>
+            <returns>Kategoriye ait makalelerin listesi</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.IArticleService.GetAllByNonDeletedAsync">
+            <summary>
+            Silinmemiş tüm makaleleri getirir. (IsDeleted = false)
+            </summary>
+            <returns>Silinmemiş makalelerin listesini içeren sonuç.</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.IArticleService.GetAllByNonDeletedAndActiveAsync">
+            <summary>
+            Silinmemiş ve aktif olan tüm makaleleri getirir.
+            </summary>
+            <returns>Aktif ve silinmemiş makalelerin listesi</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.IArticleService.AddAsync(ProgrammersBlog.Entities.Dtos.Articles.ArticleAddDto,System.String,System.Guid)">
+            <summary>
+            Yeni bir makale ekler.
+            </summary>
+            <param name="articleAddDto">Makaleyi eklemek için kullanılan DTO</param>
+            <param name="createdByName">Makaleyi oluşturan kişinin adı</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.IArticleService.UpdateAsync(ProgrammersBlog.Entities.Dtos.Articles.ArticleUpdateDto,System.String)">
+            <summary>
+            Mevcut bir makaleyi günceller.
+            </summary>
+            <param name="articleUpdateDto">Makaleyi güncellemek için kullanılan DTO</param>
+            <param name="modifiedByName">Makaleyi güncelleyen kişinin adı</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.IArticleService.DeleteAsync(System.Guid,System.String)">
+            <summary>
+            Makaleyi yumuşak silme (soft delete) işlemi yapar.
+            (IsDeleted = true olarak işaretlenir.)
+            </summary>
+            <param name="articleId">Makale ID</param>
+            <param name="modifiedByName">Silme işlemini yapan kişinin adı</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.IArticleService.HardDeleteAsync(System.Guid)">
+            <summary>
+            Makaleyi tamamen siler. (Hard delete)
+            Veritabanından tamamen kaldırılır.
+            </summary>
+            <param name="articleId">Makale ID</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+        <member name="T:ProgrammersBlog.Services.Abstract.ICategoryService">
+            <summary>
+            Kategori işlemlerini yöneten servis arayüzü.
+            </summary>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.ICategoryService.GetAsync(System.Guid)">
+            <summary>
+            Belirtilen ID'ye sahip kategoriyi getirir.
+            </summary>
+            <param name="categoryId">Kategori ID</param>
+            <returns>İçinde kategori nesnesi bulunan işlem sonucu</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.ICategoryService.GetAllAsync">
+            <summary>
+            Tüm kategorileri getirir.
+            </summary>
+            <returns>Kategori listesi</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.ICategoryService.GetAllByNonDeletedAsync">
+            <summary>
+            Silinmemiş tüm kategorileri getirir. (IsDeleted = false)
+            </summary>
+            <returns>Silinmemiş kategorilerin listesini içeren sonuç.</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.ICategoryService.GetAllByNonDeletedAndActiveAsync">
+            <summary>
+            Hem silinmemiş hemde aktif
+            </summary>
+            <returns>Silinmemiş ve Aktif kategorilerin listesini içeren sonuç.</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.ICategoryService.AddAsync(ProgrammersBlog.Entities.Dtos.Categories.CategoryAddDto,System.String)">
+            <summary>
+            Yeni bir kategori ekler.
+            </summary>
+            <param name="categoryAddDto">Kategori ekleme DTO'su</param>
+            <param name="createdByName">Oluşturan kişinin adı</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.ICategoryService.UpdateAsync(ProgrammersBlog.Entities.Dtos.Categories.CategoryUpdateDto,System.String)">
+            <summary>
+            Mevcut bir kategoriyi günceller.
+            </summary>
+            <param name="categoryUpdateDto">Kategori güncelleme DTO'su</param>
+            <param name="modifiedByName">Güncelleyen kişinin adı</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.ICategoryService.DeleteAsync(System.Guid,System.String)">
+            <summary>
+            Kategoriyi yumuşak silme (soft delete) işlemi yapar.
+            (IsDeleted = true olarak işaretlenir.)
+            </summary>
+            <param name="categoryId">Kategori ID</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Abstract.ICategoryService.HardDeleteAsync(System.Guid)">
+            <summary>
+            Kategoriyi tamamen siler. (Hard delete)
+            Veritabanından tamamen kaldırılır.
+            </summary>
+            <param name="categoryId">Kategori ID</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Concrete.CategoryManager.#ctor(ProgrammersBlog.Data.Abstract.IUnitOfWork,AutoMapper.IMapper)">
+            <summary>
+            CategoryManager sınıfının yapıcı metodu, bağımlılıkları enjekte eder.
+            </summary>
+            <param name="unitOfWork">Unit of Work nesnesi</param>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Concrete.CategoryManager.AddAsync(ProgrammersBlog.Entities.Dtos.Categories.CategoryAddDto,System.String)">
+            <summary>
+            Yeni bir kategori ekler.
+            </summary>
+            <param name="categoryAddDto">Kategori bilgilerini içeren DTO</param>
+            <param name="createdByName">Oluşturan kişinin adı</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Concrete.CategoryManager.DeleteAsync(System.Guid,System.String)">
+            <summary>
+            Bir kategoriyi siler (Soft Delete - IsDeleted=true yapar).
+            </summary>
+            <param name="categoryId">Silinecek kategori ID'si</param>
+            <param name="modifiedByName">Silme işlemini yapan kişinin adı</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Concrete.CategoryManager.GetAsync(System.Guid)">
+            <summary>
+            Belirtilen ID'ye sahip bir kategoriyi getirir.
+            </summary>
+            <param name="categoryId">Kategori ID'si</param>
+            <returns>Kategori bilgisi</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Concrete.CategoryManager.GetAllAsync">
+            <summary>
+            Tüm kategorileri getirir.
+            </summary>
+            <returns>Kategori listesi</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Concrete.CategoryManager.GetAllByNonDeletedAsync">
+            <summary>
+            Silinmemiş (IsDeleted=false) tüm kategorileri getirir.
+            </summary>
+            <returns>Silinmemiş kategorilerin listesi</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Concrete.CategoryManager.HardDeleteAsync(System.Guid)">
+            <summary>
+            Bir kategoriyi kalıcı olarak veritabanından siler (Hard Delete).
+            </summary>
+            <param name="categoryId">Silinecek kategori ID'si</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+        <member name="M:ProgrammersBlog.Services.Concrete.CategoryManager.UpdateAsync(ProgrammersBlog.Entities.Dtos.Categories.CategoryUpdateDto,System.String)">
+            <summary>
+            Bir kategoriyi günceller.
+            </summary>
+            <param name="categoryUpdateDto">Güncellenecek kategori bilgilerini içeren DTO</param>
+            <param name="modifiedByName">Güncelleyen kişinin adı</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+    </members>
+</doc>

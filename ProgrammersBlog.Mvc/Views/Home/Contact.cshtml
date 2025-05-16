@@ -1,0 +1,146 @@
+﻿@model ProgrammersBlog.Entities.Dtos.Contacts.EmailSendDto
+@{
+    Layout = "_ContactLayout";
+    ViewBag.Title = "İletişim";
+    ViewBag.Author = "ProgrammersBlog";
+    ViewBag.Description = "Bizlerle iletişime geçin. ProgrammersBlog";
+    ViewBag.Tags = "Contact, Contact Us, Bizle İletişime Geçin, İletişim";
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - ProgrammersBlog</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="contact-card">
+            <div class="contact-header">
+                <div class="contact-icon">
+                    <!-- Modern Mesaj/İletişim İkonu -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <h3>Bizlere bir mesaj bırakın</h3>
+            </div>
+            
+            <div id="successAlert" class="alert alert-success">
+                <strong>Başarılı!</strong> Mesajınız başarıyla gönderildi. En kısa sürede size geri dönüş yapacağız.
+            </div>
+            
+            <div id="errorAlert" class="alert alert-danger">
+                <strong>Hata!</strong> Mesajınız gönderilirken bir sorun oluştu. Lütfen daha sonra tekrar deneyiniz.
+            </div>
+
+            <!-- Değişen Kısımlar: input'ların name attribute'leri -->
+            <form asp-controller="Home" asp-action="Contact" method="post" id="contactForm">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group" id="nameGroup">
+                            <input asp-for="Name" class="form-control" placeholder="İsminiz *" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" id="emailGroup">
+                            <input asp-for="Email" class="form-control" placeholder="E-Posta Adresiniz *" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" id="subjectGroup">
+                            <input asp-for="Subject" class="form-control" placeholder="Konu / Başlık *" />
+                            <span asp-validation-for="Subject" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="btnSubmit" class="btnContact" value="Gönder" />
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group" id="messageGroup">
+                            <textarea asp-for="Message" class="form-control" placeholder="Mesajınız... *" style="width: 100%; height: 180px;"></textarea>
+                            <span asp-validation-for="Message" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="contact-info1">
+            <h4>Haritada Biz</h4>
+    @*         <div class="row">
+                <div class="col-md-8">
+                    <div class="info1-item">
+                        <div class="info1-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="info1-text">
+                            Atatürk Caddesi, No: 123<br>
+                            48000 Muğla, Türkiye
+                        </div>
+                    </div>
+
+                    <div class="info1-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="info1-text">
+                            <a href="tel:+902521234567">+90 (252) 123 45 67</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="info1-item">
+                        <div class="info1-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="info1-text">
+                            <a href="mailto:info@muglaita.com">info@muglaita.com</a>
+                        </div>
+                    </div>
+
+                    <div class="info1-item">
+                        <div class="info1-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <div class="info1-text">
+                            Pazartesi - Cuma: 09:00 - 18:00<br>
+                            Cumartesi: 10:00 - 14:00
+                        </div>
+                    </div>
+                </div>
+            </div> *@
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50860.52943646143!2d28.337850924358695!3d37.21579499345405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bf6c6c48ec7125%3A0xc21e6bc9e34a8995!2zTXXEn2xhLCBNZW50ZcWfZS9NdcSfbGE!5e0!3m2!1str!2str!4v1682541234567!5m2!1str!2str" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+</body>
+</html>
+@section Scripts {
+@*     <script src="~/Mugla/Js/Contact3.js" type="text/ecmascript"></script> *@
+
+       
+    @if (TempData["RedirectToHome"] != null && (bool)TempData["RedirectToHome"] == true)
+    {
+        <script>
+            setTimeout(function () {
+                window.location.href = '@Url.Content("~/Home/Index")';
+            }, 10000);
+        </script>
+    }
+
+
+}

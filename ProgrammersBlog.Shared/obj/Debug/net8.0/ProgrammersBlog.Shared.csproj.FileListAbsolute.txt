@@ -1,0 +1,29 @@
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\bin\Debug\net8.0\ProgrammersBlog.Shared.deps.json
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\bin\Debug\net8.0\ProgrammersBlog.Shared.runtimeconfig.json
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\bin\Debug\net8.0\ProgrammersBlog.Shared.dll
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\bin\Debug\net8.0\ProgrammersBlog.Shared.pdb
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.csproj.AssemblyReference.cache
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.AssemblyInfoInputs.cache
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.AssemblyInfo.cs
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.csproj.CoreCompileInputs.cache
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.sourcelink.json
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.dll
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\obj\Debug\net8.0\refint\ProgrammersBlog.Shared.dll
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.pdb
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.genruntimeconfig.cache
+C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Shared\obj\Debug\net8.0\ref\ProgrammersBlog.Shared.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\bin\Debug\net8.0\ProgrammersBlog.Shared.deps.json
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\bin\Debug\net8.0\ProgrammersBlog.Shared.runtimeconfig.json
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\bin\Debug\net8.0\ProgrammersBlog.Shared.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\bin\Debug\net8.0\ProgrammersBlog.Shared.pdb
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.csproj.AssemblyReference.cache
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.AssemblyInfoInputs.cache
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.AssemblyInfo.cs
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.csproj.CoreCompileInputs.cache
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\refint\ProgrammersBlog.Shared.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.pdb
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.genruntimeconfig.cache
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ref\ProgrammersBlog.Shared.dll

@@ -1,0 +1,172 @@
+/* Menü Listesi Stilleri */
+.category-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.category-list > li {
+    margin: 8px 0;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.category-list > li:hover {
+    transform: translateX(5px);
+}
+
+.category-list > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px 8px 20px; /* Sol tarafta nokta için daha fazla boşluk */
+    border-radius: 6px;
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Menü başındaki renkli noktalar */
+.category-list > li > a::after {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.category-list > li:nth-child(1) > a::after { background-color: #c2185b; }
+.category-list > li:nth-child(2) > a::after { background-color: #1565c0; }
+.category-list > li:nth-child(3) > a::after { background-color: #6a1b9a; }
+.category-list > li:nth-child(4) > a::after { background-color: #ef6c00; }
+.category-list > li:nth-child(5) > a::after { background-color: #2e7d32; }
+.category-list > li:nth-child(6) > a::after { background-color: #512da8; }
+.category-list > li:nth-child(7) > a::after { background-color: #689f38; }
+.category-list > li:nth-child(8) > a::after { background-color: #d84315; }
+.category-list > li:nth-child(9) > a::after { background-color: #00838f; }
+.category-list > li:nth-child(10) > a::after { background-color: #ff6f00; }
+.category-list > li:nth-child(11) > a::after { background-color: #3949ab; }
+.category-list > li:nth-child(12) > a::after { background-color: #827717; }
+.category-list > li:nth-child(13) > a::after { background-color: #d81b60; }
+.category-list > li:nth-child(14) > a::after { background-color: #00796b; }
+.category-list > li:nth-child(15) > a::after { background-color: #0288d1; }
+
+/* Hover durumunda nokta animasyonu */
+.category-list > li:hover > a::after {
+    transform: translateY(-50%) scale(1.5);
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* Hover efekti için arkaplan renkleri */
+.category-list > li > a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -1;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.category-list > li:nth-child(1) > a:hover::before { background-color: #fce4ec; opacity: 0.5; transform: translateX(0); }
+.category-list > li:nth-child(2) > a:hover::before { background-color: #e3f2fd; opacity: 0.5; transform: translateX(0); }
+.category-list > li:nth-child(3) > a:hover::before { background-color: #f3e5f5; opacity: 0.5; transform: translateX(0); }
+.category-list > li:nth-child(4) > a:hover::before { background-color: #fff3e0; opacity: 0.5; transform: translateX(0); }
+.category-list > li:nth-child(5) > a:hover::before { background-color: #e8f5e9; opacity: 0.5; transform: translateX(0); }
+.category-list > li:nth-child(6) > a:hover::before { background-color: #ede7f6; opacity: 0.5; transform: translateX(0); }
+.category-list > li:nth-child(7) > a:hover::before { background-color: #f1f8e9; opacity: 0.5; transform: translateX(0); }
+.category-list > li:nth-child(8) > a:hover::before { background-color: #fbe9e7; opacity: 0.5; transform: translateX(0); }
+.category-list > li:nth-child(9) > a:hover::before { background-color: #e0f7fa; opacity: 0.5; transform: translateX(0); }
+.category-list > li:nth-child(10) > a:hover::before { background-color: #fff8e1; opacity: 0.5; transform: translateX(0); }
+.category-list > li:nth-child(11) > a:hover::before { background-color: #edeef7; opacity: 0.5; transform: translateX(0); }
+.category-list > li:nth-child(12) > a:hover::before { background-color: #f9fbe7; opacity: 0.5; transform: translateX(0); }
+.category-list > li:nth-child(13) > a:hover::before { background-color: #ffebee; opacity: 0.5; transform: translateX(0); }
+.category-list > li:nth-child(14) > a:hover::before { background-color: #e0f2f1; opacity: 0.5; transform: translateX(0); }
+.category-list > li:nth-child(15) > a:hover::before { background-color: #e1f5fe; opacity: 0.5; transform: translateX(0); }
+
+/* Alt menü stilleri */
+.submenu-list {
+    list-style: none;
+    margin: 5px 0 5px 15px;
+    padding-left: 10px;
+    border-left: 2px dashed #e0e0e0;
+}
+
+.submenu-list li {
+    margin: 5px 0;
+    transition: transform 0.2s ease;
+}
+
+.submenu-list li:hover {
+    transform: translateX(3px);
+}
+
+.submenu-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #666;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.submenu-list a:hover {
+    color: #0d6efd;
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+.submenu-list i {
+    color: #0d6efd;
+    margin-right: 5px;
+}
+
+/* Kategori sayısı stilleri */
+.category-count {
+    margin-left: 5px;
+    border-radius: 10px;
+    padding: 2px 6px;
+    font-size: 0.75em;
+    font-weight: bold;
+    min-width: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Renkli sayılar */
+.category-list > li:nth-child(1) .category-count { background-color: #fce4ec; color: #c2185b; }
+.category-list > li:nth-child(2) .category-count { background-color: #e3f2fd; color: #1565c0; }
+.category-list > li:nth-child(3) .category-count { background-color: #f3e5f5; color: #6a1b9a; }
+.category-list > li:nth-child(4) .category-count { background-color: #fff3e0; color: #ef6c00; }
+.category-list > li:nth-child(5) .category-count { background-color: #e8f5e9; color: #2e7d32; }
+.category-list > li:nth-child(6) .category-count { background-color: #ede7f6; color: #512da8; }
+.category-list > li:nth-child(7) .category-count { background-color: #f1f8e9; color: #689f38; }
+.category-list > li:nth-child(8) .category-count { background-color: #fbe9e7; color: #d84315; }
+.category-list > li:nth-child(9) .category-count { background-color: #e0f7fa; color: #00838f; }
+.category-list > li:nth-child(10) .category-count { background-color: #fff8e1; color: #ff6f00; }
+.category-list > li:nth-child(11) .category-count { background-color: #edeef7; color: #3949ab; }
+.category-list > li:nth-child(12) .category-count { background-color: #f9fbe7; color: #827717; }
+.category-list > li:nth-child(13) .category-count { background-color: #ffebee; color: #d81b60; }
+.category-list > li:nth-child(14) .category-count { background-color: #e0f2f1; color: #00796b; }
+.category-list > li:nth-child(15) .category-count { background-color: #e1f5fe; color: #0288d1; }
+
+/* Alt menü sayıları için de renkler */
+.submenu-list li .category-count {
+    background-color: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+}

@@ -1,0 +1,405 @@
+﻿@model ProgrammersBlog.Entities.Dtos.Logs.LogDto
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Log Detayı";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<div class="container-fluid">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-light p-3 rounded-3">
+            <li class="breadcrumb-item">
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="text-dark fw-bold">
+                    <i class="bi bi-house-door me-2"></i> Admin
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a asp-area="Admin" asp-controller="Log" asp-action="Index" class="text-dark">
+                    <i class="bi bi-journal-text me-2"></i> Loglar
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <i class="bi bi-file-earmark-post me-2"></i> Log Detayları
+            </li>
+        </ol>
+    </nav>
+
+    <!-- Main Card -->
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white py-3">
+            <h5 class="card-title mb-0">
+                <i class="fas fa-file-alt me-2"></i>Log Detayı - #@Model.Log.Id
+            </h5>
+        </div>
+
+        <div class="card-body">
+            <!-- Temel Bilgiler -->
+            <div class="card mb-4 border-primary">
+                <div class="card-header bg-primary-soft">
+                    <h6 class="mb-0"><i class="fas fa-info-circle me-2"></i>Temel Bilgiler</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <dl class="row mb-0">
+                                <dt class="col-sm-4 text-muted">Seviye:</dt>
+                                <dd class="col-sm-8">
+                                    @{
+                                        var levelClass = "bg-info";
+                                        if (Model.Log.Level == "Error" || Model.Log.Level == "Fatal") { levelClass = "bg-danger"; }
+                                        else if (Model.Log.Level == "Warn") { levelClass = "bg-warning"; }
+                                        else if (Model.Log.Level == "Debug") { levelClass = "bg-secondary"; }
+                                    }
+                                    <span class="badge @levelClass">@Model.Log.Level</span>
+                                </dd>
+
+                                <dt class="col-sm-4 text-muted">Tarih:</dt>
+                                <dd class="col-sm-8">@Model.Log.Logged.ToString("dd.MM.yyyy HH:mm:ss")</dd>
+
+                                <dt class="col-sm-4 text-muted">Durum Kodu:</dt>
+                                <dd class="col-sm-8">@Model.Log.StatusCode</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-6">
+                            <dl class="row mb-0">
+                                <dt class="col-sm-4 text-muted">Makine Adı:</dt>
+                                <dd class="col-sm-8">@Model.Log.MachineName</dd>
+
+                                <dt class="col-sm-4 text-muted">Logger:</dt>
+                                <dd class="col-sm-8">@Model.Log.Logger</dd>
+
+                                <dt class="col-sm-4 text-muted">İstek ID:</dt>
+                                <dd class="col-sm-8">@Model.Log.RequestId</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İstek Bilgileri -->
+            <div class="card mb-4 border-info">
+                <div class="card-header bg-info-soft">
+                    <h6 class="mb-0"><i class="fas fa-exchange-alt me-2"></i>İstek Bilgileri</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <dl class="row mb-0">
+                                <dt class="col-sm-4 text-muted">Controller/Action:</dt>
+                                <dd class="col-sm-8">@Model.Log.Controller/@Model.Log.Action</dd>
+
+                                <dt class="col-sm-4 text-muted">Method:</dt>
+                                <dd class="col-sm-8">@Model.Log.RequestMethod</dd>
+
+                                <dt class="col-sm-4 text-muted">Yol:</dt>
+                                <dd class="col-sm-8">@Model.Log.RequestPath</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-6">
+                            <dl class="row mb-0">
+                                <dt class="col-sm-4 text-muted">IP Adresi:</dt>
+                                <dd class="col-sm-8">@Model.Log.ClientIp</dd>
+
+                                <dt class="col-sm-4 text-muted">Tarayıcı:</dt>
+                                <dd class="col-sm-8">@Model.Log.Browser</dd>
+
+                                <dt class="col-sm-4 text-muted">User Agent:</dt>
+                                <dd class="col-sm-8 font-monospace small">@Model.Log.UserAgent</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model.Log.RequestBody))
+                    {
+                        <div class="mt-4">
+                            <label class="form-label text-muted">İstek Gövdesi:</label>
+                            <div class="card bg-light">
+                                <pre class="card-body mb-0 small p-3" style="max-height: 200px;">@Model.Log.RequestBody</pre>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Hata Detayları -->
+            <div class="card mb-4 border-danger">
+                <div class="card-header bg-danger-soft">
+                    <h6 class="mb-0"><i class="fas fa-bug me-2"></i>Hata Detayları</h6>
+                </div>
+                <div class="card-body">
+                    @if (!string.IsNullOrEmpty(Model.Log.Message))
+                    {
+                        <div class="mb-4">
+                            <label class="form-label text-muted">Mesaj:</label>
+                            <div class="card bg-light">
+                                <pre class="card-body mb-0 small p-3">@Model.Log.Message</pre>
+                            </div>
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.Log.Exception))
+                    {
+                        <div>
+                            <label class="form-label text-muted">Exception:</label>
+                            <div class="card bg-light">
+                                <pre class="card-body mb-0 small p-3" style="max-height: 300px;">@Model.Log.Exception</pre>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="d-flex gap-2 justify-content-end mt-4">
+                <a asp-area="Admin" asp-controller="Log" asp-action="Index" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Listeye Dön
+                </a>
+                <button id="btnDelete" class="btn btn-danger btn-delete" data-id="@Model.Log.Id">
+
+                    <i class="fas fa-trash me-2"></i>Sil
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        /* Breadcrumb Container */
+        .breadcrumb-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1rem 2rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 100%;
+            margin-bottom: 1.5rem;
+            gap: 0.75rem;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #6c757d;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        /* Breadcrumb Item */
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+            color: #6c757d;
+            transition: color 0.3s ease, transform 0.3s ease; /* Daha yumuşak geçiş */
+        }
+
+            /* Breadcrumb Item Link */
+            .breadcrumb-item a {
+                color: #6c757d;
+                font-size: 1rem;
+                text-decoration: none;
+                transition: color 0.3s ease, transform 0.2s ease;
+                display: flex;
+                align-items: center;
+            }
+
+                .breadcrumb-item a:hover {
+                    color: #0056b3; /* Hoverda daha koyu mavi */
+                    transform: translateY(-3px); /* Hoverda daha belirgin yukarı kayma efekti */
+                }
+
+            /* Breadcrumb Separator */
+            .breadcrumb-item + .breadcrumb-item::before {
+                content: '›';
+                margin: 0 0.5rem;
+                color: #adb5bd;
+            }
+
+            /* Active Breadcrumb Item */
+            .breadcrumb-item.active {
+                color: #007bff; /* Aktif öğe mavi renkte */
+                font-weight: 600;
+                text-decoration: underline; /* Aktif öğe altı çizili */
+            }
+
+            /* Icon Inside Breadcrumb Item */
+            .breadcrumb-item i {
+                margin-right: 0.25rem;
+                color: #6c757d;
+                transition: color 0.3s ease;
+            }
+
+            /* Icon Hover Effect */
+            .breadcrumb-item a:hover i {
+                color: #007bff;
+            }
+
+        /* Card Header ve Body Renkleri */
+        .card-header.bg-primary-soft {
+            background-color: #e3f2fd;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* Badge Renkleri */
+        .badge.bg-light {
+            border: 1px solid #dee2e6;
+        }
+
+
+        .card-header.bg-primary-soft {
+            background-color: #e3f2fd;
+        }
+
+        .card-header.bg-info-soft {
+            background-color: #e0f7fa;
+        }
+
+        .card-header.bg-danger-soft {
+            background-color: #ffebee;
+        }
+
+        .font-monospace {
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+        .card-header.bg-primary-soft {
+            background-color: #e3f2fd;
+        }
+
+        .card-header.bg-info-soft {
+            background-color: #e0f7fa;
+        }
+
+        .card-header.bg-danger-soft {
+            background-color: #ffebee;
+        }
+
+        .card pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .font-monospace {
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+    </style>
+}
+@section Scripts
+{
+    <script>
+        $(document).ready(function() {
+            $('#logsTable').DataTable({
+                "order": [[1, "desc"]], // Tarihe göre sırala (en yeni üstte)
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Turkish.json"
+                }
+            });
+
+            $(document).on('click', '.btn-delete', function(event) {
+                event.preventDefault();
+                const id = $(this).data('id');
+                const tableRow = $(`tr[name="${id}"]`);
+
+                Swal.fire({
+                    title: 'Silmek istediğinize emin misiniz?',
+                    text: "Bu log kaydı kalıcı olarak silinecektir!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Evet, sil!',
+                    cancelButtonText: 'Hayır, vazgeç!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            type: 'POST',
+                            dataType: 'json',
+                            data: { logId: id },
+                            url: '@Url.Action("Delete", "Log")',
+                            success: function(response) {
+                                const result = jQuery.parseJSON(response);
+                                if (result.ResultStatus === 0) {
+                                    Swal.fire(
+                                        'Silindi!',
+                                        'Log kaydı başarıyla silindi.',
+                                        'success'
+                                    );
+                                    tableRow.fadeOut(1000);
+                                } else {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Hata Oluştu!',
+                                        text: result.Message
+                                    });
+                                }
+                            },
+                            error: function(err) {
+                                console.log(err);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Hata Oluştu!',
+                                    text: 'Beklenmeyen bir hata oluştu.'
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+
+            $('#btnDeleteAll').click(function() {
+                Swal.fire({
+                    title: 'Tüm logları silmek istediğinize emin misiniz?',
+                    text: "Bu işlem geri alınamaz!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Evet, tümünü sil!',
+                    cancelButtonText: 'Hayır, vazgeç!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            type: 'POST',
+                            dataType: 'json',
+                            url: '@Url.Action("DeleteAllLogs", "Log")',
+                            success: function(response) {
+                                const result = jQuery.parseJSON(response);
+                                if (result.ResultStatus === 0) {
+                                    Swal.fire(
+                                        'Silindi!',
+                                        'Tüm log kayıtları başarıyla silindi.',
+                                        'success'
+                                    ).then(() => {
+                                        window.location.reload();
+                                    });
+                                } else {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Hata Oluştu!',
+                                        text: result.Message
+                                    });
+                                }
+                            },
+                            error: function(err) {
+                                console.log(err);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Hata Oluştu!',
+                                    text: 'Beklenmeyen bir hata oluştu.'
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}

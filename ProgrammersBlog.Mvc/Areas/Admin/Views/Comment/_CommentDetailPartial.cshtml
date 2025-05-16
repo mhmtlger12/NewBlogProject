@@ -1,0 +1,26 @@
+﻿@model ProgrammersBlog.Entities.Dtos.Comments.CommentDto
+
+<div class="modal fade" id="commentDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <span class="fas fa-newspaper"></span> @Model.Comment.Id Numaralı Yorum Görüntüleniyor...
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+            </div>
+
+            <div class="modal-body">
+                @Model.Comment.Text
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger w-100" data-bs-dismiss="modal">
+                    <span class="fas fa-times"></span> Kapat
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

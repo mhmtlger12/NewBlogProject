@@ -1,0 +1,706 @@
+﻿@model ProgrammersBlog.Entities.Concrete.AboutUsPageInfo
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Hakkımızda Sayfa İçerikleri";
+}
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda Sayfa İçerikleri</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --success-color: #2ecc71;
+            --danger-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        /* Success Toastr */
+        .toast-success {
+            background-color: #2ecc71 !important; /* Yeşil */
+            color: #ffffff !important; /* Beyaz */
+        }
+
+        /* Error Toastr */
+        .toast-error {
+            background-color: #e74c3c !important; /* Kırmızı */
+            color: #ffffff !important;
+        }
+
+        /* Info Toastr */
+        .toast-info {
+            background-color: #3498db !important; /* Mavi */
+            color: #ffffff !important;
+        }
+
+        /* Warning Toastr */
+        .toast-warning {
+            background-color: #f39c12 !important; /* Turuncu */
+            color: #ffffff !important;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .form-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 1.5rem;
+            border: none;
+        }
+        
+        .form-card .card-header {
+            background: var(--light-bg);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .form-card .card-header .btn-toggle {
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+        }
+        
+        .form-card .card-body {
+            padding: 1.5rem;
+        }
+        
+        .form-label {
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        
+        .form-control {
+            border-radius: var(--border-radius);
+            padding: 0.6rem 1rem;
+            border: 1px solid rgba(0,0,0,0.15);
+        }
+        
+        .form-control:focus {
+            box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+            border-color: var(--primary-color);
+        }
+        
+        .sub-card {
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+        }
+        
+        .sub-card-header {
+            padding: 0.75rem 1rem;
+            background: rgba(0,0,0,0.05);
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);
+        }
+        
+        .sub-card-body {
+            padding: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--border-radius);
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+        
+        .btn-danger {
+            background-color: var(--danger-color);
+            border-color: var(--danger-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--border-radius);
+        }
+        
+        .btn-danger:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+        }
+        
+        .action-buttons {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .nav-tabs {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .nav-tabs .nav-link {
+            color: var(--secondary-color);
+            border: none;
+            border-bottom: 3px solid transparent;
+            padding: 0.75rem 1.5rem;
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: var(--primary-color);
+            background: none;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .tab-content {
+            padding: 1.5rem 0;
+        }
+        
+        .validation-summary {
+            background-color: #ffebee;
+            border-left: 4px solid var(--danger-color);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: var(--border-radius);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="page-header text-center">
+            <h2><i class="fas fa-edit me-2"></i>Hakkımızda Sayfa İçerikleri</h2>
+            <p class="mb-0">Hakkımızda sayfanızı özelleştirmek için aşağıdaki bilgileri doldurun</p>
+        </div>
+        
+        <form id="form-aboutuspageinfo-update" asp-controller="Options" asp-action="About" method="post">
+            <div class="validation-summary d-none" id="validation-summary">
+                <h5><i class="fas fa-exclamation-circle me-2"></i>Lütfen form hatalarını düzeltin</h5>
+                <ul class="mb-0" id="validation-errors"></ul>
+            </div>
+            
+            <ul class="nav nav-tabs" id="formTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="basic-tab" data-bs-toggle="tab" data-bs-target="#basic" type="button" role="tab" aria-controls="basic" aria-selected="true">
+                        <i class="fas fa-info-circle me-2"></i>Temel Bilgiler
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="values-tab" data-bs-toggle="tab" data-bs-target="#values" type="button" role="tab" aria-controls="values" aria-selected="false">
+                        <i class="fas fa-heart me-2"></i>Değerlerimiz
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                        <i class="fas fa-phone me-2"></i>İletişim
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="stats-tab" data-bs-toggle="tab" data-bs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="false">
+                        <i class="fas fa-chart-line me-2"></i>İstatistikler
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="gallery-tab" data-bs-toggle="tab" data-bs-target="#gallery" type="button" role="tab" aria-controls="gallery" aria-selected="false">
+                        <i class="fas fa-images me-2"></i>Galeri
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="location-tab" data-bs-toggle="tab" data-bs-target="#location" type="button" role="tab" aria-controls="location" aria-selected="false">
+                        <i class="fas fa-map-marker-alt me-2"></i>Bölgeler
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="events-tab" data-bs-toggle="tab" data-bs-target="#events" type="button" role="tab" aria-controls="events" aria-selected="false">
+                        <i class="fas fa-calendar me-2"></i>Etkinlikler
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="guide-tab" data-bs-toggle="tab" data-bs-target="#guide" type="button" role="tab" aria-controls="guide" aria-selected="false">
+                        <i class="fas fa-info me-2"></i>Ziyaretçi Rehberi
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="seo-tab" data-bs-toggle="tab" data-bs-target="#seo" type="button" role="tab" aria-controls="seo" aria-selected="false">
+                        <i class="fas fa-search me-2"></i>SEO
+                    </button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="formTabsContent">
+                <!-- Temel Bilgiler Tab -->
+                <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">
+                    <div class="form-card">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>Temel Bilgiler</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label" asp-for="Header">Ana Başlık</label>
+                                    <input type="text" class="form-control" asp-for="Header" placeholder="Lütfen, başlık bilgisini giriniz.">
+                                    <span class="text-danger" asp-validation-for="Header"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" asp-for="HeroSubtitle">Alt Başlık</label>
+                                    <input type="text" class="form-control" asp-for="HeroSubtitle" placeholder="Lütfen, alt başlık bilgisini giriniz.">
+                                    <span class="text-danger" asp-validation-for="HeroSubtitle"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label" asp-for="Content">İçerik</label>
+                                <textarea class="form-control" asp-for="Content" placeholder="Lütfen, içerik bilgisini giriniz." rows="10"></textarea>
+                                <span class="text-danger" asp-validation-for="Content"></span>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label" asp-for="AboutTextParagraph1">Hakkımızda Metin (Paragraf 1)</label>
+                                <textarea class="form-control" asp-for="AboutTextParagraph1" placeholder="Lütfen, hakkımızda ilk paragraf metnini giriniz." rows="10"></textarea>
+                                <span class="text-danger" asp-validation-for="AboutTextParagraph1"></span>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label" asp-for="AboutTextParagraph2">Hakkımızda Metin (Paragraf 2)</label>
+                                <textarea class="form-control" asp-for="AboutTextParagraph2" placeholder="Lütfen, hakkımızda ikinci paragraf metnini giriniz." rows="10"></textarea>
+                                <span class="text-danger" asp-validation-for="AboutTextParagraph2"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Değerlerimiz Tab -->
+                <div class="tab-pane fade" id="values" role="tabpanel" aria-labelledby="values-tab">
+                    <div class="form-card">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-heart me-2"></i>Değerlerimiz</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <label class="form-label" asp-for="ValuesTitle">Değerlerimiz Başlığı</label>
+                                <input type="text" class="form-control" asp-for="ValuesTitle" placeholder="Lütfen, değerlerimiz bölümü başlığını giriniz.">
+                                <span class="text-danger" asp-validation-for="ValuesTitle"></span>
+                            </div>
+                            
+                            <div class="row">
+                                @for (int i = 0; i < 3; i++)
+                                {
+                                    <div class="col-md-4">
+                                        <div class="sub-card">
+                                            <div class="sub-card-header">
+                                                <h6 class="mb-0">Değer @(i + 1)</h6>
+                                            </div>
+                                            <div class="sub-card-body">
+                                                <div class="mb-3">
+                                                    <label class="form-label" asp-for="Values[i].Icon">
+                                                        <i class="fas fa-icons me-1"></i> İkon
+                                                    </label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text"><i class="fas fa-icons"></i></span>
+                                                        <input type="text" class="form-control" asp-for="Values[i].Icon" placeholder="fa-heart, fa-star vb.">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" asp-for="Values[i].Title">Başlık</label>
+                                                    <input type="text" class="form-control" asp-for="Values[i].Title" placeholder="Değer başlığı">
+                                                </div>
+                                                <div class="mb-1">
+                                                    <label class="form-label" asp-for="Values[i].Description">Açıklama</label>
+                                                    <textarea class="form-control" asp-for="Values[i].Description" placeholder="Değer açıklaması" rows="10"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- İletişim Tab -->
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="form-card">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-phone me-2"></i>İletişim Bilgileri</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label" asp-for="ContactInfo.Title">İletişim Başlığı</label>
+                                <input type="text" class="form-control" asp-for="ContactInfo.Title" placeholder="İletişim bölümü başlığı">
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label" asp-for="ContactInfo.Address">
+                                        <i class="fas fa-map-marker-alt me-1"></i> Adres
+                                    </label>
+                                    <textarea class="form-control" asp-for="ContactInfo.Address" placeholder="Adres bilgisi" rows="10"></textarea>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label" asp-for="ContactInfo.Hours">
+                                        <i class="fas fa-clock me-1"></i> Çalışma Saatleri
+                                    </label>
+                                    <input type="text" class="form-control" asp-for="ContactInfo.Hours" placeholder="Pazartesi-Cuma: 09:00-18:00">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label" asp-for="ContactInfo.Phone">
+                                        <i class="fas fa-phone me-1"></i> Telefon
+                                    </label>
+                                    <input type="text" class="form-control" asp-for="ContactInfo.Phone" placeholder="+90 (555) 123 4567">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label" asp-for="ContactInfo.Email">
+                                        <i class="fas fa-envelope me-1"></i> E-posta
+                                    </label>
+                                    <input type="email" class="form-control" asp-for="ContactInfo.Email" placeholder="iletisim@programmersblog.com">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- İstatistikler Tab -->
+                <div class="tab-pane fade" id="stats" role="tabpanel" aria-labelledby="stats-tab">
+                    <div class="form-card">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-chart-line me-2"></i>İstatistikler</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <label class="form-label" asp-for="Stats.Title">İstatistikler Başlığı</label>
+                                <input type="text" class="form-control" asp-for="Stats.Title" placeholder="İstatistikler bölümü başlığı">
+                            </div>
+                            
+                            <div class="row">
+                                @for (int i = 0; i < 4; i++)
+                                {
+                                    <div class="col-md-3 mb-3">
+                                        <div class="sub-card">
+                                            <div class="sub-card-header">
+                                                <h6 class="mb-0">İstatistik @(i + 1)</h6>
+                                            </div>
+                                            <div class="sub-card-body">
+                                                <div class="mb-3">
+                                                    <label class="form-label" asp-for="Stats.Items[i].Number">Sayı</label>
+                                                    <input type="text" class="form-control" asp-for="Stats.Items[i].Number" placeholder="500+">
+                                                </div>
+                                                <div>
+                                                    <label class="form-label" asp-for="Stats.Items[i].Label">Etiket</label>
+                                                    <input type="text" class="form-control" asp-for="Stats.Items[i].Label" placeholder="Makale">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Galeri Tab -->
+                <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
+                    <div class="form-card">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-images me-2"></i>Galeri</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <label class="form-label" asp-for="GalleryTitle">Galeri Başlığı</label>
+                                <input type="text" class="form-control" asp-for="GalleryTitle" placeholder="Galeri bölümü başlığı">
+                            </div>
+                            
+                            <div class="row">
+                                @for (int i = 0; i < 6; i++)
+                                {
+                                    <div class="col-md-4 mb-3">
+                                        <div class="sub-card">
+                                            <div class="sub-card-header">
+                                                <h6 class="mb-0">Fotoğraf @(i + 1)</h6>
+                                            </div>
+                                            <div class="sub-card-body">
+                                                <div class="mb-3">
+                                                    <label class="form-label" asp-for="Gallery.Items[i].ImageUrl">
+                                                        <i class="fas fa-image me-1"></i> Resim URL
+                                                    </label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text"><i class="fas fa-link"></i></span>
+                                                        <input type="text" class="form-control" asp-for="Gallery.Items[i].ImageUrl" placeholder="/img/gallery/image-1.jpg">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="form-label" asp-for="Gallery.Items[i].Title">Başlık</label>
+                                                    <input type="text" class="form-control" asp-for="Gallery.Items[i].Title" placeholder="Fotoğraf başlığı">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bölgeler Tab -->
+                <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+                    <div class="form-card">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Bölgeler</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label class="form-label" asp-for="DistrictsTitle">Bölgeler Başlığı</label>
+                                    <input type="text" class="form-control" asp-for="DistrictsTitle" placeholder="Bölgeler bölümü başlığı">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" asp-for="DistrictsDescription">Bölgeler Açıklaması</label>
+                                    <textarea class="form-control" asp-for="DistrictsDescription" placeholder="Bölgeler hakkında açıklama" rows="10"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                @for (int i = 0; i < 12; i++)
+                                {
+                                    <div class="col-md-6 mb-3">
+                                        <div class="sub-card">
+                                            <div class="sub-card-header">
+                                                <h6 class="mb-0"> @Model.Districts[i].Name</h6>
+                                            </div>
+                                            <div class="sub-card-body">
+                                                <div class="mb-3">
+                                                    <label class="form-label" asp-for="Districts[i].Icon">
+                                                        <i class="fas fa-icons me-1"></i> İkon
+                                                    </label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                                        <input type="text" class="form-control" asp-for="Districts[i].Icon" placeholder="fa-map-marker, fa-location-dot vb.">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" asp-for="Districts[i].Name">İsim</label>
+                                                    <input type="text" class="form-control" asp-for="Districts[i].Name" placeholder="Bölge adı">
+                                                </div>
+                                                <div>
+                                                    <label class="form-label" asp-for="Districts[i].Description">Açıklama</label>
+                                                    <textarea class="form-control" asp-for="Districts[i].Description" placeholder="Bölge açıklaması" rows="10"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Etkinlikler Tab -->
+                <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
+                    <div class="form-card">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-calendar me-2"></i>Etkinlikler</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label class="form-label" asp-for="EventsTitle">Etkinlikler Başlığı</label>
+                                    <input type="text" class="form-control" asp-for="EventsTitle" placeholder="Etkinlikler bölümü başlığı">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" asp-for="EventsDescription">Etkinlikler Açıklaması</label>
+                                    <textarea class="form-control" asp-for="EventsDescription" placeholder="Etkinlikler hakkında açıklama" rows="10"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                @for (int i = 0; i < 4; i++)
+                                {
+                                    <div class="col-md-6 mb-3">
+                                        <div class="sub-card">
+                                            <div class="sub-card-header">
+                                                <h6 class="mb-0">Etkinlik @(i + 1)</h6>
+                                            </div>
+                                            <div class="sub-card-body">
+                                                <div class="mb-3">
+                                                    <label class="form-label" asp-for="Events[i].Icon">
+                                                        <i class="fas fa-icons me-1"></i> İkon
+                                                    </label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                                        <input type="text" class="form-control" asp-for="Events[i].Icon" placeholder="fa-calendar, fa-event vb.">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" asp-for="Events[i].Name">İsim</label>
+                                                    <input type="text" class="form-control" asp-for="Events[i].Name" placeholder="Etkinlik adı">
+                                                </div>
+                                                <div>
+                                                    <label class="form-label" asp-for="Events[i].Description">Açıklama</label>
+                                                    <textarea class="form-control" asp-for="Events[i].Description" placeholder="Etkinlik açıklaması" rows="10"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ziyaretçi Rehberi Tab -->
+                <div class="tab-pane fade" id="guide" role="tabpanel" aria-labelledby="guide-tab">
+                    <div class="form-card">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-info me-2"></i>Ziyaretçi Rehberi</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <label class="form-label" asp-for="VisitorGuide.Title">Ziyaretçi Rehberi Başlığı</label>
+                                <input type="text" class="form-control" asp-for="VisitorGuide.Title" placeholder="Ziyaretçi rehberi başlığı">
+                            </div>
+
+                            <div class="row">
+                                @for (int i = 0; i < 4; i++)
+                                {
+                                    <div class="col-md-6 mb-3">
+                                        <div class="sub-card">
+                                            <div class="sub-card-header">
+                                                <h6 class="mb-0">Rehber Madde @(i + 1)</h6>
+                                            </div>
+                                            <div class="sub-card-body">
+                                                <div class="mb-3">
+                                                    <label class="form-label" asp-for="VisitorGuide.Items[i].Icon">
+                                                        <i class="fas fa-icons me-1"></i> İkon
+                                                    </label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text"><i class="fas fa-info-circle"></i></span>
+                                                        <input type="text" class="form-control" asp-for="VisitorGuide.Items[i].Icon"
+                                                               placeholder="fa-info, fa-circle-info vb.">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="form-label" asp-for="VisitorGuide.Items[i].Text">Açıklama</label>
+                                                    <textarea class="form-control" asp-for="VisitorGuide.Items[i].Text"
+                                                              placeholder="Rehber maddesi açıklaması" rows="10"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Tab -->
+                <div class="tab-pane fade" id="seo" role="tabpanel" aria-labelledby="seo-tab">
+                    <div class="form-card">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-search me-2"></i>SEO Ayarları</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label" asp-for="SeoAuthor">SEO Yazarı</label>
+                                    <input type="text" class="form-control" asp-for="SeoAuthor"
+                                           placeholder="SEO yazar bilgisi">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label" asp-for="SeoTags">SEO Etiketleri</label>
+                                    <input type="text" class="form-control" asp-for="SeoTags"
+                                           placeholder="Virgülle ayrılmış etiketler">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label" asp-for="SeoDescription">SEO Açıklaması</label>
+                                    <textarea class="form-control" asp-for="SeoDescription" rows="10"
+                                              placeholder="Max. 160 karakter"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button type="submit" class="btn btn-primary me-2">
+                    <i class="fas fa-save me-2"></i>Değişiklikleri Kaydet
+                </button>
+                <a href="#" class="btn btn-danger">
+                    <i class="fas fa-times me-2"></i>İptal
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+         document.addEventListener('DOMContentLoaded', function () {
+            // Form Validation Handling
+            const form = document.getElementById('form-aboutuspageinfo-update');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    const validationSummary = document.getElementById('validation-summary');
+                    const errorList = document.getElementById('validation-errors');
+
+                    errorList.innerHTML = '';
+                    validationSummary.classList.add('d-none');
+
+                    const errors = []; // Simulated errors
+
+                    if (errors.length > 0) {
+                        e.preventDefault();
+                        validationSummary.classList.remove('d-none');
+                        errors.forEach(error => {
+                            const li = document.createElement('li');
+                            li.textContent = error;
+                            errorList.appendChild(li);
+                        });
+                    }
+                });
+            }
+
+            // Tab Persistence
+            const triggerTabList = [].slice.call(document.querySelectorAll('#formTabs button'));
+            triggerTabList.forEach(triggerEl => {
+                const tabTrigger = new bootstrap.Tab(triggerEl);
+                triggerEl.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    tabTrigger.show();
+                });
+            });
+
+            toastr.options = {
+            "closeButton": true,           // Toast kutusunun sağ üstüne kapatma (X) butonu koyar
+            "progressBar": true,           // Altta bir ilerleme çubuğu gösterir (kendi kendine kapanana kadar)
+            "positionClass": "toast-top-right", // Bildirim ekranın neresinde çıksın? (sağ üst köşe)
+            "preventDuplicates": true      // Aynı mesaj birden fazla kez gösterilmesin
+        };
+
+        });
+
+    </script>
+</body>
+</html>

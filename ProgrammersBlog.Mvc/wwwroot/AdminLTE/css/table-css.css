@@ -1,0 +1,126 @@
+﻿/* Zarif Tablo Tasarımı - Belirgin Çizgili */
+:root {
+    --tablo-ana-renk: #6c7ae0;
+    --tablo-acik-renk: #f8f6ff;
+    --tablo-koyu-renk: #f1f1f1;
+    --tablo-baslik-yazi: #ffffff;
+    --tablo-golge: rgba(108, 122, 224, 0.2);
+    --tablo-yazi-renk: #666666;
+    --tablo-hover-renk: #e8eaf6;
+    --tablo-cizgi-renk: #e0e0e0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* separate yerine collapse kullanıldı */
+    margin: 30px 0;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    font-size: 15px;
+    color: var(--tablo-yazi-renk);
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px var(--tablo-golge);
+    border: 1px solid var(--tablo-cizgi-renk); /* Tablo dış çerçevesi */
+}
+
+thead {
+    background-color: var(--tablo-ana-renk);
+}
+
+th {
+    padding: 16px 20px;
+    font-weight: 500;
+    color: var(--tablo-baslik-yazi);
+    text-align: left;
+    vertical-align: middle;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Başlık hücrelerinin çizgileri */
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 14px 20px;
+    vertical-align: middle;
+    font-weight: 400;
+    /* Belirgin hücre çizgileri - hem yatay hem dikey */
+    border: 1px solid var(--tablo-cizgi-renk);
+    position: relative;
+}
+
+/* Alternatif Satır Renkleri - Hafif Ton Farkı */
+tbody tr:nth-child(even) {
+    background-color: var(--tablo-acik-renk);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+/* Hover Efekti - Zarif Geçiş */
+tbody tr {
+    transition: all 0.2s ease;
+}
+
+    tbody tr:hover {
+        background-color: var(--tablo-hover-renk);
+    }
+
+/* Duyarlı Tasarım */
+
+
+/* Özel Sınıflar */
+.ozel-baslik {
+    background: linear-gradient(135deg, var(--tablo-ana-renk), #9c88ff);
+}
+
+.durum-yesil {
+    color: #38b2ac;
+    font-weight: 500;
+}
+
+.durum-mavi {
+    color: #4299e1;
+    font-weight: 500;
+}
+
+.durum-turuncu {
+    color: #ed8936;
+    font-weight: 500;
+}
+
+.durum-kirmizi {
+    color: #f56565;
+    font-weight: 500;
+}
+
+/* Özel hücre stilleri */
+.hucre-vurgu {
+    font-weight: 500;
+    color: #2d3748;
+}
+
+/* Koyu çizgili tablo versiyonu */
+.koyu-cizgiler {
+    --tablo-cizgi-renk: #c0c0c0;
+}
+
+    .koyu-cizgiler th,
+    .koyu-cizgiler td {
+        border: 1px solid var(--tablo-cizgi-renk);
+    }
+
+/* Sadece iç çizgiler versiyonu */
+.ic-cizgiler {
+    border: 2px solid var(--tablo-cizgi-renk);
+}
+
+    .ic-cizgiler th,
+    .ic-cizgiler td {
+        border: 1px solid var(--tablo-cizgi-renk);
+    }
+
+.genis-cizgiler th,
+.genis-cizgiler td {
+    border-width: 2px;
+}

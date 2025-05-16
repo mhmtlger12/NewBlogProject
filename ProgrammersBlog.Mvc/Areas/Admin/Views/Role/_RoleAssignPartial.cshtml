@@ -1,0 +1,150 @@
+﻿@model ProgrammersBlog.Entities.Dtos.Roles.UserRoleAssignDto
+<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><span class="fas fa-user-shield"></span> @Model.UserName Kullanıcısına Rol Atanıyor...</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="İptal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="Assign" id="form-role-assign">
+                    <input name="IsValid" type="hidden" value="@ViewData.ModelState.IsValid.ToString()" />
+                    <div asp-validation-summary="All" class="text-danger" id="validation-summary" aria-hidden="true" style="display: none;"></div>
+                    <input type="hidden" asp-for="UserId" />
+                    <input type="hidden" asp-for="UserName" />
+                    <div class="form-row">
+                        @{
+                            // Rolleri isimlerine göre gruplayalım
+                            var categoryRoles = Model.RoleAssignDtos.Where(r => r.RoleName.StartsWith("Category") || r.RoleName.Contains("Kategori")).ToList();
+                            var articleRoles = Model.RoleAssignDtos.Where(r => r.RoleName.StartsWith("Article") || r.RoleName.Contains("Makale")).ToList();
+                            var userRoles = Model.RoleAssignDtos.Where(r => r.RoleName.StartsWith("User") || r.RoleName.Contains("Kullanıcı")).ToList();
+                            var roleRoles = Model.RoleAssignDtos.Where(r => r.RoleName.StartsWith("Role") || r.RoleName == "Role").ToList();
+                            var commentRoles = Model.RoleAssignDtos.Where(r => r.RoleName.StartsWith("Comment") || r.RoleName.Contains("Yorum")).ToList();
+                            var generalRoles = Model.RoleAssignDtos.Except(categoryRoles).Except(articleRoles).Except(userRoles).Except(roleRoles).Except(commentRoles).ToList();
+                        }
+
+                        @if (categoryRoles.Any())
+                        {
+                            <div class="form-group col-md-12">
+                                <h4 class="text-center"><span class="fas fa-th-list"></span> Kategori İzinleri</h4>
+                            </div>
+                            foreach (var role in categoryRoles)
+                            {
+                                var index = Model.RoleAssignDtos.IndexOf(role);
+                                <div class="form-group col-md-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" asp-for="@Model.RoleAssignDtos[index].HasRole" />
+                                        <label asp-for="@Model.RoleAssignDtos[index].RoleId">@Model.RoleAssignDtos[index].RoleName</label>
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleId" />
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleName" />
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                        @if (articleRoles.Any())
+                        {
+                            <div class="form-group col-md-12">
+                                <h4 class="text-center"><span class="fas fa-file-alt"></span> Makale İzinleri</h4>
+                            </div>
+                            foreach (var role in articleRoles)
+                            {
+                                var index = Model.RoleAssignDtos.IndexOf(role);
+                                <div class="form-group col-md-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" asp-for="@Model.RoleAssignDtos[index].HasRole" />
+                                        <label asp-for="@Model.RoleAssignDtos[index].RoleId">@Model.RoleAssignDtos[index].RoleName</label>
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleId" />
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleName" />
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                        @if (userRoles.Any())
+                        {
+                            <div class="form-group col-md-12">
+                                <h4 class="text-center"><span class="fas fa-users"></span> Kullanıcı İzinleri</h4>
+                            </div>
+                            foreach (var role in userRoles)
+                            {
+                                var index = Model.RoleAssignDtos.IndexOf(role);
+                                <div class="form-group col-md-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" asp-for="@Model.RoleAssignDtos[index].HasRole" />
+                                        <label asp-for="@Model.RoleAssignDtos[index].RoleId">@Model.RoleAssignDtos[index].RoleName</label>
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleId" />
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleName" />
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                        @if (roleRoles.Any())
+                        {
+                            <div class="form-group col-md-12">
+                                <h4 class="text-center"><span class="fas fa-user-shield"></span> Rol İzinleri</h4>
+                            </div>
+                            foreach (var role in roleRoles)
+                            {
+                                var index = Model.RoleAssignDtos.IndexOf(role);
+                                <div class="form-group col-md-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" asp-for="@Model.RoleAssignDtos[index].HasRole" />
+                                        <label asp-for="@Model.RoleAssignDtos[index].RoleId">@Model.RoleAssignDtos[index].RoleName</label>
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleId" />
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleName" />
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                        @if (commentRoles.Any())
+                        {
+                            <div class="form-group col-md-12">
+                                <h4 class="text-center"><span class="fas fa-comments"></span> Yorum İzinleri</h4>
+                            </div>
+                            foreach (var role in commentRoles)
+                            {
+                                var index = Model.RoleAssignDtos.IndexOf(role);
+                                <div class="form-group col-md-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" asp-for="@Model.RoleAssignDtos[index].HasRole" />
+                                        <label asp-for="@Model.RoleAssignDtos[index].RoleId">@Model.RoleAssignDtos[index].RoleName</label>
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleId" />
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleName" />
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                        @if (generalRoles.Any())
+                        {
+                            <div class="form-group col-md-12">
+                                <h4 class="text-center"><span class="fas fa-shield-alt"></span> Genel İzinler</h4>
+                            </div>
+                            foreach (var role in generalRoles)
+                            {
+                                var index = Model.RoleAssignDtos.IndexOf(role);
+                                <div class="form-group col-md-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" asp-for="@Model.RoleAssignDtos[index].HasRole" />
+                                        <label asp-for="@Model.RoleAssignDtos[index].RoleId">@Model.RoleAssignDtos[index].RoleName</label>
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleId" />
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleName" />
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-block" data-dismiss="modal"><span class="fas fa-times"></span> İptal</button>
+                <button type="button" class="btn btn-primary btn-block" id="btnAssign"><span class="fas fa-save"></span> Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>

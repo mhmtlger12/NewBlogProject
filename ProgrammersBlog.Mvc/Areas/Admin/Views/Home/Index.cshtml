@@ -1,0 +1,730 @@
+@model ProgrammersBlog.Mvc.Areas.Admin.Models.DashboardViewModel
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Yönetim Paneli";
+}
+
+<head>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (en son versiyon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Weather Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css" />
+
+    <link href="~/AdminLTE/css/AdminHome.css" rel="stylesheet" />
+    <link href="~/AdminLTE/css/AdminWeather.css" rel="stylesheet" />
+        
+</head>
+
+<div class="container-fluid px-4">
+    <nav class="breadcrumb-container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-home"></i> Admin
+                </a>
+            </li>
+            <li class="breadcrumb-item active">
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-tools"></i> Yönetim Paneli
+                </a>
+            </li>
+        </ol>
+    </nav>
+
+    <div class="row mb-4">
+        <!-- Geçici emojili uyarı -->
+        <div class="col-12 mb-3">
+            <div id="weatherInfoAlert" class="weather-info-box">
+                <i class="wi wi-day-sunny me-2" style="color: #f39c12;"></i>
+                <span>🌤️ Hava durumunu öğrenmek için açılır kartlara basabilirsiniz 👇</span>
+                <i class="fas fa-arrow-down ms-2 animate-bounce"></i>
+            </div>
+        </div>
+
+        <!-- Butonlar için ayrı bir satır -->
+        <div class="row mb-2">
+            <!-- Muğla Hava Durumu Düğmesi -->
+            <div class="col-md-6">
+                <button class="btn-toggle-card" data-target="weatherCardContainer">
+                    <i class="wi wi-day-sunny" style="font-size: 18px; color: #f39c12;"></i>
+                    <span>Muğla Hava Durumu</span>
+                    <i class="fas fa-chevron-down ms-2"></i>
+                </button>
+            </div>
+
+            <!-- İlçeler Hava Durumu Düğmesi -->
+            <div class="col-md-6">
+                <button class="btn-toggle-card" data-target="districtsCardContainer">
+                    <i class="fas fa-map-marked-alt" style="font-size: 18px; color: #1976d2;"></i>
+                    <span>Muğla İlçeleri Hava Durumu</span>
+                    <i class="fas fa-chevron-down ms-2"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Kartlar için ayrı bir satır -->
+        <div class="row">
+            <!-- Muğla Merkez Hava Durumu Kartı -->
+            <div class="col-md-6 mb-4 card-container collapsed" id="weatherCardContainer">
+                <div class="weather-widget-container">
+                    <div class="weather-widget-header d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <i class="wi wi-day-sunny" style="font-size: 32px; color: #f39c12; margin-right: 12px;"></i>
+                            <h5 class="weather-widget-title mb-0">Muğla Hava Durumu</h5>
+                        </div>
+                    </div>
+                    <div class="weather-widget-content mt-0">
+                        <div class="weather-current mb-4">
+                            <h6 style="margin-bottom: 15px; font-weight: 500;">Bugünkü Durum</h6>
+                            <img src="http://www.mgm.gov.tr/sunum/sondurum-show-2.aspx?m=MUGLA&rC=111&rZ=fff" style="width:140px; height:100px;" alt="MUGLA" class="weather-img" />
+                        </div>
+                        <div class="weather-forecast">
+                            <h6 style="margin-bottom: 15px; font-weight: 500;">5 Günlük Tahmin</h6>
+                            <img src="http://www.mgm.gov.tr/sunum/tahmin-show-2.aspx?m=MUGLA&basla=1&bitir=5&rC=111&rZ=fff" style="width:400px; height:100px;" alt="MUGLA" class="weather-img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Muğla İlçeleri Hava Durumu Kartı -->
+            <div class="col-md-6 mb-4 card-container collapsed" id="districtsCardContainer">
+                <div class="districts-container">
+                    <div class="districts-header">
+                        <div class="districts-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h5 class="districts-title">Muğla İlçeleri Hava Durumu</h5>
+                    </div>
+                    <div class="districts-content">
+                        <div class="district-card">
+                            <div class="district-name">Bodrum</div>
+                            <img src="http://www.mgm.gov.tr/sunum/tahmin-show-1.aspx?m=BODRUM&basla=1&bitir=3&rC=111&rZ=fff" style="width:165px; height:85px;" alt="BODRUM" class="district-weather-img" />
+                        </div>
+
+                        <div class="district-card">
+                            <div class="district-name">Dalaman</div>
+                            <img src="http://www.mgm.gov.tr/sunum/tahmin-show-1.aspx?m=DALAMAN&basla=1&bitir=3&rC=111&rZ=fff" style="width:165px; height:85px;" alt="DALAMAN" class="district-weather-img" />
+                        </div>
+
+                        <div class="district-card">
+                            <div class="district-name">Datça</div>
+                            <img src="http://www.mgm.gov.tr/sunum/tahmin-show-1.aspx?m=DATCA&basla=1&bitir=3&rC=111&rZ=fff" style="width:165px; height:85px;" alt="DATCA" class="district-weather-img" />
+                        </div>
+
+                        <div class="district-card">
+                            <div class="district-name">Fethiye</div>
+                            <img src="http://www.mgm.gov.tr/sunum/tahmin-show-1.aspx?m=FETHIYE&basla=1&bitir=3&rC=111&rZ=fff" style="width:165px; height:85px;" alt="FETHIYE" class="district-weather-img" />
+                        </div>
+
+                        <div class="district-card">
+                            <div class="district-name">Kavaklıdere</div>
+                            <img src="http://www.mgm.gov.tr/sunum/tahmin-show-1.aspx?m=KAVAKLIDERE&basla=1&bitir=3&rC=111&rZ=fff" style="width:165px; height:85px;" alt="KAVAKLIDERE" class="district-weather-img" />
+                        </div>
+
+                        <div class="district-card">
+                            <div class="district-name">Köyceğiz</div>
+                            <img src="http://www.mgm.gov.tr/sunum/tahmin-show-1.aspx?m=KOYCEGIZ&basla=1&bitir=3&rC=111&rZ=fff" style="width:165px; height:85px;" alt="KOYCEGIZ" class="district-weather-img" />
+                        </div>
+
+                        <div class="district-card">
+                            <div class="district-name">Marmaris</div>
+                            <img src="http://www.mgm.gov.tr/sunum/tahmin-show-1.aspx?m=MARMARIS&basla=1&bitir=3&rC=111&rZ=fff" style="width:165px; height:85px;" alt="MARMARIS" class="district-weather-img" />
+                        </div>
+
+                        <div class="district-card">
+                            <div class="district-name">Milas</div>
+                            <img src="http://www.mgm.gov.tr/sunum/tahmin-show-1.aspx?m=MILAS&basla=1&bitir=3&rC=111&rZ=fff" style="width:165px; height:85px;" alt="MILAS" class="district-weather-img" />
+                        </div>
+
+                        <div class="district-card">
+                            <div class="district-name">Ortaca</div>
+                            <img src="http://www.mgm.gov.tr/sunum/tahmin-show-1.aspx?m=ORTACA&basla=1&bitir=3&rC=111&rZ=fff" style="width:165px; height:85px;" alt="ORTACA" class="district-weather-img" />
+                        </div>
+
+                        <div class="district-card">
+                            <div class="district-name">Seydikemer</div>
+                            <img src="http://www.mgm.gov.tr/sunum/tahmin-show-1.aspx?m=SEYDIKEMER&basla=1&bitir=3&rC=111&rZ=fff" style="width:165px; height:85px;" alt="SEYDIKEMER" class="district-weather-img" />
+                        </div>
+
+                        <div class="district-card">
+                            <div class="district-name">Ula</div>
+                            <img src="http://www.mgm.gov.tr/sunum/tahmin-show-1.aspx?m=ULA&basla=1&bitir=3&rC=111&rZ=fff" style="width:165px; height:85px;" alt="ULA" class="district-weather-img" />
+                        </div>
+
+                        <div class="district-card">
+                            <div class="district-name">Yatağan</div>
+                            <img src="http://www.mgm.gov.tr/sunum/tahmin-show-1.aspx?m=YATAGAN&basla=1&bitir=3&rC=111&rZ=fff" style="width:165px; height:85px;" alt="YATAGAN" class="district-weather-img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="stats-card" style="background-color: rgba(0, 123, 255, 0.1);">
+                <div class="stats-card-header">
+                    <div class="stats-card-icon bg-primary">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <h5 class="stats-card-title">Kategoriler</h5>
+                </div>
+                <div class="stats-card-content">
+                    <div class="stats-card-value">@Model.CategoriesCount</div>
+                    <div class="stats-card-label">Toplam kategori sayısı</div>
+                </div>
+                <div class="stats-card-footer">
+                    <a class="stats-card-link" asp-area="Admin" asp-controller="Category" asp-action="Index">
+                        Detayları İncele <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="stats-card" style="background-color: rgba(255, 193, 7, 0.1);">
+                <div class="stats-card-header">
+                    <div class="stats-card-icon bg-warning">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h5 class="stats-card-title">Makaleler</h5>
+                </div>
+                <div class="stats-card-content">
+                    <div class="stats-card-value">@Model.ArticlesCount</div>
+                    <div class="stats-card-label">Toplam makale sayısı</div>
+                </div>
+                <div class="stats-card-footer">
+                    <a class="stats-card-link" asp-area="Admin" asp-controller="Article" asp-action="Index">
+                        Detayları İncele <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="stats-card" style="background-color: rgba(40, 167, 69, 0.1);">
+                <div class="stats-card-header">
+                    <div class="stats-card-icon bg-success">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h5 class="stats-card-title">Yorumlar</h5>
+                </div>
+                <div class="stats-card-content">
+                    <div class="stats-card-value">@Model.CommentsCount</div>
+                    <div class="stats-card-label">Toplam yorum sayısı</div>
+                </div>
+                <div class="stats-card-footer">
+                    <a class="stats-card-link" asp-area="Admin" asp-controller="Comment" asp-action="Index">
+                        Detayları İncele <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="stats-card" style="background-color: rgba(220, 53, 69, 0.1);">
+                <div class="stats-card-header">
+                    <div class="stats-card-icon bg-danger">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h5 class="stats-card-title">Kullanıcılar</h5>
+                </div>
+                <div class="stats-card-content">
+                    <div class="stats-card-value">@Model.UsersCount</div>
+                    <div class="stats-card-label">Toplam kullanıcı sayısı</div>
+                </div>
+                <div class="stats-card-footer">
+                    <a class="stats-card-link" asp-area="Admin" asp-controller="User" asp-action="Index">
+                        Detayları İncele <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mb-4">
+        <div class="col-xl-6">
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <div class="chart-card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h5 class="chart-card-title">Makale İstatistikleri</h5>
+                </div>
+                <div class="chart-card-body">
+                    <div class="chart-container">
+                        <canvas id="viewCountChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-xl-6">
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <div class="chart-card-icon" style="background: #ef4444;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h5 class="chart-card-title">Log Dağılımı</h5>
+                </div>
+                <div class="chart-card-body">
+                    <div class="chart-container">
+                        <canvas id="logLevelChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-card">
+        <div class="table-card-header">
+            <div class="header-content">
+                <div class="header-title">
+                    <i class="fas fa-table icon-primary"></i>
+                    <h5 class="table-card-title">Son Paylaşılan Makaleler</h5>
+                </div>
+                <div class="table-actions">
+                    <button class="btn-action print" id="printTable" aria-label="Yazdır">
+                        <i class="fas fa-print"></i>
+                        <span class="action-tooltip">Yazdır</span>
+                    </button>
+                    <button class="btn-action pdf" id="exportPDF" aria-label="PDF Aktar">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="action-tooltip">PDF Aktar</span>
+                    </button>
+                    <button class="btn-action excel" id="exportExcel" aria-label="Excel Aktar">
+                        <i class="fas fa-file-excel"></i>
+                        <span class="action-tooltip">Excel Aktar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-card-body">
+            <div class="table-responsive">
+                <table class="table" id="articlesTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Kategori</th>
+                            <th>Başlık</th>
+                            <th>Küçük Resim</th>
+                            <th>Tarih</th>
+                            <th>Okunma</th>
+                            <th>Yorum</th>
+                            <th>Aktif</th>
+                            <th>Silinmiş</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var article in Model.Articles.Articles)
+                        {
+                            <tr>
+                                <td>@article.Id</td>
+                                <td>@article.Menu.Name</td>
+                                <td>@article.Title</td>
+                                <td><img src="~/img/@article.Thumbnail" class="table-image" /></td>
+                                <td>@article.Date.ToShortDateString()</td>
+                                <td>@article.ViewsCount</td>
+                                <td>@article.CommentCount</td>
+                                <td><span class="status-badge @(article.IsActive ? "status-yes" : "status-no")">@(article.IsActive ? "Evet" : "Hayır")</span></td>
+                                <td><span class="status-badge @(article.IsDeleted ? "status-yes" : "status-no")">@(article.IsDeleted ? "Evet" : "Hayır")</span></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .table-card-header {
+        padding: 12px 16px;
+        background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+        border-radius: 10px 10px 0 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .header-title {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .icon-primary {
+        font-size: 20px;
+        color: #4f46e5;
+        background: #e0e7ff;
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+    .table-card-title {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #111827;
+    }
+
+    .table-actions {
+        display: flex;
+        gap: 6px;
+        position: relative;
+    }
+
+    .btn-action {
+        position: relative;
+        background: white;
+        border: 1px solid #e5e7eb;
+        color: #6b7280;
+        cursor: pointer;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+    }
+
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-action i {
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-action.print:hover {
+            background: #f3f4f6;
+            color: #1e40af;
+            border-color: #d1d5db;
+        }
+
+        .btn-action.pdf:hover {
+            background: #fef2f2;
+            color: #dc2626;
+            border-color: #fca5a5;
+        }
+
+        .btn-action.excel:hover {
+            background: #f0fdf4;
+            color: #16a34a;
+            border-color: #86efac;
+        }
+
+    .action-tooltip {
+        position: absolute;
+        top: -38px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #374151;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+    }
+
+        .action-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 4px;
+            border-style: solid;
+            border-color: #374151 transparent transparent transparent;
+        }
+
+    .btn-action:hover .action-tooltip {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-2px);
+    }
+</style>
+
+@section Scripts {
+    <!-- Gerekli JS Kütüphaneleri -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="~/AdminLTE/js/HomeIndex.js" type="application/ecmascript"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButtons = document.querySelectorAll('.btn-toggle-card');
+            const weatherInfoAlert = document.getElementById('weatherInfoAlert');
+
+            // 20 saniye sonra uyarıyı kaldır
+            setTimeout(function() {
+                weatherInfoAlert.classList.add('fade-out');
+                setTimeout(function() {
+                    weatherInfoAlert.style.display = 'none';
+                }, 1000); // Fade-out animasyonu tamamlandıktan sonra elementi gizle
+            }, 20000); // 20 saniye
+
+            // Başlangıçta ikonları doğru duruma getir
+            toggleButtons.forEach(button => {
+                const targetId = button.getAttribute('data-target');
+                const targetElement = document.getElementById(targetId);
+                const icon = button.querySelector('.fa-chevron-down');
+
+                if (targetElement && targetElement.classList.contains('collapsed') && icon) {
+                    icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                }
+            });
+
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const targetElement = document.getElementById(targetId);
+                    const icon = this.querySelector('.fa-chevron-down, .fa-chevron-up');
+
+                    if (!targetElement || !icon) {
+                        console.error('Target element or icon not found!');
+                        return;
+                    }
+
+                    targetElement.classList.toggle('collapsed');
+
+                    if (targetElement.classList.contains('collapsed')) {
+                        icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                    } else {
+                        icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                    }
+                });
+            });
+
+            // Hava durumu güncelleme işlemi
+            let weatherBox = document.getElementById("weatherInfoAlert");
+            let icon = weatherBox.querySelector("i");
+            let text = weatherBox.querySelector("span");
+
+            let weatherTypes = [
+                { type: 'sunny', iconClass: 'fa-sun', text: 'Hava durumunu öğrenmek için açılır kartlara basabilirsiniz     👇', className: 'sunny' },
+                { type: 'rain', iconClass: 'fa-cloud-rain', text: 'Hava durumunu öğrenmek için açılır kartlara basabilirsiniz    👇', className: 'rain' },
+                { type: 'snow', iconClass: 'fa-snowflake', text: 'Hava durumunu öğrenmek için açılır kartlara basabilirsiniz     👇', className: 'snow' },
+                { type: 'storm', iconClass: 'fa-cloud-showers-heavy', text: 'Hava durumunu öğrenmek için açılır kartlara basabilirsiniz     👇', className: 'stormy' }
+            ];
+
+            let currentWeather = 0;
+
+            function updateWeather() {
+                currentWeather = (currentWeather + 1) % weatherTypes.length;
+
+                let weather = weatherTypes[currentWeather];
+                weatherBox.className = 'weather-info-box ' + weather.className;
+                icon.className = 'fa-solid ' + weather.iconClass;
+                text.textContent = weather.text;
+            }
+
+            setInterval(updateWeather, 5000); // 5 saniyede bir hava durumunu değiştir
+        });
+                        document.addEventListener('DOMContentLoaded', function() {
+            // Yazdırma Fonksiyonu
+            document.getElementById('printTable').addEventListener('click', function() {
+                const printWindow = window.open('', '', 'height=600,width=800');
+                printWindow.document.write('<html><head><title>Makaleler Tablosu</title>');
+                printWindow.document.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">');
+                printWindow.document.write('<style>');
+                printWindow.document.write(`
+                    body { font-family: Arial, sans-serif; margin: 20px; }
+                    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+                    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+                    th { background-color: #f8f9fa; }
+                    .table-image { max-width: 50px; height: auto; }
+                    .status-badge { padding: 4px 8px; border-radius: 12px; font-size: 12px; }
+                    .status-yes { background-color: #d1fae5; color: #065f46; }
+                    .status-no { background-color: #fee2e2; color: #b91c1c; }
+                    .table-card-title { margin: 0; font-size: 1.2rem; }
+                    .table-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+                `);
+                printWindow.document.write('</style></head><body>');
+                printWindow.document.write('<h3><i class="fas fa-table"></i> Son Paylaşılan Makaleler</h3>');
+                printWindow.document.write(document.getElementById('articlesTable').outerHTML);
+                printWindow.document.write('</body></html>');
+                printWindow.document.close();
+                printWindow.focus();
+                setTimeout(() => {
+                    printWindow.print();
+                    printWindow.close();
+                }, 200);
+            });
+
+            // PDF Aktarma Fonksiyonu
+            document.getElementById('exportPDF').addEventListener('click', async function() {
+                try {
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF({
+                        orientation: 'landscape',
+                        unit: 'mm'
+                    });
+
+                    // Başlık ve logo ekleme
+                    doc.setFontSize(18);
+                    doc.setTextColor(40);
+                    doc.setFont('helvetica', 'bold');
+                    doc.text('Son Paylaşılan Makaleler', 140, 15, { align: 'center' });
+
+                    doc.setFontSize(10);
+                    doc.setTextColor(100);
+                    doc.setFont('helvetica', 'normal');
+                    doc.text(`Oluşturulma Tarihi: ${new Date().toLocaleDateString()}`, 140, 22, { align: 'center' });
+
+                    // Tablo verilerini hazırlama
+                    const table = document.getElementById('articlesTable');
+                    const headers = [];
+                    const data = [];
+
+                    // Başlıkları al
+                    table.querySelectorAll('thead th').forEach(th => {
+                        headers.push({
+                            title: th.textContent,
+                            dataKey: th.textContent.toLowerCase().replace(/ /g, '_')
+                        });
+                    });
+
+                    // Satır verilerini al
+                    const rows = Array.from(table.querySelectorAll('tbody tr'));
+
+                    // Tüm resimleri önceden yükle
+                    await Promise.all(rows.map(async (tr, rowIndex) => {
+                        const rowData = {};
+                        const cells = Array.from(tr.querySelectorAll('td'));
+
+                        cells.forEach((td, cellIndex) => {
+                            const headerKey = headers[cellIndex].dataKey;
+
+                            if (cellIndex === 3 && td.querySelector('img')) {
+                                const img = td.querySelector('img');
+                                rowData[headerKey] = {
+                                    image: img.src,
+                                    width: 20,
+                                    height: 15
+                                };
+                            } else if (cellIndex === 7 || cellIndex === 8) {
+                                const badge = td.querySelector('.status-badge');
+                                rowData[headerKey] = badge ? badge.textContent : '';
+                            } else {
+                                rowData[headerKey] = td.textContent.trim();
+                            }
+                        });
+
+                        data.push(rowData);
+                    })); // Burada kapanış parantezi eksikti
+
+                    // PDF'ye tablo ekleme
+                    doc.autoTable({
+                        head: [headers.map(h => h.title)],
+                        body: data.map(row => headers.map(header => row[header.dataKey])),
+                        startY: 30,
+                        margin: { top: 25 },
+                        styles: {
+                            fontSize: 9,
+                            cellPadding: 1.5,
+                            overflow: 'linebreak',
+                            textColor: [40, 40, 40],
+                            font: 'helvetica',
+                            fontStyle: 'normal'
+                        },
+                        headStyles: {
+                            fillColor: [71, 85, 105],
+                            textColor: [255, 255, 255],
+                            fontSize: 10,
+                            fontStyle: 'bold'
+                        },
+                        alternateRowStyles: {
+                            fillColor: [248, 250, 252]
+                        },
+                        columnStyles: {
+                            küçük_resim: { cellWidth: 25 },
+                            aktif: { cellWidth: 15 },
+                            silinmiş: { cellWidth: 15 },
+                            tarih: { cellWidth: 20 }
+                        },
+                        didParseCell: function(data) {
+                            if (data.column.dataKey === 'küçük_resim' && typeof data.cell.raw !== 'object') {
+                                data.cell.text = '';
+                            }
+                        },
+                        willDrawCell: function(data) {
+                            if (data.column.dataKey === 'küçük_resim' &&
+                                data.cell.raw &&
+                                typeof data.cell.raw === 'object' &&
+                                data.cell.raw.image) {
+
+                                try {
+                                    doc.addImage(
+                                        data.cell.raw.image,
+                                        data.cell.x + 2,
+                                        data.cell.y + 2,
+                                        data.cell.raw.width,
+                                        data.cell.raw.height
+                                    );
+                                    data.cell.text = '';
+                                } catch (error) {
+                                    console.error('Resim eklenemedi:', error);
+                                    data.cell.text = 'Resim';
+                                }
+                            }
+                        }
+                    });
+
+                    // Sayfa numaraları ekle
+                    const pageCount = doc.internal.getNumberOfPages();
+                    for (let i = 1; i <= pageCount; i++) {
+                        doc.setPage(i);
+                        doc.setFontSize(10);
+                        doc.setTextColor(150);
+                        doc.text(
+                            `Sayfa ${i}/${pageCount}`,
+                            doc.internal.pageSize.width - 15,
+                            doc.internal.pageSize.height - 10,
+                            { align: 'right' }
+                        );
+                    }
+
+                    doc.save(`Makaleler_${new Date().toISOString().slice(0,10)}.pdf`);
+
+                } catch (error) {
+                    console.error('PDF oluşturma hatası:', error);
+                    alert('PDF oluşturulurken bir hata oluştu. Lütfen konsolu kontrol edin.');
+                }
+            });
+
+            // Excel Aktarma Fonksiyonu
+            document.getElementById('exportExcel').addEventListener('click', function() {
+                const table = document.getElementById('articlesTable');
+                const workbook = XLSX.utils.table_to_book(table, {
+                    sheet: "Makaleler",
+                    raw: true
+                });
+
+                XLSX.writeFile(workbook, 'Makaleler.xlsx', {
+                    compression: true
+                });
+            });
+        });
+    </script>
+
+    
+}

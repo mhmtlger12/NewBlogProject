@@ -1,0 +1,25 @@
+﻿@model ProgrammersBlog.Entities.Dtos.Comments.CommentAddDto
+
+<!-- Yorum Formu -->
+<div class="collapse mb-4" id="commentForm">
+    <div class="card border-primary">
+        <div class="card-body form-card">
+            <h5 class="card-title mb-3">Yorumunuzu Yazın</h5>
+            <form asp-controller="Comment" asp-action="Add" method="post" id="form-comment-add">
+                @Html.AntiForgeryToken() <!-- CSRF Koruması -->
+                <input type="hidden" asp-for="ArticleId" value="@Model.ArticleId" />
+                <div class="mb-3">
+                    <label class="form-label" asp-for="CreatedByName">Adınız</label>
+                    <input type="text" class="form-control" asp-for="CreatedByName" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Yorumunuz</label>
+                    <textarea class="form-control" rows="3" asp-for="Text" required></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" id="btnSave">
+                    <i class="bi bi-send-fill me-1"></i> Gönder
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
