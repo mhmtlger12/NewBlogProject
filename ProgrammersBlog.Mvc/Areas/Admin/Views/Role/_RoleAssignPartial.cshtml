@@ -1,4 +1,4 @@
-﻿@model ProgrammersBlog.Entities.Dtos.Roles.UserRoleAssignDto
+@model ProgrammersBlog.Entities.Dtos.Roles.UserRoleAssignDto
 <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -22,7 +22,9 @@
                             var userRoles = Model.RoleAssignDtos.Where(r => r.RoleName.StartsWith("User") || r.RoleName.Contains("Kullanıcı")).ToList();
                             var roleRoles = Model.RoleAssignDtos.Where(r => r.RoleName.StartsWith("Role") || r.RoleName == "Role").ToList();
                             var commentRoles = Model.RoleAssignDtos.Where(r => r.RoleName.StartsWith("Comment") || r.RoleName.Contains("Yorum")).ToList();
-                            var generalRoles = Model.RoleAssignDtos.Except(categoryRoles).Except(articleRoles).Except(userRoles).Except(roleRoles).Except(commentRoles).ToList();
+                            var menuRoles = Model.RoleAssignDtos.Where(r => r.RoleName.StartsWith("Menu") || r.RoleName.Contains("Menü")).ToList();
+                            var logRoles = Model.RoleAssignDtos.Where(r => r.RoleName.StartsWith("Log") || r.RoleName.Contains("Log")).ToList();
+                            var generalRoles = Model.RoleAssignDtos.Except(categoryRoles).Except(articleRoles).Except(userRoles).Except(roleRoles).Except(commentRoles).Except(menuRoles).Except(logRoles).ToList();
                         }
 
                         @if (categoryRoles.Any())
@@ -107,6 +109,44 @@
                                 <h4 class="text-center"><span class="fas fa-comments"></span> Yorum İzinleri</h4>
                             </div>
                             foreach (var role in commentRoles)
+                            {
+                                var index = Model.RoleAssignDtos.IndexOf(role);
+                                <div class="form-group col-md-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" asp-for="@Model.RoleAssignDtos[index].HasRole" />
+                                        <label asp-for="@Model.RoleAssignDtos[index].RoleId">@Model.RoleAssignDtos[index].RoleName</label>
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleId" />
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleName" />
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                        @if (menuRoles.Any())
+                        {
+                            <div class="form-group col-md-12">
+                                <h4 class="text-center"><span class="fas fa-bars"></span> Menü İzinleri</h4>
+                            </div>
+                            foreach (var role in menuRoles)
+                            {
+                                var index = Model.RoleAssignDtos.IndexOf(role);
+                                <div class="form-group col-md-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" asp-for="@Model.RoleAssignDtos[index].HasRole" />
+                                        <label asp-for="@Model.RoleAssignDtos[index].RoleId">@Model.RoleAssignDtos[index].RoleName</label>
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleId" />
+                                        <input type="hidden" asp-for="@Model.RoleAssignDtos[index].RoleName" />
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                        @if (logRoles.Any())
+                        {
+                            <div class="form-group col-md-12">
+                                <h4 class="text-center"><span class="fas fa-file-alt"></span> Log İzinleri</h4>
+                            </div>
+                            foreach (var role in logRoles)
                             {
                                 var index = Model.RoleAssignDtos.IndexOf(role);
                                 <div class="form-group col-md-3">

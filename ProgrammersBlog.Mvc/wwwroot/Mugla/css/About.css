@@ -11,6 +11,15 @@
     --about-golge: 0 5px 20px rgba(0, 87, 146, 0.15);
     --about-gecis: 0.4s;
     --about-radius: 16px;
+    
+    /* Eski değişkenlerin yerine geçecek eşleştirmeler */
+    --deniz-mavisi: var(--about-deniz);
+    --acik-turkuaz: var(--about-turkuaz);
+    --gece-mavisi: var(--about-gece);
+    --beyaz-kopuk: var(--about-beyaz);
+    --golge-efekti: var(--about-golge);
+    --gecis-suresi: var(--about-gecis);
+    --border-radius: var(--about-radius);
 }
 
 /* Hero Alanı */
@@ -106,18 +115,18 @@
     }
 
     .wave-container .shape-fill {
-        fill: var(--beyaz-kopuk);
+        fill: var(--about-beyaz);
         opacity: 0.8;
     }
 
 /* İçerik Kartı */
 .about-content-card {
-    background-color: var(--beyaz-kopuk);
-    border-radius: var(--border-radius);
+    background-color: var(--about-beyaz);
+    border-radius: var(--about-radius);
     padding: 45px;
-    box-shadow: var(--golge-efekti);
+    box-shadow: var(--about-golge);
     margin-bottom: 40px;
-    transition: transform var(--gecis-suresi), box-shadow var(--gecis-suresi);
+    transition: transform var(--about-gecis), box-shadow var(--about-gecis);
     position: relative;
     overflow: hidden;
 }
@@ -133,10 +142,10 @@
         right: 0;
         width: 150px;
         height: 150px;
-        background: linear-gradient(135deg, var(--acik-turkuaz) 0%, transparent 70%);
+        background: linear-gradient(135deg, var(--about-turkuaz) 0%, transparent 70%);
         opacity: 0.1;
         border-radius: 0 0 0 100%;
-        transition: all var(--gecis-suresi);
+        transition: all var(--about-gecis);
     }
 
     .about-content-card:hover::before {
@@ -146,7 +155,7 @@
     }
 
 .section-title {
-    color: var(--gece-mavisi);
+    color: var(--about-gece);
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-size: 2.3rem;
@@ -163,8 +172,8 @@
         bottom: -2px;
         width: 90px;
         height: 3px;
-        background-color: var(--deniz-mavisi);
-        transition: width var(--gecis-suresi);
+        background-color: var(--about-deniz);
+        transition: width var(--about-gecis);
     }
 
 .about-content-card:hover .section-title:after {
@@ -199,40 +208,8 @@
     gap: 15px;
 }
 
-.logo-sembol {
-    width: 80px;
-    height: 80px;
-    background-color: var(--deniz-mavisi);
-    border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 149, 182, 0.3);
-}
 
-    .logo-sembol::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        height: 40%;
-        background-color: var(--acik-turkuaz);
-        transform: translateY(-15%);
-        opacity: 0.6;
-        border-radius: 50%;
-    }
-
-    .logo-sembol::after {
-        content: "";
-        position: absolute;
-        top: 20%;
-        right: 20%;
-        width: 15px;
-        height: 15px;
-        background-color: var(--beyaz-kopuk);
-        border-radius: 50%;
-        opacity: 0.8;
-    }
+/* Logo stilleri kaldırıldı */
 
 .logo-yazi {
     text-align: left;
@@ -366,12 +343,12 @@
 
 /* Sidebar */
 .about-sidebar > div {
-    background-color: var(--beyaz-kopuk);
-    border-radius: var(--border-radius);
+    background-color: var(--about-beyaz);
+    border-radius: var(--about-radius);
     padding: 32px;
-    box-shadow: var(--golge-efekti);
+    box-shadow: var(--about-golge);
     margin-bottom: 35px;
-    transition: transform var(--gecis-suresi), box-shadow var(--gecis-suresi);
+    transition: transform var(--about-gecis), box-shadow var(--about-gecis);
     position: relative;
     overflow: hidden;
 }
@@ -518,11 +495,11 @@
 
 /* Sosyal Medya Kartı */
 .social-media-card {
-    background-color: var(--beyaz-kopuk);
-    border-radius: var(--border-radius);
+    background-color: var(--about-beyaz);
+    border-radius: var(--about-radius);
     padding: 32px;
-    box-shadow: var(--golge-efekti);
-    transition: transform var(--gecis-suresi), box-shadow var(--gecis-suresi);
+    box-shadow: var(--about-golge);
+    transition: transform var(--about-gecis), box-shadow var(--about-gecis);
 }
 
     .social-media-card:hover {
@@ -654,11 +631,11 @@
 
 /* Galeri */
 .about-gallery {
-    background-color: var(--beyaz-kopuk);
-    border-radius: var(--border-radius);
+    background-color: var(--about-beyaz);
+    border-radius: var(--about-radius);
     padding: 45px;
-    box-shadow: var(--golge-efekti);
-    transition: transform var(--gecis-suresi), box-shadow var(--gecis-suresi);
+    box-shadow: var(--about-golge);
+    transition: transform var(--about-gecis), box-shadow var(--about-gecis);
     position: relative;
     overflow: hidden;
 }
@@ -745,12 +722,12 @@
 .discover-btn {
     display: inline-block;
     padding: 12px 28px;
-    background: linear-gradient(to right, var(--deniz-mavisi), var(--acik-turkuaz));
+    background: linear-gradient(to right, var(--about-deniz), var(--about-turkuaz));
     color: white;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
-    transition: all var(--gecis-suresi);
+    transition: all var(--about-gecis);
     box-shadow: 0 5px 15px rgba(0, 149, 182, 0.3);
     border: none;
     margin-top: 15px;
@@ -766,8 +743,8 @@
         left: 0;
         width: 0%;
         height: 100%;
-        background: linear-gradient(to right, var(--gece-mavisi), var(--deniz-mavisi));
-        transition: width var(--gecis-suresi);
+        background: linear-gradient(to right, var(--about-gece), var(--about-deniz));
+        transition: width var(--about-gecis);
         z-index: -1;
     }
 

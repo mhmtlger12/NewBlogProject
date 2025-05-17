@@ -120,7 +120,7 @@
 
 
 
-                @if (Model.Roles.Any(r => r.Equals("SuperAdmin") && r.Equals("Log.Read")))
+                @if (Model.Roles.Any(r => r.Equals("SuperAdmin") || r.Equals("Log.Read")))
                 {
                     <!-- Log Management -->
                     <div class="menu-section">

@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\gitme\\Desktop\\Yeni klas\u00F6r\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{69CA7942-045F-45D3-A1A9-9E73BC1D516C}|ProgrammersBlog.Mvc\\ProgrammersBlog.Mvc.csproj|c:\\users\\gitme\\desktop\\yeni klas\u00F6r\\programmersblog.mvc\\areas\\admin\\views\\role\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{69CA7942-045F-45D3-A1A9-9E73BC1D516C}|ProgrammersBlog.Mvc\\ProgrammersBlog.Mvc.csproj|solutionrelative:programmersblog.mvc\\areas\\admin\\views\\role\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69CA7942-045F-45D3-A1A9-9E73BC1D516C}|ProgrammersBlog.Mvc\\ProgrammersBlog.Mvc.csproj|c:\\users\\gitme\\desktop\\yeni klas\u00F6r\\programmersblog.mvc\\areas\\admin\\views\\role\\_roleassignpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{69CA7942-045F-45D3-A1A9-9E73BC1D516C}|ProgrammersBlog.Mvc\\ProgrammersBlog.Mvc.csproj|solutionrelative:programmersblog.mvc\\areas\\admin\\views\\role\\_roleassignpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69CA7942-045F-45D3-A1A9-9E73BC1D516C}|ProgrammersBlog.Mvc\\ProgrammersBlog.Mvc.csproj|c:\\users\\gitme\\desktop\\yeni klas\u00F6r\\programmersblog.mvc\\areas\\admin\\views\\shared\\components\\adminmenu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{69CA7942-045F-45D3-A1A9-9E73BC1D516C}|ProgrammersBlog.Mvc\\ProgrammersBlog.Mvc.csproj|solutionrelative:programmersblog.mvc\\areas\\admin\\views\\shared\\components\\adminmenu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\gitme\\Desktop\\Yeni klas\u00F6r\\ProgrammersBlog.Mvc\\Areas\\Admin\\Views\\Role\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProgrammersBlog.Mvc\\Areas\\Admin\\Views\\Role\\Index.cshtml",
+              "ToolTip": "C:\\Users\\gitme\\Desktop\\Yeni klas\u00F6r\\ProgrammersBlog.Mvc\\Areas\\Admin\\Views\\Role\\Index.cshtml",
+              "RelativeToolTip": "ProgrammersBlog.Mvc\\Areas\\Admin\\Views\\Role\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-17T21:23:45.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_RoleAssignPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\gitme\\Desktop\\Yeni klas\u00F6r\\ProgrammersBlog.Mvc\\Areas\\Admin\\Views\\Role\\_RoleAssignPartial.cshtml",
+              "RelativeDocumentMoniker": "ProgrammersBlog.Mvc\\Areas\\Admin\\Views\\Role\\_RoleAssignPartial.cshtml",
+              "ToolTip": "C:\\Users\\gitme\\Desktop\\Yeni klas\u00F6r\\ProgrammersBlog.Mvc\\Areas\\Admin\\Views\\Role\\_RoleAssignPartial.cshtml",
+              "RelativeToolTip": "ProgrammersBlog.Mvc\\Areas\\Admin\\Views\\Role\\_RoleAssignPartial.cshtml",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-17T21:23:29.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\gitme\\Desktop\\Yeni klas\u00F6r\\ProgrammersBlog.Mvc\\Areas\\Admin\\Views\\Shared\\Components\\AdminMenu\\Default.cshtml",
+              "RelativeDocumentMoniker": "ProgrammersBlog.Mvc\\Areas\\Admin\\Views\\Shared\\Components\\AdminMenu\\Default.cshtml",
+              "ToolTip": "C:\\Users\\gitme\\Desktop\\Yeni klas\u00F6r\\ProgrammersBlog.Mvc\\Areas\\Admin\\Views\\Shared\\Components\\AdminMenu\\Default.cshtml",
+              "RelativeToolTip": "ProgrammersBlog.Mvc\\Areas\\Admin\\Views\\Shared\\Components\\AdminMenu\\Default.cshtml",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAAAHIAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-17T21:22:27.386Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
