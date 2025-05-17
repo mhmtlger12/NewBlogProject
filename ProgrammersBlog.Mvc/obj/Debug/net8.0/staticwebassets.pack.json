@@ -565,6 +565,10 @@
       "PackagePath": "staticwebassets\\Mugla\\css\\error-page-bg-animation.css"
     },
     {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\footer.css",
+      "PackagePath": "staticwebassets\\Mugla\\css\\footer.css"
+    },
+    {
       "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\css\\logo.css",
       "PackagePath": "staticwebassets\\Mugla\\css\\logo.css"
     },
@@ -697,8 +701,20 @@
       "PackagePath": "staticwebassets\\Mugla\\js\\articleDetail.js"
     },
     {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\js\\dropdown-hover.js",
+      "PackagePath": "staticwebassets\\Mugla\\js\\dropdown-hover.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\js\\navbar.js",
+      "PackagePath": "staticwebassets\\Mugla\\js\\navbar.js"
+    },
+    {
       "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\js\\script.js",
       "PackagePath": "staticwebassets\\Mugla\\js\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\js\\simple-dropdown.js",
+      "PackagePath": "staticwebassets\\Mugla\\js\\simple-dropdown.js"
     },
     {
       "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\Mugla\\plugins\\bootstrap\\bootstrap.min.css",
