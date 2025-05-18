@@ -1,10 +1,14 @@
-﻿using ProgrammersBlog.Entities.ComplexTypes;
+using ProgrammersBlog.Entities.ComplexTypes;
 using ProgrammersBlog.Entities.Dtos.UsersDto;
+using ProgrammersBlog.Mvc.Helpers;
 using ProgrammersBlog.Mvc.Helpers.Abstract;
 using ProgrammersBlog.Shared.Utilities.Extensions;
 using ProgrammersBlog.Shared.Utilities.Results.Abstract;
 using ProgrammersBlog.Shared.Utilities.Results.ComplexTypes;
 using ProgrammersBlog.Shared.Utilities.Results.Concrete;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.IO;
 using System.Text.RegularExpressions;
 
 namespace ProgrammersBlog.Mvc.Helpers.Concrete

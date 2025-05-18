@@ -351,18 +351,21 @@ $(document).ready(function() {
                         $('.form-card').replaceWith(newFormBody);
                     }
 
-                    // Yeni yorum ekleme
+                    // Yeni yorum ekleme - sayfa yenilenerek yorumlar doğru şekilde yüklenecek
                     if (commentAddAjaxModel.CommentDto && commentAddAjaxModel.CommentDto.Comment) {
-                        const newSingleComment = `
-                            <div class="media mb-4">
-                                <img class="d-flex mr-3 rounded-circle" src="https://randomuser.me/api/portraits/men/34.jpg" alt="">
-                                <div class="media-body">
-                                    <h5 class="mt-0">${commentAddAjaxModel.CommentDto.Comment.CreatedByName}</h5>
-                                    ${commentAddAjaxModel.CommentDto.Comment.Text}
-                                </div>
-                            </div>`;
-
-                        $('#comments').append($(newSingleComment).hide().fadeIn(1000));
+                        // Formu temizle
+                        form[0].reset();
+                        
+                        // Başarı mesajını göster
+                        toastr.success('Yorum başarıyla eklendi, sayfa yenileniyor...', 'Başarılı');
+                        
+                        // 1 saniye sonra sayfayı yenile
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 1000);
+                        
+                        // Burada return ederek aşağıdaki kodların çalışmasını engelliyoruz
+                        return;
                     }
 
                     toastr.success('Yorum başarıyla eklendi!', 'Başarılı');

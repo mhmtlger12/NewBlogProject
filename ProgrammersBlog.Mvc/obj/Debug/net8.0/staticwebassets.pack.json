@@ -121,6 +121,10 @@
       "PackagePath": "staticwebassets\\AdminLTE\\js\\site.js"
     },
     {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\trumbowyg-image-optimizer.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\js\\trumbowyg-image-optimizer.js"
+    },
+    {
       "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\AdminLTE\\js\\userIndex.js",
       "PackagePath": "staticwebassets\\AdminLTE\\js\\userIndex.js"
     },
@@ -753,12 +757,32 @@
       "PackagePath": "staticwebassets\\img\\editoruser_980_17_45_21_8_4_2025.png"
     },
     {
-      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\485_15_44_22_17_4_2025",
-      "PackagePath": "staticwebassets\\img\\postImages"
-    },
-    {
       "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Bodrum'da Gezilecek Tarihi Mekanlar_727_51_38_22_19_4_2025.jpg",
       "PackagePath": "staticwebassets\\img\\postImages\\Bodrum'da Gezilecek Tarihi Mekanlar_727_51_38_22_19_4_2025.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Bodrum'un Tarihi ve Kültürel Zenginlikleri_222_3_2_19_18_5_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\Bodrum'un Tarihi ve Kültürel Zenginlikleri_222_3_2_19_18_5_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Bodrum'un Tarihi ve Kültürel Zenginlikleri_632_42_43_18_18_5_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\Bodrum'un Tarihi ve Kültürel Zenginlikleri_632_42_43_18_18_5_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Bodrum'un Tarihi ve Kültürel Zenginlikleri_839_14_52_17_18_5_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\Bodrum'un Tarihi ve Kültürel Zenginlikleri_839_14_52_17_18_5_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Bodrum'un Tarihi ve Kültürel Zenginlikleri_87_30_41_18_18_5_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\Bodrum'un Tarihi ve Kültürel Zenginlikleri_87_30_41_18_18_5_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Bodrum'un Tarihi ve Kültürel Zenginlikleri_884_41_48_17_18_5_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\Bodrum'un Tarihi ve Kültürel Zenginlikleri_884_41_48_17_18_5_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Bodrum'un Tarihi ve Kültürel Zenginlikleri_904_59_47_18_18_5_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\Bodrum'un Tarihi ve Kültürel Zenginlikleri_904_59_47_18_18_5_2025.png"
     },
     {
       "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Datça Yarımadası'nın Gizli Koyları_20250419_230600.jpg",
@@ -775,6 +799,18 @@
     {
       "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Fethiye'nin Eşsiz Koyları ve Plajları_187_10_39_22_19_4_2025.jpg",
       "PackagePath": "staticwebassets\\img\\postImages\\Fethiye'nin Eşsiz Koyları ve Plajları_187_10_39_22_19_4_2025.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Fethiye'nin Eşsiz Koyları ve Plajları_359_5_29_17_18_5_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\Fethiye'nin Eşsiz Koyları ve Plajları_359_5_29_17_18_5_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Fethiye'nin Eşsiz Koyları ve Plajları_431_23_7_18_18_5_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\Fethiye'nin Eşsiz Koyları ve Plajları_431_23_7_18_18_5_2025.png"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Fethiye'nin Eşsiz Koyları ve Plajları_527_28_27_17_18_5_2025.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\Fethiye'nin Eşsiz Koyları ve Plajları_527_28_27_17_18_5_2025.png"
     },
     {
       "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\Fethiye'nin Eşsiz Koyları ve Plajları_59_41_19_21_14_5_2025.png",
@@ -863,6 +899,10 @@
     {
       "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\defaultThumbnail.jpg",
       "PackagePath": "staticwebassets\\img\\postImages\\defaultThumbnail.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\defaultThumbnail_new.jpg",
+      "PackagePath": "staticwebassets\\img\\postImages\\defaultThumbnail_new.jpg"
     },
     {
       "Id": "C:\\Users\\gitme\\Desktop\\Yeni klasör\\ProgrammersBlog.Mvc\\wwwroot\\img\\postImages\\mehmet_410_31_41_23_16_4_2025.png",

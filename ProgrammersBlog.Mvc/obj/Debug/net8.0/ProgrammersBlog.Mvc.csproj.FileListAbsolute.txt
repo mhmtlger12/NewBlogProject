@@ -607,19 +607,6 @@ C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs
 C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Identity.Core.dll
 C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\gitme\Desktop\ProgrammersBlog\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\System.Formats.Asn1.dll
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.csproj.AssemblyReference.cache
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.AssemblyInfoInputs.cache
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.AssemblyInfo.cs
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.csproj.CoreCompileInputs.cache
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.RazorAssemblyInfo.cache
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.RazorAssemblyInfo.cs
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.dll
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\refint\ProgrammersBlog.Mvc.dll
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.pdb
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\wwwroot\img\postImages\defaultThumbnail.jpg
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\wwwroot\img\userImages\defaultUser.png
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\wwwroot\Mugla\images\404.png
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\wwwroot\Mugla\images\author.jpg
@@ -724,10 +711,8 @@ C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Mi
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.CSharp.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.Binder.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.CommandLine.dll
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.Ini.dll
@@ -766,7 +751,6 @@ C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Mi
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Options.dll
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.Primitives.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Extensions.WebEncoders.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.JSInterop.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Microsoft.Net.Http.Headers.dll
@@ -939,6 +923,7 @@ C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\refs\Wi
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Castle.Core.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Humanizer.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\LinqKit.Core.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\LinqKit.Microsoft.EntityFrameworkCore.dll
@@ -968,9 +953,12 @@ C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microso
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
@@ -984,6 +972,7 @@ C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microso
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
@@ -1004,6 +993,7 @@ C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microso
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\MySqlConnector.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\NLog.dll
@@ -1020,6 +1010,7 @@ C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\NuGet.P
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\NuGet.ProjectModel.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\NuGet.Protocol.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\NuGet.Versioning.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\System.ClientModel.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\System.CodeDom.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\System.Composition.AttributedModel.dll
@@ -1204,6 +1195,16 @@ C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\Program
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\ProgrammersBlog.Services.xml
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\ProgrammersBlog.Shared.pdb
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\bin\Debug\net8.0\ProgrammersBlog.Entities.pdb
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.csproj.AssemblyReference.cache
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.AssemblyInfoInputs.cache
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.AssemblyInfo.cs
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.csproj.CoreCompileInputs.cache
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.RazorAssemblyInfo.cache
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.RazorAssemblyInfo.cs
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.sourcelink.json
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\staticwebassets\msbuild.ProgrammersBlog.Mvc.Microsoft.AspNetCore.StaticWebAssets.props
@@ -1213,6 +1214,8 @@ C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\staticw
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\scopedcss\bundle\ProgrammersBlog.Mvc.styles.css
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\Programm.EADCD596.Up2Date
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\refint\ProgrammersBlog.Mvc.dll
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.pdb
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.genruntimeconfig.cache
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ref\ProgrammersBlog.Mvc.dll
-C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Mvc\obj\Debug\net8.0\ProgrammersBlog.Mvc.sourcelink.json

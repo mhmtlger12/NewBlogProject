@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ProgrammersBlog.Shared.Entities.Abstract;
 
 namespace ProgrammersBlog.Entities.Concrete
@@ -14,7 +14,7 @@ namespace ProgrammersBlog.Entities.Concrete
         public string? Description { get; set; }
 
         // Bir kategorinin birden fazla makalesi olabilir. (1'e N ilişki)
-        public ICollection<Article> Articles { get; set; }
+        public virtual ICollection<Article> Articles { get; set; }
     }
 }
 

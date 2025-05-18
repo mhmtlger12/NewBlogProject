@@ -22,6 +22,7 @@ C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\Prog
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.AssemblyInfoInputs.cache
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.AssemblyInfo.cs
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.csproj.CoreCompileInputs.cache
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.sourcelink.json
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\refint\ProgrammersBlog.Shared.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Shared\obj\Debug\net8.0\ProgrammersBlog.Shared.pdb

@@ -12,8 +12,8 @@ using ProgrammersBlog.Data.Concrete.EntityFramework.Contexts;
 namespace ProgrammersBlog.Data.Migrations
 {
     [DbContext(typeof(ProgrammersBlogContext))]
-    [Migration("20250514191746_InitialCatalog1")]
-    partial class InitialCatalog1
+    [Migration("20250518162147_InitialCatalog")]
+    partial class InitialCatalog
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,7 +39,7 @@ namespace ProgrammersBlog.Data.Migrations
 
                     b.Property<string>("Content")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR(MAX)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedByName")
                         .IsRequired()
@@ -72,6 +72,11 @@ namespace ProgrammersBlog.Data.Migrations
                     b.Property<string>("Note")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("PublishDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<string>("SeoAuthor")
                         .IsRequired()
@@ -122,45 +127,70 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = new Guid("c20558d8-b0fd-4142-a527-0da9910deefc"),
                             CommentCount = 0,
-                            Content = "Muğla'nın incisi Fethiye, Türkiye'nin en güzel koylarına ve plajlarına ev sahipliği yapıyor. Ölüdeniz'in turkuaz suları ve beyaz kumsalı, dünyaca ünlü Kelebekler Vadisi, saklı cennet Kabak Koyu ve tekne turlarıyla keşfedebileceğiniz 12 Adalar, her yıl binlerce turisti ağırlıyor. Fethiye'nin berrak sularında yüzmek, Belcekız Plajı'nda güneşlenmek ve Gemiler Adası'nı keşfetmek unutulmaz bir tatil deneyimi yaşatıyor. Ayrıca Fethiye merkezdeki tarihi Kayaköy (Levissi) harabeleri, Antik Likya uygarlığından kalma kaya mezarları ve Tlos antik kenti de bölgenin zengin tarihini gözler önüne seriyor. Fethiye aynı zamanda yamaç paraşütü tutkunları için dünyanın en iyi noktalarından biri olan Babadağ'a ev sahipliği yapıyor. 1975 metre yükseklikteki Babadağ'dan Ölüdeniz manzarası eşliğinde yapılan uçuşlar, adrenalin tutkunlarına unutulmaz anlar yaşatıyor.",
+                            Content = "Muğla, Türkiye'nin güneybatısında yer alan, eşsiz doğal güzellikleri, zengin tarihi ve kültürel mirasıyla öne çıkan bir ilimizdir. Bodrum, Marmaris, Fethiye gibi dünyaca ünlü tatil beldeleriyle her yıl milyonlarca turisti ağırlayan Muğla, aynı zamanda antik kentleri, koyları, plajları ve yemek kültürüyle de ziyaretçilerine unutulmaz deneyimler sunmaktadır.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5384),
-                            Date = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5382),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6427),
+                            Date = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6425),
                             IsActive = true,
                             IsDeleted = false,
                             MenuId = new Guid("b1fbe4a5-dc1d-47f7-8b95-8c2c6c0c38f7"),
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5385),
-                            Note = "Fethiye'nin doğal güzellikleri",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6428),
+                            Note = "Ana sayfa tanıtım makalesi",
+                            PublishDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6426),
                             SeoAuthor = "Muğla Rehberi",
-                            SeoDescription = "Fethiye'nin Eşsiz Koyları ve Plajları",
-                            SeoTags = "Fethiye, Ölüdeniz, Kelebekler Vadisi, Babadağ, Muğla, plajlar, koylar",
-                            Thumbnail = "postImages/defaultThumbnail.jpg",
-                            Title = "Fethiye'nin Eşsiz Koyları ve Plajları",
+                            SeoDescription = "Muğla'nın güzellikleri ve gezilecek yerleri hakkında genel bilgiler",
+                            SeoTags = "Muğla, Bodrum, Marmaris, Fethiye, tatil, gezi, rehber",
+                            Thumbnail = "postImages/mugla-genel.jpg",
+                            Title = "Muğla'ya Hoş Geldiniz",
                             UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
-                            ViewsCount = 100
+                            ViewsCount = 1500
                         },
                         new
                         {
                             Id = new Guid("87b5d57f-1e2b-4b58-b9e6-2718d5af5924"),
-                            CommentCount = 0,
-                            Content = "Muğla'nın en popüler ilçelerinden biri olan Bodrum, tarih boyunca birçok medeniyete ev sahipliği yapmış önemli bir kültür merkezidir. Antik dünyanın yedi harikasından biri olan Mausoleum'un kalıntıları, UNESCO Dünya Mirası Listesi'nde yer alan Bodrum Kalesi ve içindeki Sualtı Arkeoloji Müzesi mutlaka ziyaret edilmesi gereken yerlerdir. Bodrum Antik Tiyatrosu, Myndos Kapısı ve Pedasa Antik Kenti de tarihi yolculuğunuzu tamamlayan önemli duraklardır. Bunun yanı sıra, geleneksel Bodrum evleri ile ünlü Gümbet ve Ortakent gibi mahalleler, bembeyaz badanalı, mavi pencereli evleriyle Ege mimarisinin en güzel örneklerini sergiliyor. Bodrum, aynı zamanda canlı gece hayatı, lüks marinası ve dünyaca ünlü plajlarıyla da turistlerin gözdesi. Türkbükü, Gümüşlük ve Yalıkavak gibi beldeleriyle her zevke hitap eden Bodrum, yemek kültürü ve el sanatlarıyla da ziyaretçilerini büyülüyor.",
+                            CommentCount = 5,
+                            Content = "Muğla sahilleri, Türkiye'nin en güzel plajlarına ve koylarına ev sahipliği yapmaktadır. Ölüdeniz, Çalış Plajı, İçmeler, Akyaka ve Cleopatra Plajı gibi dünyaca ünlü plajların yanı sıra, Kelebekler Vadisi, Kabak Koyu ve Gökova Koyu gibi el değmemiş doğal güzellikleriyle de turistleri kendine çekmektedir. Bu rehberde, Muğla'nın en güzel plajlarını ve koylarını keşfedecek, her birinin özellikleri ve nasıl ulaşılacağı hakkında detaylı bilgilere ulaşacaksınız.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5397),
-                            Date = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5395),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6436),
+                            Date = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6435),
                             IsActive = true,
                             IsDeleted = false,
-                            MenuId = new Guid("c73c3b3b-5f56-48cc-9b8b-b3f78d4a1a5d"),
+                            MenuId = new Guid("7191e8c0-26c6-4703-950e-dc195cc5c3db"),
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5398),
-                            Note = "Bodrum'un tarihi zenginlikleri",
-                            SeoAuthor = "Muğla Rehberi",
-                            SeoDescription = "Bodrum'da Gezilecek Tarihi Mekanlar",
-                            SeoTags = "Bodrum, Bodrum Kalesi, Mausoleum, Antik Tiyatro, Muğla, tarih",
-                            Thumbnail = "postImages/defaultThumbnail.jpg",
-                            Title = "Bodrum'da Gezilecek Tarihi Mekanlar",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6437),
+                            Note = "Muğla plajları ve koyları rehberi",
+                            PublishDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6435),
+                            SeoAuthor = "Muğla Gezi Rehberi",
+                            SeoDescription = "Muğla'nın en güzel plajları ve koyları hakkında detaylı rehber",
+                            SeoTags = "Muğla, plajlar, koylar, Ölüdeniz, İçmeler",
+                            Thumbnail = "postImages/mugla-plajlar.jpg",
+                            Title = "Muğla'nın En Güzel Plajları ve Koyları",
                             UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
-                            ViewsCount = 295
+                            ViewsCount = 1250
+                        },
+                        new
+                        {
+                            Id = new Guid("e5a67c9f-3c2a-4b6e-9c8f-09f1c3c903d3"),
+                            CommentCount = 3,
+                            Content = "Muğla, antik Karya ve Likya medeniyetlerinin izlerini taşıyan önemli bir tarih merkezidir. Bölgede Knidos, Stratonikeia, Kaunos, Tlos ve Letoon gibi önemli antik kentler bulunmaktadır. Bodrum'daki Halikarnas Mozolesi (Mausoleum), antik dünyanın yedi harikasından biri olarak kabul edilmektedir. Ayrıca Bodrum Kalesi, Marmaris Kalesi, Fethiye Kaya Mezarları ve Kayaköy gibi tarihi yerler de bölgenin zengin kültürel mirasını yansıtmaktadır. Bu makalede, Muğla'daki en önemli tarihi yerleri ve antik kentleri tanıtacak, ziyaretçilerin bu bölgelerde neler görebileceğini ve nasıl ulaşabileceğini detaylı olarak anlatacağız.",
+                            CreatedByName = "InitialCreate",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6443),
+                            Date = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6442),
+                            IsActive = true,
+                            IsDeleted = false,
+                            MenuId = new Guid("3b4e5f42-2043-4c0a-9a2f-cbce38591ea2"),
+                            ModifiedByName = "InitialCreate",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6444),
+                            Note = "Muğla'nın tarihi zenginlikleri",
+                            PublishDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6442),
+                            SeoAuthor = "Muğla Tarih Rehberi",
+                            SeoDescription = "Muğla'daki antik kentler ve tarihi yerler hakkında detaylı rehber",
+                            SeoTags = "Muğla, antik kentler, Knidos, tarih",
+                            Thumbnail = "postImages/mugla-antik-kentler.jpg",
+                            Title = "Muğla'daki Antik Kentler ve Tarihi Yerler",
+                            UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
+                            ViewsCount = 950
                         },
                         new
                         {
@@ -168,17 +198,18 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 0,
                             Content = "Muğla'nın göz bebeği Marmaris, eşsiz doğal güzellikleriyle her yıl milyonlarca turisti ağırlıyor. İçmeler, Turunç ve Selimiye gibi muhteşem koylarıyla ünlü olan Marmaris, yat turizmi için de ideal bir destinasyon. Marmaris Marina ve Netsel Marina'da demirlemiş lüks yatlar, bölgenin prestijiyle bütünleşiyor. Marmaris'in turkuaz renkli koylarında tekne turu yapmak, Kleopatra Plajı'nda denizin tadını çıkarmak ve Cennet Adası'nı keşfetmek, burada yapılabilecek en keyifli aktiviteler arasında. Bunun yanı sıra doğa tutkunları için Marmaris'in çevresindeki ormanlar, trekking, kano ve safari turları için mükemmel fırsatlar sunuyor. Turgut Şelalesi'nin serinletici suları, Günnücek Mesire Yeri'nin yeşil örtüsü ve Nimara Mağarası'nın gizemli atmosferi, Marmaris'in keşfedilmeyi bekleyen doğal hazineleri. Ayrıca, Marmaris Kale ve Müzesi, tarihi İbrahim Ağa Camii ve antik Amos kenti, bölgenin kültürel zenginliğini yansıtan önemli eserler arasında yer alıyor.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5407),
-                            Date = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5406),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6450),
+                            Date = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6449),
                             IsActive = true,
                             IsDeleted = false,
                             MenuId = new Guid("3b4e5f42-2043-4c0a-9a2f-cbce38591ea2"),
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5409),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6450),
                             Note = "Marmaris'in turistik değerleri",
+                            PublishDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6449),
                             SeoAuthor = "Muğla Rehberi",
                             SeoDescription = "Marmaris'te Deniz ve Doğa Turizmi",
-                            SeoTags = "Marmaris, İçmeler, Turunç, marina, tekne turu, Kleopatra Plajı, Muğla",
+                            SeoTags = "Marmaris, İçmeler, Turunç, marina, Muğla",
                             Thumbnail = "postImages/defaultThumbnail.jpg",
                             Title = "Marmaris'te Deniz ve Doğa Turizmi",
                             UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
@@ -187,134 +218,140 @@ namespace ProgrammersBlog.Data.Migrations
                         new
                         {
                             Id = new Guid("0b797ea6-5f12-42a5-b4f6-4f67d5e2a829"),
-                            CommentCount = 0,
-                            Content = "Muğla'nın cennet köşelerinden biri olan Datça Yarımadası, Ege ve Akdeniz'in buluştuğu noktada eşsiz bir doğal güzelliğe sahip. 'Dünyada iki kere insan yaşar; biri Datça'da, biri rüyada' diye tarif eden Can Yücel'i haklı çıkaracak güzellikteki bu yarımada, el değmemiş koyları ve plajlarıyla ünlü. Doğu tarafında Hisarönü Körfezi, batı tarafında Gökova Körfezi ile çevrili olan yarımadada Palamutbükü, Hayıtbükü ve Kızılbük gibi muhteşem koylar bulunuyor. Özellikle Knidos Antik Kenti'nin yanındaki Delikli Koy ve Karaincir Koyu, berrak suları ve sessiz ortamıyla dikkat çekiyor. Datça merkezdeki Kumluk Plajı ve Taşlık Plajı da hem yerel halkın hem de turistlerin vazgeçilmez durakları. Ayrıca Datça, Apollon Tapınağı, Eski Datça'nın taş evleri ve zeytinyağı atölyeleriyle de kültür turizmi açısından zengin bir bölge. Bademli ve verimliliğiyle dünyaca ünlü Datça bademleri, zeytinyağı ve bal gibi yerel lezzetler de bu güzel yarımadanın tadını tamamlıyor.",
+                            CommentCount = 2,
+                            Content = "Antik çağda Halikarnas olarak bilinen Bodrum, dünyanın yedi harikasından biri olan Mausoleum'a ev sahipliği yapmıştır. Günümüzde Bodrum Kalesi içinde yer alan Sualtı Arkeoloji Müzesi, dünyanın en önemli sualtı arkeoloji müzelerinden biridir. Bodrum'un beyaz badanalı, mavi pencereli evleri, dar sokakları ve renkli begonvilleri ile süslü sokakları, kentin karakteristik özelliklerini oluşturmaktadır. Bodrum Antik Tiyatrosu, Myndos Kapısı, Pedasa Antik Kenti ve Zeki Müren Sanat Müzesi gibi kültürel miras alanları, Bodrum'un zengin tarihini yansıtmaktadır. Bu makalede, Bodrum'un tarihi ve kültürel zenginliklerini keşfedecek, ziyaretçilerin görmesi gereken yerleri ve Bodrum'un kültürel yaşamını detaylı olarak inceleyeceğiz.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5418),
-                            Date = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5416),
-                            IsActive = true,
-                            IsDeleted = false,
-                            MenuId = new Guid("7191e8c0-26c6-4703-950e-dc195cc5c3db"),
-                            ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5419),
-                            Note = "Datça'nın doğal güzellikleri",
-                            SeoAuthor = "Muğla Rehberi",
-                            SeoDescription = "Datça Yarımadası'nın Gizli Koyları",
-                            SeoTags = "Datça, Knidos, Palamutbükü, koylar, plajlar, Muğla, Ege",
-                            Thumbnail = "postImages/defaultThumbnail.jpg",
-                            Title = "Datça Yarımadası'nın Gizli Koyları",
-                            UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
-                            ViewsCount = 666
-                        },
-                        new
-                        {
-                            Id = new Guid("77c21f6c-57e4-48d3-85b8-1e5e357d6e53"),
-                            CommentCount = 0,
-                            Content = "Muğla'nın en özel doğa harikalarından biri olan Köyceğiz Gölü ve Dalyan Kanalları, eşsiz ekosistemiyle büyüleyici bir güzelliğe sahip. Tatlı su gölü olan Köyceğiz'den başlayıp, kanallar boyunca Akdeniz'e uzanan bu su yolu, nesli tükenmekte olan Caretta Caretta deniz kaplumbağalarının en önemli üreme alanlarından biri olan İztuzu Plajı'na kadar devam ediyor. Dalyan Kanalları boyunca tekne turlarıyla yapılan gezilerde, sazlıklar arasında ilerlerken binlerce yıllık Kaunos Antik Kenti'nin kaya mezarlarını görebilirsiniz. Ayrıca bölgede bulunan şifalı çamur banyoları ve termal kaynaklar da sağlık turizmi açısından büyük önem taşıyor. Sultan Sazlığı olarak bilinen bölge, yüzlerce kuş türüne ev sahipliği yapan bir kuş cennetidir. Köyceğiz'in zengin bitki örtüsü, endemik türleri ve yaban hayatı, doğa tutkunları için adeta bir cennet. Bölge aynı zamanda, Köyceğiz'in geleneksel pazarı, yerel el sanatları ve Sultaniye Kaplıcaları ile de ziyaretçilerine unutulmaz deneyimler sunuyor.",
-                            CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5431),
-                            Date = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5429),
-                            IsActive = true,
-                            IsDeleted = false,
-                            MenuId = new Guid("dfa25617-9fdb-4f9b-bba9-726404d6d87b"),
-                            ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5432),
-                            Note = "Köyceğiz ve Dalyan'ın doğal güzellikleri",
-                            SeoAuthor = "Muğla Rehberi",
-                            SeoDescription = "Köyceğiz Gölü ve Dalyan Kanalları",
-                            SeoTags = "Köyceğiz, Dalyan, İztuzu, Caretta Caretta, Kaunos, Muğla",
-                            Thumbnail = "postImages/defaultThumbnail.jpg",
-                            Title = "Köyceğiz Gölü ve Dalyan Kanalları",
-                            UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
-                            ViewsCount = 3225
-                        },
-                        new
-                        {
-                            Id = new Guid("1b9e8c64-075f-4a16-8a18-09532fe8d1bd"),
-                            CommentCount = 0,
-                            Content = "Muğla'nın en eski yerleşim yerlerinden biri olan Milas, zengin tarihi dokusu ve kültürel mirası ile dikkat çekiyor. Antik Karya uygarlığının başkenti olan Milas, Helenistik, Roma, Bizans, Selçuklu ve Osmanlı dönemlerine ait birçok tarihi esere ev sahipliği yapıyor. Şehir merkezinde bulunan Hekatomnos Anıt Mezarı ve Müzesi, dünyada türünün en iyi korunmuş örneklerinden biri olarak UNESCO Dünya Mirası Geçici Listesi'nde yer alıyor. Ünlü Beçin Kalesi ve etrafındaki Osmanlı dönemi yerleşimi, İasos Antik Kenti, Labranda Antik Kenti ve Zeus Tapınağı bölgenin önemli tarihi değerleri arasında. Ayrıca Milas, geleneksel Türk mimarisinin en güzel örneklerinden olan konakları ve camileriyle de ünlü. Milas halıları, el dokuması kilimler ve zeytin ürünleri yörenin en önemli kültürel simgeleri arasında. Bafa Gölü Tabiat Parkı da doğa tutkunları için muhteşem manzaralar sunuyor. Göl kenarında bulunan Herakleia Antik Kenti kalıntıları ise doğa ve tarihin buluştuğu eşsiz bir atmosfer yaratıyor.",
-                            CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5441),
-                            Date = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5439),
-                            IsActive = true,
-                            IsDeleted = false,
-                            MenuId = new Guid("bb9c127f-e143-4ad4-93b5-56d3f9f244ec"),
-                            ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5442),
-                            Note = "Milas tarihi",
-                            SeoAuthor = "Muğla Rehberi",
-                            SeoDescription = "Milas'ın Tarihi ve Kültürel Zenginlikleri",
-                            SeoTags = "Milas, Hekatomnos, Beçin Kalesi, İasos, Labranda, Bafa Gölü, Muğla",
-                            Thumbnail = "postImages/defaultThumbnail.jpg",
-                            Title = "Milas'ın Tarihi ve Kültürel Zenginlikleri",
-                            UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
-                            ViewsCount = 9999
-                        },
-                        new
-                        {
-                            Id = new Guid("3e17dec7-f5b9-4cab-8d53-77f89c144e2d"),
-                            CommentCount = 0,
-                            Content = "Muğla il merkezi, Osmanlı ve Cumhuriyet dönemlerinden kalma tarihi yapıları, müzeleri ve geleneksel Türk mimarisini yansıtan evleriyle tam bir açık hava müzesi niteliğindedir. 'Beyaz Kent' olarak da anılan Muğla'nın tarihi dokusunu en iyi yansıtan Saburhane Mahallesi, restore edilmiş geleneksel Muğla evleriyle ünlüdür. Bacaları ve cumbalı evleriyle dikkat çeken bu mahalle, fotoğraf tutkunları için de eşsiz kareler sunuyor. Kent merkezindeki Kurşunlu Cami, Ulu Cami ve Konakaltı Han gibi tarihi yapılar, Osmanlı mimarisinin en güzel örnekleri arasında. Muğla Arkeoloji Müzesi ve Muğla Kent Müzesi, bölgenin zengin tarihini ve kültürel mirasını sergilemektedir. Ayrıca Muğla'nın meşhur perşembe pazarı, yöresel ürünlerin bulunabileceği rengarenk bir alışveriş deneyimi sunuyor. Muğla mutfağı da zeytinyağlı yemekleri, otları, börekleri ve tatlılarıyla Türk mutfağının en zengin örneklerinden. Özellikle çökertme kebabı, sündürme, keşkek ve tarhana çorbası mutlaka tadılması gereken yerel lezzetler arasında yer alıyor.",
-                            CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5450),
-                            Date = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5449),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6456),
+                            Date = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6455),
                             IsActive = true,
                             IsDeleted = false,
                             MenuId = new Guid("7e29265f-d672-42a7-9d84-47b564ebad69"),
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5451),
-                            Note = "Muğla merkez kültürü",
-                            SeoAuthor = "Muğla Rehberi",
-                            SeoDescription = "Muğla Merkez'de Kültür Turizmi",
-                            SeoTags = "Muğla, Saburhane, Osmanlı mimarisi, müzeler, kültür, pazar",
-                            Thumbnail = "postImages/defaultThumbnail.jpg",
-                            Title = "Muğla Merkez'de Kültür Turizmi",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6457),
+                            Note = "Bodrum'un tarihi ve kültürel değerleri",
+                            PublishDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6455),
+                            SeoAuthor = "Muğla Kültür Rehberi",
+                            SeoDescription = "Bodrum'un tarihi ve kültürel zenginlikleri hakkında detaylı rehber",
+                            SeoTags = "Bodrum, Kalesi, Halikarnas, Mausoleum, Müze",
+                            Thumbnail = "postImages/bodrum-kalesi.jpg",
+                            Title = "Bodrum'un Tarihi ve Kültürel Zenginlikleri",
                             UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
-                            ViewsCount = 4818
+                            ViewsCount = 850
                         },
                         new
                         {
-                            Id = new Guid("42eb2c71-47f5-4bec-b31e-e71e11c39c28"),
-                            CommentCount = 0,
-                            Content = "Muğla'nın en büyük ilçelerinden biri olan Seydikemer, el değmemiş doğası, kanyonları ve dağlarıyla doğa tutkunlarının gözdesi. İlçenin en önemli doğal güzelliklerinden biri olan Saklıkent Kanyonu, Türkiye'nin en uzun ikinci kanyonu olup, 18 km uzunluğunda ve yer yer 300 metre derinliğe sahip. Yazın serinlemek isteyenler için ideal bir rotadır. Tlos Antik Kenti'nin de bulunduğu ilçede, Yaka Kanyonu ve Gizlikent Şelalesi de görülmeye değer doğa harikalarından. Pastoral yaşamın hala devam ettiği ilçede, yaylacılık kültürü de oldukça yaygın. Akdağ ve Seki yaylaları, özellikle yaz aylarında serin iklimi ve muhteşem manzarasıyla ziyaretçileri büyülüyor. Seydikemer'in bereketli topraklarında yetiştirilen tarım ürünleri, özellikle narenciye ve çam balı, bölgenin ekonomisinde önemli yer tutuyor. Ayrıca ilçede bulunan Letoon Antik Kenti, UNESCO Dünya Mirası Listesi'nde yer alan önemli bir arkeolojik alandır. Seydikemer'in kırsal köylerinde yaşayan yörük kültürü ve geleneksel el sanatları da görülmeye değer kültürel zenginlikler sunuyor.",
+                            Id = new Guid("77c21f6c-57e4-48d3-85b8-1e5e357d6e53"),
+                            CommentCount = 4,
+                            Content = "Muğla'nın en popüler tatil beldelerinden biri olan Marmaris, muhteşem doğası ve berrak deniziyle her yıl binlerce turisti ağırlamaktadır. İçmeler, Turunç, Selimiye ve Bozburun gibi güzel koylara sahip olan Marmaris, aynı zamanda yat turizmi için de önemli bir merkezdir. Marmaris Marina ve Netsel Marina'da demirlemiş lüks yatlar, bölgenin prestijini yansıtmaktadır. Marmaris'in turkuaz renkli koylarında tekne turu yapmak, Kleopatra Plajı'nda yüzmek ve Cennet Adası'nı keşfetmek, ziyaretçilerin en sevdiği aktiviteler arasındadır. Ayrıca Turgut Şelalesi, Nimara Mağarası ve Marmaris Milli Parkı gibi doğal güzellikler de bölgenin çekiciliğini artırmaktadır. Bu makalede, Marmaris'in en güzel plajlarını, koylarını ve doğal güzelliklerini keşfedecek, ziyaretçilere öneriler sunacağız.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5460),
-                            Date = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5458),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6463),
+                            Date = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6461),
                             IsActive = true,
                             IsDeleted = false,
                             MenuId = new Guid("b33b442b-58b3-400b-a2f5-9231e58a1ff7"),
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5461),
-                            Note = "Seydikemer doğa",
-                            SeoAuthor = "Muğla Rehberi",
-                            SeoDescription = "Seydikemer'in Bakir Doğası ve Kanyonları",
-                            SeoTags = "Seydikemer, Saklıkent Kanyonu, Tlos, yaylalar, doğa, Muğla",
-                            Thumbnail = "postImages/defaultThumbnail.jpg",
-                            Title = "Seydikemer'in Bakir Doğası ve Kanyonları",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6463),
+                            Note = "Marmaris'in doğal güzellikleri ve plajları",
+                            PublishDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6462),
+                            SeoAuthor = "Muğla Doğa Rehberi",
+                            SeoDescription = "Marmaris'in doğal güzellikleri ve plajları hakkında detaylı rehber",
+                            SeoTags = "Marmaris, İçmeler, plajlar, koylar",
+                            Thumbnail = "postImages/marmaris-plaj.jpg",
+                            Title = "Marmaris'in Doğal Güzellikleri ve Plajları",
+                            UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
+                            ViewsCount = 1100
+                        },
+                        new
+                        {
+                            Id = new Guid("1b9e8c64-075f-4a16-8a18-09532fe8d1bd"),
+                            CommentCount = 6,
+                            Content = "Muğla'nın incisi Fethiye, Türkiye'nin en güzel koylarına ve plajlarına ev sahipliği yapmaktadır. Ölüdeniz'in turkuaz suları ve beyaz kumsalı, dünyaca ünlü Kelebekler Vadisi, saklı cennet Kabak Koyu ve tekne turlarıyla keşfedebileceğiniz 12 Adalar, her yıl binlerce turisti ağırlamaktadır. Fethiye'nin berrak sularında yüzmek, Belcekız Plajı'nda güneşlenmek ve Gemiler Adası'nı keşfetmek, unutulmaz bir tatil deneyimi yaşatmaktadır. Bu makalede, Fethiye'nin en güzel koylarını ve plajlarını tanıtacak, ziyaretçilere öneriler sunacağız.",
+                            CreatedByName = "InitialCreate",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6469),
+                            Date = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6468),
+                            IsActive = true,
+                            IsDeleted = false,
+                            MenuId = new Guid("97b6d8c7-6a07-4ef1-8764-d71ab72f812a"),
+                            ModifiedByName = "InitialCreate",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6470),
+                            Note = "Fethiye'nin plajları ve koyları",
+                            PublishDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6468),
+                            SeoAuthor = "Muğla Plaj Rehberi",
+                            SeoDescription = "Fethiye'nin eşsiz koyları ve plajları hakkında detaylı rehber",
+                            SeoTags = "Fethiye, Ölüdeniz, plajlar, koylar",
+                            Thumbnail = "postImages/fethiye-oludeniz.jpg",
+                            Title = "Fethiye'nin Eşsiz Koyları ve Plajları",
+                            UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
+                            ViewsCount = 1300
+                        },
+                        new
+                        {
+                            Id = new Guid("3e17dec7-f5b9-4cab-8d53-77f89c144e2d"),
+                            CommentCount = 1,
+                            Content = "Muğla il merkezi, Osmanlı ve Cumhuriyet dönemlerinden kalma tarihi yapıları, müzeleri ve geleneksel Türk mimarisini yansıtan evleriyle tam bir açık hava müzesi niteliğindedir. 'Beyaz Kent' olarak da anılan Muğla'nın tarihi dokusunu en iyi yansıtan Saburhane Mahallesi, restore edilmiş geleneksel Muğla evleriyle ünlüdür. Bacaları ve cumbalı evleriyle dikkat çeken bu mahalle, fotoğraf tutkunları için de eşsiz kareler sunmaktadır. Kent merkezindeki Kurşunlu Cami, Ulu Cami ve Konakaltı Han gibi tarihi yapılar, Osmanlı mimarisinin en güzel örnekleri arasındadır. Bu makalede, Muğla merkezdeki tarihi ve kültürel değerleri tanıtacak, ziyaretçilere öneriler sunacağız.",
+                            CreatedByName = "InitialCreate",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6476),
+                            Date = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6474),
+                            IsActive = true,
+                            IsDeleted = false,
+                            MenuId = new Guid("bb9c127f-e143-4ad4-93b5-56d3f9f244ec"),
+                            ModifiedByName = "InitialCreate",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6476),
+                            Note = "Muğla merkez kültür ve tarih rehberi",
+                            PublishDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6475),
+                            SeoAuthor = "Muğla Kültür Rehberi",
+                            SeoDescription = "Muğla merkez'in tarihi ve kültürel değerleri hakkında detaylı rehber",
+                            SeoTags = "Muğla, Saburhane, kültür, tarih",
+                            Thumbnail = "postImages/mugla-merkez.jpg",
+                            Title = "Muğla Merkez'in Tarihi ve Kültürel Değerleri",
                             UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
                             ViewsCount = 750
                         },
                         new
                         {
-                            Id = new Guid("f8dfba8a-90e6-4e1b-bd0c-2e22a8c77423"),
+                            Id = new Guid("42eb2c71-47f5-4bec-b31e-e71e11c39c28"),
                             CommentCount = 0,
-                            Content = "Muğla'nın saklı cenneti Ula ve dünyaca ünlü sakin şehir (cittaslow) Akyaka, modern dünyanın hızından uzaklaşmak isteyenler için ideal destinasyonlar. Akyaka, 2011 yılında Türkiye'nin üçüncü sakin şehri olarak ilan edilmiş ve bu unvanı geleneksel mimarisi, doğal güzellikleri ve sürdürülebilir yaşam anlayışı ile hak etmiştir. Bölgenin en karakteristik özelliği olan 'Muğla-Ula evleri' tarzındaki mimari, taş ve ahşabın uyumlu birleşimiyle dikkat çekiyor. Akyaka'nın uzun kumsalı ve berrak denizi, plaj keyfi için idealken, Kadın Azmağı olarak bilinen tatlı su kaynağı etrafındaki restoranlar da lezzetli deniz ürünleri sunuyor. Akyaka aynı zamanda, kiteboard sporcuları için ideal rüzgar koşulları sayesinde bir cennet. Gökova Körfezi'nin eşsiz manzarasına sahip olan bölge, tekne turları ve doğa yürüyüşleri için de mükemmel imkanlar sunuyor. Ula'nın yeşil yaylaları, Gökova'nın muhteşem koyu ve Akçapınar'ın sakin atmosferi, bölgenin diğer güzellikleri arasında. Ayrıca yöresel mutfağın özel tatları, özellikle çam balı, zeytinyağlı yemekler ve taze deniz ürünleri, gastronomi tutkunları için unutulmaz lezzetler vadediyor.",
+                            Content = "Muğla Rehberi, Türkiye'nin en güzel illerinden biri olan Muğla'nın doğal güzelliklerini, tarihi ve kültürel zenginliklerini tanıtmak amacıyla kurulmuş bir platformdur. Amacımız, Muğla'nın eşsiz koylarını, plajlarını, antik kentlerini, lezzetli mutfağını ve zengin kültürünü hem yerli hem de yabancı turistlere tanıtmak ve bölgeye gelen ziyaretçilere rehberlik etmektir. Ekibimiz, Muğla'yı karış karış gezen, bölgeyi iyi tanıyan ve seven uzmanlardan oluşmaktadır. Sitemizde Bodrum, Marmaris, Fethiye, Datça, Köyceğiz gibi popüler tatil beldelerinin yanı sıra, Muğla'nın daha az bilinen güzelliklerini de keşfedebilirsiniz. Sizlere en doğru ve güncel bilgileri sunmak için sürekli olarak içeriğimizi güncelliyor ve genişletiyoruz. Muğla Rehberi olarak, sizlerin Muğla'da unutulmaz bir tatil geçirmeniz için elimizden gelen her şeyi yapmaya hazırız.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5469),
-                            Date = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5468),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6483),
+                            Date = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6482),
                             IsActive = true,
                             IsDeleted = false,
-                            MenuId = new Guid("97b6d8c7-6a07-4ef1-8764-d71ab72f812a"),
+                            MenuId = new Guid("3b466d57-abb5-4624-b922-1b2fba6a62c3"),
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5470),
-                            Note = "Ula ve Akyaka",
-                            SeoAuthor = "Muğla Rehberi",
-                            SeoDescription = "Ula ve Akyaka'da Sakin Şehir Deneyimi",
-                            SeoTags = "Akyaka, Ula, cittaslow, sakin şehir, Gökova, Kadın Azmağı, Muğla",
-                            Thumbnail = "postImages/defaultThumbnail.jpg",
-                            Title = "Ula ve Akyaka'da Sakin Şehir Deneyimi",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6484),
+                            Note = "Hakkımızda sayfası",
+                            PublishDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6482),
+                            SeoAuthor = "Muğla Rehberi Ekibi",
+                            SeoDescription = "Muğla Rehberi hakkında bilgiler ve misyonumuz",
+                            SeoTags = "Muğla Rehberi, hakkımızda, misyon, vizyon, Muğla tanıtım",
+                            Thumbnail = "postImages/mugla-rehberi-logo.jpg",
+                            Title = "Muğla Rehberi Hakkında",
                             UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
-                            ViewsCount = 14900
+                            ViewsCount = 500
+                        },
+                        new
+                        {
+                            Id = new Guid("f8dfba8a-90e6-4e1b-bd0c-2e22a8c77423"),
+                            CommentCount = 0,
+                            Content = "Muğla Rehberi ekibi olarak, sorularınız, önerileriniz ve işbirliği talepleriniz için her zaman hizmetinizdeyiz. Aşağıdaki iletişim kanallarından bize ulaşabilirsiniz:\n\n**E-posta:** info@muglarehberi.com\n\n**Telefon:** +90 252 123 45 67\n\n**Adres:** Kavaklıdere Mah. Atatürk Cad. No:123, 48000 Muğla Merkez\n\n**Sosyal Medya Hesaplarımız:**\n- Instagram: @muglarehberi\n- Facebook: Muğla Rehberi\n- Twitter: @muglarehberi\n\nMuğla'da gezilecek yerler, konaklama, ulaşım ve diğer konularda bilgi almak için bizimle iletişime geçebilirsiniz. Ayrıca Muğla ile ilgili deneyimlerinizi ve fotoğraflarınızı bizimle paylaşmak isterseniz, sosyal medya hesaplarımızda bizi etiketleyebilir veya e-posta adresimize gönderebilirsiniz. Sizden gelecek her türlü geri bildirim, sitemizi ve hizmetlerimizi geliştirmemize yardımcı olacaktır.",
+                            CreatedByName = "InitialCreate",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6492),
+                            Date = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6490),
+                            IsActive = true,
+                            IsDeleted = false,
+                            MenuId = new Guid("a1f0d5a1-5c2d-4c1f-b71d-f2bc9c31f9eb"),
+                            ModifiedByName = "InitialCreate",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6492),
+                            Note = "İletişim sayfası",
+                            PublishDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6491),
+                            SeoAuthor = "Muğla Rehberi Ekibi",
+                            SeoDescription = "Muğla Rehberi iletişim bilgileri ve iletişim formu",
+                            SeoTags = "iletişim, Muğla Rehberi, telefon",
+                            Thumbnail = "postImages/iletisim.jpg",
+                            Title = "Bizimle İletişime Geçin",
+                            UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
+                            ViewsCount = 400
                         },
                         new
                         {
@@ -322,14 +359,15 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 0,
                             Content = "Muğla'nın iç kesimlerinde yer alan Kavaklıdere ve Yatağan ilçeleri, el değmemiş doğası ve zengin tarihi mirası ile keşfedilmeyi bekleyen gizli hazinelerdir. Kavaklıdere, ismini verimli topraklarında yetişen kavak ağaçlarından almış olup, bağcılık ve şarapçılık kültürü ile ünlüdür. İlçenin dağlık alanlarında bulunan Menteşe Yaylası, serin iklimi ve muhteşem manzarasıyla yazın bunaltan sıcaklardan kaçmak isteyenler için ideal bir sığınak. Yatağan ise antik dönemden kalma Stratonikeia Antik Kenti ile ünlüdür. 'Mermer Şehir' olarak da bilinen bu antik kent, Roma, Helenistik ve Bizans dönemlerine ait kalıntılarıyla tarih meraklıları için vazgeçilmez bir durak. Yatağan aynı zamanda geleneksel Türk kılıcı olan 'yatağan'ın üretim merkezi olarak da tarihe geçmiştir. Bölgede yer alan Bozüyük ve Turgut gibi eski Türk yerleşimleri, yüzlerce yıllık çınar ağaçları, tarihi camileri ve geleneksel Türk köy yaşamını yansıtan dokusuyla otantik bir atmosfer sunuyor. Yerel halk tarafından hala yaşatılan geleneksel el sanatları, özellikle halıcılık ve dokumacılık, bölgenin kültürel zenginliklerini tamamlıyor.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5479),
-                            Date = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5477),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6498),
+                            Date = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6497),
                             IsActive = true,
                             IsDeleted = false,
-                            MenuId = new Guid("3b466d57-abb5-4624-b922-1b2fba6a62c3"),
+                            MenuId = new Guid("a1f0d5a1-5c2d-4c1f-b71d-f2bc9c31f9eb"),
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(5480),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6499),
                             Note = "Kavaklıdere ve Yatağan",
+                            PublishDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6497),
                             SeoAuthor = "Muğla Rehberi",
                             SeoDescription = "Kavaklıdere ve Yatağan'ın Doğal ve Tarihi Zenginlikleri",
                             SeoTags = "Kavaklıdere, Yatağan, Stratonikeia, bağcılık, yaylalar, tarih, Muğla",
@@ -337,6 +375,75 @@ namespace ProgrammersBlog.Data.Migrations
                             Title = "Kavaklıdere ve Yatağan'ın Doğal ve Tarihi Zenginlikleri",
                             UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
                             ViewsCount = 26777
+                        },
+                        new
+                        {
+                            Id = new Guid("a25d2b14-7f5c-4d2f-9c98-b3c6e8b3a2d1"),
+                            CommentCount = 8,
+                            Content = "Muğla'nın incisi Fethiye, Türkiye'nin en güzel koylarına ve plajlarına ev sahipliği yapıyor. Ölüdeniz'in turkuaz suları ve beyaz kumsalı, dünyaca ünlü Kelebekler Vadisi, saklı cennet Kabak Koyu ve tekne turlarıyla keşfedebileceğiniz 12 Adalar, her yıl binlerce turisti ağırlıyor.",
+                            CreatedByName = "InitialCreate",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6504),
+                            Date = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6503),
+                            IsActive = true,
+                            IsDeleted = false,
+                            MenuId = new Guid("b1fbe4a5-dc1d-47f7-8b95-8c2c6c0c38f7"),
+                            ModifiedByName = "InitialCreate",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6505),
+                            Note = "Fethiye plajları makalesi",
+                            PublishDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6504),
+                            SeoAuthor = "Muğla Gezi Rehberi",
+                            SeoDescription = "Fethiye'nin muhteşem koyları ve plajları hakkında detaylı rehber",
+                            SeoTags = "Fethiye, Ölüdeniz, Kelebekler Vadisi, Kabak Koyu, plajlar",
+                            Thumbnail = "postImages/fethiye-plajlar.jpg",
+                            Title = "Fethiye'nin Eşsiz Koyları ve Plajları",
+                            UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
+                            ViewsCount = 15420
+                        },
+                        new
+                        {
+                            Id = new Guid("1c20d2d7-27d1-4d25-90b9-bba97e5ea56f"),
+                            CommentCount = 5,
+                            Content = "Bodrum Kalesi, kentin simgesi olan muhteşem bir Ortaçağ yapısı. Sualtı Arkeoloji Müzesi olarak hizmet veren kale, dünyanın en önemli sualtı arkeolojisi merkezlerinden biri. Antik batıklardan çıkarılan eserler burada sergileniyor.",
+                            CreatedByName = "InitialCreate",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6511),
+                            Date = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6509),
+                            IsActive = true,
+                            IsDeleted = false,
+                            MenuId = new Guid("7e29265f-d672-42a7-9d84-47b564ebad69"),
+                            ModifiedByName = "InitialCreate",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6511),
+                            Note = "Bodrum Kalesi tanıtım makalesi",
+                            PublishDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6510),
+                            SeoAuthor = "Muğla Gezi Rehberi",
+                            SeoDescription = "Bodrum Kalesi ve Sualtı Arkeoloji Müzesi detaylı gezi rehberi",
+                            SeoTags = "Bodrum Kalesi, Sualtı Müzesi, tarih, arkeoloji",
+                            Thumbnail = "postImages/bodrum-kalesi.jpg",
+                            Title = "Bodrum'un Tarihi Kalesi ve Sualtı Müzesi",
+                            UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
+                            ViewsCount = 12350
+                        },
+                        new
+                        {
+                            Id = new Guid("3d8533eb-3c9e-4d29-97e6-7c4e7244e4f8"),
+                            CommentCount = 12,
+                            Content = "Marmaris'in kristal berraklığındaki koylarını tekne turuyla keşfedin. Cennet Adası, Fosforlu Mağara, Akvaryum Koyu ve Kızkumu Plajı gibi eşsiz doğal güzelliklere sahip noktalara yapılan günlük tekne turları unutulmaz anılar bırakıyor.",
+                            CreatedByName = "InitialCreate",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6517),
+                            Date = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6515),
+                            IsActive = true,
+                            IsDeleted = false,
+                            MenuId = new Guid("a1f0d5a1-5c2d-4c1f-b71d-f2bc9c31f9eb"),
+                            ModifiedByName = "InitialCreate",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6517),
+                            Note = "Marmaris tekne turları makalesi",
+                            PublishDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(6516),
+                            SeoAuthor = "Muğla Gezi Rehberi",
+                            SeoDescription = "Marmaris tekne turları ve popüler rota önerileri",
+                            SeoTags = "Marmaris, tekne turu, Cennet Adası, Kızkumu",
+                            Thumbnail = "postImages/marmaris-tekne.jpg",
+                            Title = "Marmaris'te Tekne Turu Rotaları",
+                            UserId = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
+                            ViewsCount = 8940
                         });
                 });
 
@@ -392,12 +499,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = new Guid("b1fbe4a5-dc1d-47f7-8b95-8c2c6c0c38f7"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6891),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7276),
                             Description = "C# Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6892),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7276),
                             Name = "C#",
                             Note = "C# Blog Kategorisi"
                         },
@@ -405,12 +512,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = new Guid("c73c3b3b-5f56-48cc-9b8b-b3f78d4a1a5d"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6898),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7280),
                             Description = "C++ Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6899),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7281),
                             Name = "C++",
                             Note = "C++ Blog Kategorisi"
                         },
@@ -418,12 +525,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = new Guid("3b4e5f42-2043-4c0a-9a2f-cbce38591ea2"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6908),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7283),
                             Description = "JavaScript Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6909),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7284),
                             Name = "JavaScript",
                             Note = "JavaScript Blog Kategorisi"
                         },
@@ -431,12 +538,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = new Guid("7191e8c0-26c6-4703-950e-dc195cc5c3db"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6913),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7287),
                             Description = "Typescript Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6914),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7287),
                             Name = "Typescript",
                             Note = "Typescript Blog Kategorisi"
                         },
@@ -444,12 +551,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = new Guid("dfa25617-9fdb-4f9b-bba9-726404d6d87b"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6919),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7291),
                             Description = "Java Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6920),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7291),
                             Name = "Java",
                             Note = "Java Blog Kategorisi"
                         },
@@ -457,12 +564,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = new Guid("bb9c127f-e143-4ad4-93b5-56d3f9f244ec"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6925),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7294),
                             Description = "Python Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6926),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7294),
                             Name = "Python",
                             Note = "Python Blog Kategorisi"
                         },
@@ -470,12 +577,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = new Guid("7e29265f-d672-42a7-9d84-47b564ebad69"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6930),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7297),
                             Description = "Php Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6931),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7298),
                             Name = "Php",
                             Note = "Php Blog Kategorisi"
                         },
@@ -483,12 +590,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = new Guid("b33b442b-58b3-400b-a2f5-9231e58a1ff7"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6936),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7300),
                             Description = "Kotlin Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6936),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7301),
                             Name = "Kotlin",
                             Note = "Kotlin Blog Kategorisi"
                         },
@@ -496,12 +603,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = new Guid("97b6d8c7-6a07-4ef1-8764-d71ab72f812a"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6941),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7303),
                             Description = "Swift Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6942),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7304),
                             Name = "Swift",
                             Note = "Swift Blog Kategorisi"
                         },
@@ -509,12 +616,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = new Guid("3b466d57-abb5-4624-b922-1b2fba6a62c3"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6946),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7306),
                             Description = "Ruby Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(6947),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(7307),
                             Name = "Ruby",
                             Note = "Ruby Blog Kategorisi"
                         });
@@ -585,12 +692,12 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = new Guid("253e472e-21ac-4e18-91d7-49b599a4f9b9"),
                             ArticleId = new Guid("c20558d8-b0fd-4142-a527-0da9910deefc"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1068),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9860),
                             IsActive = true,
                             IsDeleted = false,
                             LikeCount = 0,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1070),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9861),
                             Note = "C# Makale Yorumu",
                             Text = "Lorem Ipsum pasajlarının birçok çeşitlemesi vardır. Ancak bunların büyük bir çoğunluğu mizah katılarak veya rastgele sözcükler eklenerek değiştirilmişlerdir. Eğer bir Lorem Ipsum pasajı kullanacaksanız, metin aralarına utandırıcı sözcükler gizlenmediğinden emin olmanız gerekir. İnternet'teki tüm Lorem Ipsum üreteçleri önceden belirlenmiş metin bloklarını yineler. Bu da, bu üreteci İnternet üzerindeki gerçek Lorem Ipsum üreteci yapar. Bu üreteç, 200'den fazla Latince sözcük ve onlara ait cümle yapılarını içeren bir sözlük kullanır. Bu nedenle, üretilen Lorem Ipsum metinleri yinelemelerden, mizahtan ve karakteristik olmayan sözcüklerden uzaktır."
                         },
@@ -599,12 +706,12 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = new Guid("1a099dbb-af9f-4a8a-b67a-96c8d957a7b2"),
                             ArticleId = new Guid("87b5d57f-1e2b-4b58-b9e6-2718d5af5924"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1076),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9865),
                             IsActive = true,
                             IsDeleted = false,
                             LikeCount = 0,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1077),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9865),
                             Note = "C++ Makale Yorumu",
                             Text = "Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker"
                         },
@@ -613,12 +720,12 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = new Guid("f0756c5c-6d1d-4683-9d3d-7ddbbc561f42"),
                             ArticleId = new Guid("2fe2d2d5-79c9-4fed-a236-74426d84d4b5"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1084),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9869),
                             IsActive = true,
                             IsDeleted = false,
                             LikeCount = 0,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1085),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9870),
                             Note = "JavaScript Makale Yorumu",
                             Text = "Ang Lorem Ipsum ay ginagamit na modelo ng industriya ng pagpriprint at pagtytypeset. Ang Lorem Ipsum ang naging regular na modelo simula pa noong 1500s, noong may isang di kilalang manlilimbag and kumuha ng galley ng type at ginulo ang pagkaka-ayos nito upang makagawa ng libro ng mga type specimen. Nalagpasan nito hindi lang limang siglo, kundi nalagpasan din nito ang paglaganap ng electronic typesetting at nanatiling parehas. Sumikat ito noong 1960s kasabay ng pag labas ng Letraset sheets na mayroong mga talata ng Lorem Ipsum, at kamakailan lang sa mga desktop publishing software tulad ng Aldus Pagemaker ginamit ang mga bersyon ng Lorem Ipsum."
                         },
@@ -627,12 +734,12 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = new Guid("d86f1fb4-8c1e-45c8-8677-46ee89af8db3"),
                             ArticleId = new Guid("0b797ea6-5f12-42a5-b4f6-4f67d5e2a829"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1092),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9874),
                             IsActive = true,
                             IsDeleted = false,
                             LikeCount = 0,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1093),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9874),
                             Note = "Typescript Makale Yorumu",
                             Text = "Lorem Ipsum er rett og slett dummytekst fra og for trykkeindustrien. Lorem Ipsum har vært bransjens standard for dummytekst helt siden 1500-tallet, da en ukjent boktrykker stokket en mengde bokstaver for å lage et prøveeksemplar av en bok. Lorem Ipsum har tålt tidens tann usedvanlig godt, og har i tillegg til å bestå gjennom fem århundrer også tålt spranget over til elektronisk typografi uten vesentlige endringer. Lorem Ipsum ble gjort allment kjent i 1960-årene ved lanseringen av Letraset-ark med avsnitt fra Lorem Ipsum, og senere med sideombrekkingsprogrammet Aldus PageMaker som tok i bruk nettopp Lorem Ipsum for dummytekst."
                         },
@@ -641,12 +748,12 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = new Guid("3f8b6590-12f5-4d2a-b97d-57e75f0a2a75"),
                             ArticleId = new Guid("77c21f6c-57e4-48d3-85b8-1e5e357d6e53"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1100),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9879),
                             IsActive = true,
                             IsDeleted = false,
                             LikeCount = 0,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1101),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9880),
                             Note = "Java Makale Yorumu",
                             Text = "Lorem Ipsum este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard a industriei încă din secolul al XVI-lea, când un tipograf anonim a luat o planşetă de litere şi le-a amestecat pentru a crea o carte demonstrativă pentru literele respective. Nu doar că a supravieţuit timp de cinci secole, dar şi a facut saltul în tipografia electronică practic neschimbată. A fost popularizată în anii '60 odată cu ieşirea colilor Letraset care conţineau pasaje Lorem Ipsum, iar mai recent, prin programele de publicare pentru calculator, ca Aldus PageMaker care includeau versiuni de Lorem Ipsum."
                         },
@@ -655,12 +762,12 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = new Guid("7c4c7d74-5187-4a7d-9a96-bd7a321e3340"),
                             ArticleId = new Guid("1b9e8c64-075f-4a16-8a18-09532fe8d1bd"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1108),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9883),
                             IsActive = true,
                             IsDeleted = false,
                             LikeCount = 0,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1109),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9884),
                             Note = "Python Makale Yorumu",
                             Text = "Lorem Ipsum je jednostavno probni tekst koji se koristi u tiskarskoj i slovoslagarskoj industriji. Lorem Ipsum postoji kao industrijski standard još od 16-og stoljeća, kada je nepoznati tiskar uzeo tiskarsku galiju slova i posložio ih da bi napravio knjigu s uzorkom tiska. Taj je tekst ne samo preživio pet stoljeća, već se i vinuo u svijet elektronskog slovoslagarstva, ostajući u suštini nepromijenjen. Postao je popularan tijekom 1960-ih s pojavom Letraset listova s odlomcima Lorem Ipsum-a, a u skorije vrijeme sa software-om za stolno izdavaštvo kao što je Aldus PageMaker koji također sadrži varijante Lorem Ipsum-a."
                         },
@@ -669,12 +776,12 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = new Guid("e257f068-5e76-4587-8e99-a9b58bea2b5f"),
                             ArticleId = new Guid("3e17dec7-f5b9-4cab-8d53-77f89c144e2d"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1115),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9888),
                             IsActive = true,
                             IsDeleted = false,
                             LikeCount = 0,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1116),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9889),
                             Note = "Php Makale Yorumu",
                             Text = "Lorem Ipsum – tas ir teksta salikums, kuru izmanto poligrāfijā un maketēšanas darbos. Lorem Ipsum ir kļuvis par vispārpieņemtu teksta aizvietotāju kopš 16. gadsimta sākuma. Tajā laikā kāds nezināms iespiedējs izveidoja teksta fragmentu, lai nodrukātu grāmatu ar burtu paraugiem. Tas ir ne tikai pārdzīvojis piecus gadsimtus, bet bez ievērojamām izmaiņām saglabājies arī mūsdienās, pārejot uz datorizētu teksta apstrādi. Tā popularizēšanai 60-tajos gados kalpoja Letraset burtu paraugu publicēšana ar Lorem Ipsum teksta fragmentiem un, nesenā pagātnē, tādas maketēšanas programmas kā Aldus PageMaker, kuras šablonu paraugos ir izmantots Lorem Ipsum teksts."
                         },
@@ -683,12 +790,12 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = new Guid("a4edb8d2-6c4f-4186-b4f6-0bf664011d5e"),
                             ArticleId = new Guid("42eb2c71-47f5-4bec-b31e-e71e11c39c28"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1122),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9893),
                             IsActive = true,
                             IsDeleted = false,
                             LikeCount = 0,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1123),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9893),
                             Note = "Kotlin Makale Yorumu",
                             Text = "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
                         },
@@ -697,12 +804,12 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = new Guid("fd7e2485-5ca0-4a3c-9b0b-5f62ddb7c3f9"),
                             ArticleId = new Guid("f8dfba8a-90e6-4e1b-bd0c-2e22a8c77423"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1129),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9897),
                             IsActive = true,
                             IsDeleted = false,
                             LikeCount = 0,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1130),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9898),
                             Note = "Swift Makale Yorumu",
                             Text = "ong established fact that a reader will be distracted by the readable conten"
                         },
@@ -711,12 +818,12 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = new Guid("9a5cef5c-8276-4c8e-933e-95c5f29cdab1"),
                             ArticleId = new Guid("ad45a8fc-3c20-4c37-8db1-e45c1fb01a57"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1139),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9901),
                             IsActive = true,
                             IsDeleted = false,
                             LikeCount = 0,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 129, DateTimeKind.Local).AddTicks(1140),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(9902),
                             Note = "Ruby Makale Yorumu",
                             Text = "Lorem Ipsum，ong established fact that a reader will be distracted by the readable conten"
                         });
@@ -737,7 +844,7 @@ namespace ProgrammersBlog.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Callsite")
-                        .HasColumnType("NVARCHAR(MAX)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ClientIp")
                         .IsRequired()
@@ -748,7 +855,7 @@ namespace ProgrammersBlog.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Exception")
-                        .HasColumnType("NVARCHAR(MAX)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ExceptionType")
                         .IsRequired()
@@ -773,7 +880,7 @@ namespace ProgrammersBlog.Data.Migrations
 
                     b.Property<string>("Message")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR(MAX)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RequestBody")
                         .IsRequired()
@@ -884,13 +991,13 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = new Guid("b1fbe4a5-dc1d-47f7-8b95-8c2c6c0c38f7"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9212),
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8828),
                             Description = "Ana Sayfa Menüsü",
-                            Icon = "bi bi-house",
+                            Icon = "bi bi-house-door-fill",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9213),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8829),
                             Name = "Ana Sayfa",
                             Note = "Ana Sayfa Menüsü",
                             Order = 1,
@@ -900,167 +1007,167 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = new Guid("c73c3b3b-5f56-48cc-9b8b-b3f78d4a1a5d"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9220),
-                            Description = "Gezi Rehberi Menüsü",
-                            Icon = "bi bi-map",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8833),
+                            Description = "Tüm makaleler",
+                            Icon = "bi bi-journal-text",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9221),
-                            Name = "Gezi Rehberi",
-                            Note = "Gezi Rehberi Menüsü",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8833),
+                            Name = "Makaleler",
+                            Note = "Makaleler Ana Menüsü",
                             Order = 2,
-                            Url = "#"
-                        },
-                        new
-                        {
-                            Id = new Guid("3b4e5f42-2043-4c0a-9a2f-cbce38591ea2"),
-                            CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9228),
-                            Description = "Plajlar Alt Menüsü",
-                            Icon = "bi bi-water",
-                            IsActive = true,
-                            IsDeleted = false,
-                            ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9229),
-                            Name = "Plajlar",
-                            Note = "Plajlar Alt Menüsü",
-                            Order = 1,
-                            ParentId = new Guid("c73c3b3b-5f56-48cc-9b8b-b3f78d4a1a5d"),
-                            Url = "/Plajlar"
-                        },
-                        new
-                        {
-                            Id = new Guid("7191e8c0-26c6-4703-950e-dc195cc5c3db"),
-                            CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9236),
-                            Description = "Tarihi Yerler Alt Menüsü",
-                            Icon = "bi bi-building-fill",
-                            IsActive = true,
-                            IsDeleted = false,
-                            ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9237),
-                            Name = "Tarihi Yerler",
-                            Note = "Tarihi Yerler Alt Menüsü",
-                            Order = 2,
-                            ParentId = new Guid("c73c3b3b-5f56-48cc-9b8b-b3f78d4a1a5d"),
-                            Url = "/TarihiYerler"
-                        },
-                        new
-                        {
-                            Id = new Guid("dfa25617-9fdb-4f9b-bba9-726404d6d87b"),
-                            CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9243),
-                            Description = "Doğa Yürüyüşleri Alt Menüsü",
-                            Icon = "bi bi-tree-fill",
-                            IsActive = true,
-                            IsDeleted = false,
-                            ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9244),
-                            Name = "Doğa Yürüyüşleri",
-                            Note = "Doğa Yürüyüşleri Alt Menüsü",
-                            Order = 3,
-                            ParentId = new Guid("c73c3b3b-5f56-48cc-9b8b-b3f78d4a1a5d"),
-                            Url = "/DogaYuruyusleri"
+                            Url = "/makaleler"
                         },
                         new
                         {
                             Id = new Guid("bb9c127f-e143-4ad4-93b5-56d3f9f244ec"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9249),
-                            Description = "Muğla ve İlçeleri Menüsü",
-                            Icon = "bi bi-geo-alt",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8837),
+                            Description = "Muğla hakkında bilgiler",
+                            Icon = "bi bi-geo-alt-fill",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9250),
-                            Name = "Muğla ve İlçeleri",
-                            Note = "Muğla ve İlçeleri Menüsü",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8837),
+                            Name = "Muğla",
+                            Note = "Muğla Ana Menüsü",
                             Order = 3,
-                            Url = "#"
-                        },
-                        new
-                        {
-                            Id = new Guid("7e29265f-d672-42a7-9d84-47b564ebad69"),
-                            CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9256),
-                            Description = "Bodrum Alt Menüsü",
-                            Icon = "bi bi-geo-fill",
-                            IsActive = true,
-                            IsDeleted = false,
-                            ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9257),
-                            Name = "Bodrum",
-                            Note = "Bodrum Alt Menüsü",
-                            Order = 1,
-                            ParentId = new Guid("bb9c127f-e143-4ad4-93b5-56d3f9f244ec"),
-                            Url = "/Home/Index?menuId=7e29265f-d672-42a7-9d84-47b564ebad69"
-                        },
-                        new
-                        {
-                            Id = new Guid("b33b442b-58b3-400b-a2f5-9231e58a1ff7"),
-                            CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9263),
-                            Description = "Marmaris Alt Menüsü",
-                            Icon = "bi bi-pin-map",
-                            IsActive = true,
-                            IsDeleted = false,
-                            ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9264),
-                            Name = "Marmaris",
-                            Note = "Marmaris Alt Menüsü",
-                            Order = 2,
-                            ParentId = new Guid("bb9c127f-e143-4ad4-93b5-56d3f9f244ec"),
-                            Url = "/Home/Index?menuId=b33b442b-58b3-400b-a2f5-9231e58a1ff7"
-                        },
-                        new
-                        {
-                            Id = new Guid("97b6d8c7-6a07-4ef1-8764-d71ab72f812a"),
-                            CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9270),
-                            Description = "Fethiye Alt Menüsü",
-                            Icon = "bi bi-compass",
-                            IsActive = true,
-                            IsDeleted = false,
-                            ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9271),
-                            Name = "Fethiye",
-                            Note = "Fethiye Alt Menüsü",
-                            Order = 3,
-                            ParentId = new Guid("bb9c127f-e143-4ad4-93b5-56d3f9f244ec"),
-                            Url = "/Home/Index?menuId=97b6d8c7-6a07-4ef1-8764-d71ab72f812a"
+                            Url = "/mugla"
                         },
                         new
                         {
                             Id = new Guid("3b466d57-abb5-4624-b922-1b2fba6a62c3"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9276),
-                            Description = "Hakkımızda Menüsü",
-                            Icon = "bi bi-info-circle",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8841),
+                            Description = "Hakkımızda sayfası",
+                            Icon = "bi bi-info-circle-fill",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9277),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8841),
                             Name = "Hakkımızda",
                             Note = "Hakkımızda Menüsü",
                             Order = 4,
-                            Url = "/Home/About"
+                            Url = "/hakkimizda"
                         },
                         new
                         {
                             Id = new Guid("a1f0d5a1-5c2d-4c1f-b71d-f2bc9c31f9eb"),
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9283),
-                            Description = "İletişim Menüsü",
-                            Icon = "bi bi-telephone",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8844),
+                            Description = "İletişim sayfası",
+                            Icon = "bi bi-telephone-fill",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2025, 5, 14, 22, 17, 45, 128, DateTimeKind.Local).AddTicks(9284),
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8845),
                             Name = "İletişim",
                             Note = "İletişim Menüsü",
                             Order = 5,
-                            Url = "/Home/Contact"
+                            Url = "/iletisim"
+                        },
+                        new
+                        {
+                            Id = new Guid("7191e8c0-26c6-4703-950e-dc195cc5c3db"),
+                            CreatedByName = "InitialCreate",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8850),
+                            Description = "Gezi rehberi makaleleri",
+                            Icon = "bi bi-map-fill",
+                            IsActive = true,
+                            IsDeleted = false,
+                            ModifiedByName = "InitialCreate",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8850),
+                            Name = "Gezi Rehberi",
+                            Note = "Gezi Rehberi Alt Menüsü",
+                            Order = 1,
+                            ParentId = new Guid("c73c3b3b-5f56-48cc-9b8b-b3f78d4a1a5d"),
+                            Url = "/makaleler/gezi-rehberi"
+                        },
+                        new
+                        {
+                            Id = new Guid("3b4e5f42-2043-4c0a-9a2f-cbce38591ea2"),
+                            CreatedByName = "InitialCreate",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8854),
+                            Description = "Tarih ve kültür makaleleri",
+                            Icon = "bi bi-bank",
+                            IsActive = true,
+                            IsDeleted = false,
+                            ModifiedByName = "InitialCreate",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8855),
+                            Name = "Tarih ve Kültür",
+                            Note = "Tarih ve Kültür Alt Menüsü",
+                            Order = 2,
+                            ParentId = new Guid("c73c3b3b-5f56-48cc-9b8b-b3f78d4a1a5d"),
+                            Url = "/makaleler/tarih-kultur"
+                        },
+                        new
+                        {
+                            Id = new Guid("e75e6faa-6c4c-4bd6-95f5-2c2e82c8ed03"),
+                            CreatedByName = "InitialCreate",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8859),
+                            Description = "Doğa ve aktivite makaleleri",
+                            Icon = "bi bi-tree-fill",
+                            IsActive = true,
+                            IsDeleted = false,
+                            ModifiedByName = "InitialCreate",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8859),
+                            Name = "Doğa ve Aktiviteler",
+                            Note = "Doğa ve Aktiviteler Alt Menüsü",
+                            Order = 3,
+                            ParentId = new Guid("c73c3b3b-5f56-48cc-9b8b-b3f78d4a1a5d"),
+                            Url = "/makaleler/doga-aktiviteler"
+                        },
+                        new
+                        {
+                            Id = new Guid("7e29265f-d672-42a7-9d84-47b564ebad69"),
+                            CreatedByName = "InitialCreate",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8863),
+                            Description = "Bodrum hakkında bilgiler",
+                            Icon = "bi bi-geo-fill",
+                            IsActive = true,
+                            IsDeleted = false,
+                            ModifiedByName = "InitialCreate",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8863),
+                            Name = "Bodrum",
+                            Note = "Bodrum Alt Menüsü",
+                            Order = 1,
+                            ParentId = new Guid("bb9c127f-e143-4ad4-93b5-56d3f9f244ec"),
+                            Url = "/mugla/bodrum"
+                        },
+                        new
+                        {
+                            Id = new Guid("b33b442b-58b3-400b-a2f5-9231e58a1ff7"),
+                            CreatedByName = "InitialCreate",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8868),
+                            Description = "Marmaris hakkında bilgiler",
+                            Icon = "bi bi-geo-fill",
+                            IsActive = true,
+                            IsDeleted = false,
+                            ModifiedByName = "InitialCreate",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8868),
+                            Name = "Marmaris",
+                            Note = "Marmaris Alt Menüsü",
+                            Order = 2,
+                            ParentId = new Guid("bb9c127f-e143-4ad4-93b5-56d3f9f244ec"),
+                            Url = "/mugla/marmaris"
+                        },
+                        new
+                        {
+                            Id = new Guid("97b6d8c7-6a07-4ef1-8764-d71ab72f812a"),
+                            CreatedByName = "InitialCreate",
+                            CreatedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8872),
+                            Description = "Fethiye hakkında bilgiler",
+                            Icon = "bi bi-geo-fill",
+                            IsActive = true,
+                            IsDeleted = false,
+                            ModifiedByName = "InitialCreate",
+                            ModifiedDate = new DateTime(2025, 5, 18, 19, 21, 46, 691, DateTimeKind.Local).AddTicks(8873),
+                            Name = "Fethiye",
+                            Note = "Fethiye Alt Menüsü",
+                            Order = 3,
+                            ParentId = new Guid("bb9c127f-e143-4ad4-93b5-56d3f9f244ec"),
+                            Url = "/mugla/fethiye"
                         });
                 });
 
@@ -1095,182 +1202,182 @@ namespace ProgrammersBlog.Data.Migrations
                         new
                         {
                             Id = new Guid("f7b90591-d678-462d-9f3d-5497dbd43c5d"),
-                            ConcurrencyStamp = "bd3675c5-9b02-4715-8831-9ba0e360139c",
+                            ConcurrencyStamp = "c2b46a20-7baf-41aa-b230-76c2a88d6d96",
                             Name = "Category.Create",
                             NormalizedName = "CATEGORY.CREATE"
                         },
                         new
                         {
                             Id = new Guid("65cb04f5-bdd6-4b3b-9611-9a243c2f982b"),
-                            ConcurrencyStamp = "224ce999-269d-4390-ba0a-c8c5c60cedf1",
+                            ConcurrencyStamp = "7704b35c-22a7-4e96-975e-bb4168b1b588",
                             Name = "Category.Read",
                             NormalizedName = "CATEGORY.READ"
                         },
                         new
                         {
                             Id = new Guid("cc5c2c3b-e013-4317-8a6d-387f6e6b4e70"),
-                            ConcurrencyStamp = "875d89b7-1a4a-42b0-a06b-aacb3bf68bcd",
+                            ConcurrencyStamp = "75f2a00d-23fc-4307-a97e-a2bbef1e92ea",
                             Name = "Category.Update",
                             NormalizedName = "CATEGORY.UPDATE"
                         },
                         new
                         {
                             Id = new Guid("46e3b3b3-bb4f-4755-8257-68fe1b6bca34"),
-                            ConcurrencyStamp = "0bf06461-203f-491c-b8be-9a594e205b50",
+                            ConcurrencyStamp = "55dc3d1c-d90a-489c-9dfe-8999743e2f76",
                             Name = "Category.Delete",
                             NormalizedName = "CATEGORY.DELETE"
                         },
                         new
                         {
                             Id = new Guid("f2c6c3a5-d7e6-4bd4-8a2f-3b0e8175a1d7"),
-                            ConcurrencyStamp = "d3f987e6-a586-4083-ac1f-344587f39c52",
+                            ConcurrencyStamp = "02058e29-af92-4179-b2bc-97d0cdaaa893",
                             Name = "Menu.Create",
                             NormalizedName = "MENU.CREATE"
                         },
                         new
                         {
                             Id = new Guid("a8b2c7e3-d5f6-4e9a-8c1d-7b3e9f5a2c4d"),
-                            ConcurrencyStamp = "a321a216-ff70-497b-8de9-615fbb4ad5df",
+                            ConcurrencyStamp = "a7d77479-6a29-417e-be95-ab3bdd5a9de1",
                             Name = "Menu.Read",
                             NormalizedName = "MENU.READ"
                         },
                         new
                         {
                             Id = new Guid("d9e4a7b2-c5f8-4e1d-9b3a-8c7e6f5a4d2b"),
-                            ConcurrencyStamp = "41573fa9-3cb7-4933-8269-45a2a13608a3",
+                            ConcurrencyStamp = "cd41deae-ead4-4cc9-9fff-b1cc1455b1de",
                             Name = "Menu.Update",
                             NormalizedName = "MENU.UPDATE"
                         },
                         new
                         {
                             Id = new Guid("e7c9b1a4-d8f2-4e5c-9b7a-8d6e5f4c3b2a"),
-                            ConcurrencyStamp = "180e3a84-a4f3-4960-a9bf-d5d3b2c20597",
+                            ConcurrencyStamp = "6e9f1217-53ae-4a21-a2aa-eb12a314b45c",
                             Name = "Menu.Delete",
                             NormalizedName = "MENU.DELETE"
                         },
                         new
                         {
                             Id = new Guid("d1c1d472-1a4d-4d43-9f85-05b8975f9e23"),
-                            ConcurrencyStamp = "1eede7bd-a54c-46aa-ae40-45591161b4ab",
+                            ConcurrencyStamp = "c815c58e-06aa-4b8d-b09d-59c1d66359f6",
                             Name = "Article.Create",
                             NormalizedName = "ARTICLE.CREATE"
                         },
                         new
                         {
                             Id = new Guid("fb9c2732-0c9c-4a5b-90a4-80ab2f04f6b2"),
-                            ConcurrencyStamp = "ccec560b-ffdd-4fab-bcbf-f24bd422017e",
+                            ConcurrencyStamp = "a351c309-e920-4595-8236-23d773dddbc9",
                             Name = "Article.Read",
                             NormalizedName = "ARTICLE.READ"
                         },
                         new
                         {
                             Id = new Guid("0730f01f-58f5-4f99-a28c-d51c121694f2"),
-                            ConcurrencyStamp = "38aa5e34-4def-432b-bcad-7fb6da75b550",
+                            ConcurrencyStamp = "37afaa6b-fbc3-45f4-97dc-b26e00034f88",
                             Name = "Article.Update",
                             NormalizedName = "ARTICLE.UPDATE"
                         },
                         new
                         {
                             Id = new Guid("b7f3894d-d399-479a-a9cf-5d195f02b984"),
-                            ConcurrencyStamp = "a09a1ab8-f387-486f-a227-5728fd118236",
+                            ConcurrencyStamp = "1d3e3e95-3071-4eca-9b55-1e48bb7aeb70",
                             Name = "Article.Delete",
                             NormalizedName = "ARTICLE.DELETE"
                         },
                         new
                         {
                             Id = new Guid("c9fc3b36-73f4-4e5b-bb16-cf84d1740189"),
-                            ConcurrencyStamp = "26d1913a-8d66-4102-b9bd-3b92d2b9b792",
+                            ConcurrencyStamp = "208657c1-6783-437c-837e-0e208d33e123",
                             Name = "User.Create",
                             NormalizedName = "USER.CREATE"
                         },
                         new
                         {
                             Id = new Guid("cf8d7b2a-69de-467f-b496-f56ed8c8d019"),
-                            ConcurrencyStamp = "dbc0ec3b-2ae0-4828-ab8d-919872dfc59b",
+                            ConcurrencyStamp = "48a74e77-2c90-4e88-b21b-dac219397fb2",
                             Name = "User.Read",
                             NormalizedName = "USER.READ"
                         },
                         new
                         {
                             Id = new Guid("b28789c7-1a4d-4a58-8043-50499e39a0f1"),
-                            ConcurrencyStamp = "acefceb1-8696-47dd-8410-d51538e316c8",
+                            ConcurrencyStamp = "93a6d54d-64a6-466a-be2e-75c9bcc2cb18",
                             Name = "User.Update",
                             NormalizedName = "USER.UPDATE"
                         },
                         new
                         {
                             Id = new Guid("ed14e6e9-05b4-4065-b300-213589e16ff3"),
-                            ConcurrencyStamp = "c1b863aa-a199-4aa3-9b45-4825dc7d5ca5",
+                            ConcurrencyStamp = "c5b56672-9847-42fb-9c04-8f84129304a5",
                             Name = "User.Delete",
                             NormalizedName = "USER.DELETE"
                         },
                         new
                         {
                             Id = new Guid("9a20d3de-e7c0-44b7-b446-d287453064f1"),
-                            ConcurrencyStamp = "a5a78c95-2fb9-4ecd-9b7e-b8b32ef34553",
+                            ConcurrencyStamp = "9d7fb89d-01b1-415f-b7b1-75ae16a34ecd",
                             Name = "Role.Create",
                             NormalizedName = "ROLE.CREATE"
                         },
                         new
                         {
                             Id = new Guid("e1bc238f-4d9c-4261-b2d5-bbe8d6e6b6ca"),
-                            ConcurrencyStamp = "12e547d4-1e55-4458-8b33-cdee9fc93cd0",
+                            ConcurrencyStamp = "7e10caa5-fb87-4613-8ea9-9ad3092b51ce",
                             Name = "Role.Read",
                             NormalizedName = "ROLE.READ"
                         },
                         new
                         {
                             Id = new Guid("30e26bb1-c7b7-4c10-98da-b775b861bc7a"),
-                            ConcurrencyStamp = "4e557190-827e-4b3a-844d-2b40438d294c",
+                            ConcurrencyStamp = "e167c7f6-5bb9-4675-aa59-e0fba25d8387",
                             Name = "Role.Update",
                             NormalizedName = "ROLE.UPDATE"
                         },
                         new
                         {
                             Id = new Guid("8b07b9e4-1b7b-4525-a22a-b3d98d4e647d"),
-                            ConcurrencyStamp = "0a11c371-d5d2-4c4f-a6d2-afbdf47fad07",
+                            ConcurrencyStamp = "563df562-68b3-4f2a-9fdb-ecbf391a268e",
                             Name = "Role.Delete",
                             NormalizedName = "ROLE.DELETE"
                         },
                         new
                         {
                             Id = new Guid("6d5878d7-8a8f-46a6-8808-b9717421b021"),
-                            ConcurrencyStamp = "bc690807-bbf5-4314-8fc0-96b7cd1d822e",
+                            ConcurrencyStamp = "7f7bbba4-cf02-44d1-82ae-45b5c79d99cd",
                             Name = "Comment.Create",
                             NormalizedName = "COMMENT.CREATE"
                         },
                         new
                         {
                             Id = new Guid("e1b835c9-d8a7-4ca4-9cc4-c6e5e3deaa45"),
-                            ConcurrencyStamp = "ea308f29-0d5e-41b8-a027-9c035b32bd9c",
+                            ConcurrencyStamp = "62250339-a388-45c8-ba91-26c7435d58ad",
                             Name = "Comment.Read",
                             NormalizedName = "COMMENT.READ"
                         },
                         new
                         {
                             Id = new Guid("b4cf3987-e4ac-4da7-b931-bbd59c4d20ed"),
-                            ConcurrencyStamp = "bd6a4958-6c9a-4f2d-a1d5-2f95e3486108",
+                            ConcurrencyStamp = "2000d65a-5f32-4291-938b-a24abc005d08",
                             Name = "Comment.Update",
                             NormalizedName = "COMMENT.UPDATE"
                         },
                         new
                         {
                             Id = new Guid("8a9418f1-c27f-4303-a256-48736d06bbed"),
-                            ConcurrencyStamp = "1474cba5-52ec-4d22-aae2-9b24f7337e61",
+                            ConcurrencyStamp = "d0cb5b38-bbbf-4d69-aa05-b73c6cda3930",
                             Name = "Comment.Delete",
                             NormalizedName = "COMMENT.DELETE"
                         },
                         new
                         {
                             Id = new Guid("b5718dcb-45f0-429d-b8f3-5c0e6ff2278d"),
-                            ConcurrencyStamp = "1486df2e-5c35-477c-8017-a27a35c764ad",
+                            ConcurrencyStamp = "ee02497c-f727-4cb4-9535-c782453ee213",
                             Name = "AdminArea.Home.Read",
                             NormalizedName = "ADMINAREA.HOME.READ"
                         },
                         new
                         {
                             Id = new Guid("ab56d30e-7d6c-4b47-80e5-7cbce544e925"),
-                            ConcurrencyStamp = "a8782ec5-fcfc-4e86-a7e9-90a70e479b02",
+                            ConcurrencyStamp = "4347a60f-2b87-4892-a933-ad1be3da9bd2",
                             Name = "SuperAdmin",
                             NormalizedName = "SUPERADMIN"
                         });
@@ -1426,7 +1533,7 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = new Guid("9f34e61b-78fc-46d3-a179-6c32e62ac195"),
                             About = "Admin User of ProgrammersBlog",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9e59dedd-98dd-4317-afd4-de12ce620d27",
+                            ConcurrencyStamp = "9f8813de-c185-45fd-ac17-4cea05e3a1d8",
                             Email = "adminuser@gmail.com",
                             EmailConfirmed = true,
                             FacebookLink = "https://facebook.com/adminuser",
@@ -1438,11 +1545,11 @@ namespace ProgrammersBlog.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMINUSER@GMAIL.COM",
                             NormalizedUserName = "ADMINUSER",
-                            PasswordHash = "AQAAAAIAAYagAAAAECo6hX1EgEtufNYrH/kdePJFJ+2yZwsWkxd4CoIyM1x0X81I/MDjn7MhY/ZMnvhAqg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEABDxUs4O3I9fddmN/dS8cEHMiw29Qq0lI2sAYKp1IEHtQ7G7DoW447haT4qtFKTog==",
                             PhoneNumber = "+905555555555",
                             PhoneNumberConfirmed = true,
                             Picture = "/userImages/defaultUser.png",
-                            SecurityStamp = "da4c1468-b6a5-4ffc-9952-bacfb4135ec1",
+                            SecurityStamp = "a396a679-c353-4118-ab90-e2dbf0dcda65",
                             TwitterLink = "https://twitter.com/adminuser",
                             TwoFactorEnabled = false,
                             UserName = "adminuser",
@@ -1454,7 +1561,7 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = new Guid("a54605a4-d3ed-4fa9-83bc-0ea2cc6193d4"),
                             About = "Editor User of ProgrammersBlog",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "19665e6a-a7cf-4923-95e9-7fc0e807de33",
+                            ConcurrencyStamp = "e1673020-9edb-4001-b84d-c0827f016cd4",
                             Email = "editoruser@gmail.com",
                             EmailConfirmed = true,
                             FacebookLink = "https://facebook.com/editoruser",
@@ -1466,11 +1573,11 @@ namespace ProgrammersBlog.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "EDITORUSER@GMAIL.COM",
                             NormalizedUserName = "EDITORUSER",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMWDHY5YLMCBEuSC9Bxqm7JVgjwk5YLhjRpB1Nmiu+Dr42FdOYe/ICDLtfXkSm2Lsw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOYc4jhAs5elic803lwhl9Y1h5hbT2QXAe/97fUhh1kg0BpLwlUMPdMPTGx1OqkPRQ==",
                             PhoneNumber = "+905555555555",
                             PhoneNumberConfirmed = true,
                             Picture = "/userImages/defaultUser.png",
-                            SecurityStamp = "6aa2f6d4-1d7a-4d86-97d0-6455e2832b25",
+                            SecurityStamp = "81ce7770-3b46-454d-9f6b-8057853d60c4",
                             TwitterLink = "https://twitter.com/editoruser",
                             TwoFactorEnabled = false,
                             UserName = "editoruser",

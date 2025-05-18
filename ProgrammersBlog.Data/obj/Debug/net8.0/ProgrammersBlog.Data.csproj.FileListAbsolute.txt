@@ -31,6 +31,7 @@ C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Data\obj\Debug\net8.0\Progra
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Data\obj\Debug\net8.0\ProgrammersBlog.Data.AssemblyInfoInputs.cache
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Data\obj\Debug\net8.0\ProgrammersBlog.Data.AssemblyInfo.cs
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Data\obj\Debug\net8.0\ProgrammersBlog.Data.csproj.CoreCompileInputs.cache
+C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Data\obj\Debug\net8.0\ProgrammersBlog.Data.sourcelink.json
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Data\obj\Debug\net8.0\Programm.53F5A1DD.Up2Date
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Data\obj\Debug\net8.0\ProgrammersBlog.Data.dll
 C:\Users\gitme\Desktop\Yeni klasör\ProgrammersBlog.Data\obj\Debug\net8.0\refint\ProgrammersBlog.Data.dll

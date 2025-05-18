@@ -15,8 +15,11 @@ namespace ProgrammersBlog.Entities.Concrete
         // Makalenin küçük resim yolu
         public string Thumbnail { get; set; }
 
-        // Makalenin yayınlandığı tarih
+        // Makalenin yayınlandığı tarih (eski alan, geriye uyumluluk için korunuyor)
         public DateTime Date { get; set; }
+        
+        // Makalenin ilk yayınlanma tarihi (sıralama için kullanılır ve güncelleme yapılsa bile değişmez)
+        public DateTime PublishDate { get; set; }
 
         // Makalenin görüntülenme sayısı
         public int ViewsCount { get; set; } = 0;
@@ -37,14 +40,14 @@ namespace ProgrammersBlog.Entities.Concrete
         public Guid MenuId { get; set; }
 
         // Navigation Property: Makalenin ait olduğu menü
-        public Menu Menu { get; set; }
+        public virtual Menu Menu { get; set; }
 
         // Makaleyi yazan kullanıcının ID'si
         public Guid UserId { get; set; }
 
         // Navigation Property: Makalenin yazarı
-        public User User { get; set; }
+        public virtual User User { get; set; }
         //Bir makale birden çok yoruma sahip olabilir
-        public ICollection<Comment>  Comments { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

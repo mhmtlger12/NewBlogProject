@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using ProgrammersBlog.Entities.Concrete;
 
@@ -20,16 +20,16 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
             builder.Property(l => l.Level).HasMaxLength(50);
 
             builder.Property(l => l.Message).IsRequired();
-            builder.Property(l => l.Message).HasColumnType("NVARCHAR(MAX)");
+            builder.Property(l => l.Message).HasColumnType("nvarchar(max)");
 
             builder.Property(l => l.Logger).IsRequired(false);
             builder.Property(l => l.Logger).HasMaxLength(250);
 
             builder.Property(l => l.Callsite).IsRequired(false);
-            builder.Property(l => l.Callsite).HasColumnType("NVARCHAR(MAX)");
+            builder.Property(l => l.Callsite).HasColumnType("nvarchar(max)");
 
             builder.Property(l => l.Exception).IsRequired(false);
-            builder.Property(l => l.Exception).HasColumnType("NVARCHAR(MAX)");
+            builder.Property(l => l.Exception).HasColumnType("nvarchar(max)");
 
             builder.ToTable("Logs");
         }

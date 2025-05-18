@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using ProgrammersBlog.Shared.Entities.Abstract;
 
 namespace ProgrammersBlog.Entities.Concrete
@@ -9,7 +9,7 @@ namespace ProgrammersBlog.Entities.Concrete
     {
 
         public string? Picture { get; set; }
-        public ICollection<Article> Articles { get; set; }
+        public virtual ICollection<Article> Articles { get; set; }
         public string About { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

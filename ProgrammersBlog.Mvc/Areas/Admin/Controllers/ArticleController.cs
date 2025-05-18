@@ -58,6 +58,15 @@ namespace ProgrammersBlog.Mvc.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(ArticleAddViewModel articleAddViewModel)
         {
+            // Resim boyutu kontrolü - 2MB'dan büyük resimleri reddet
+            if (articleAddViewModel.ThumbnailFile != null && articleAddViewModel.ThumbnailFile.Length > 2 * 1024 * 1024)
+            {
+                ModelState.AddModelError("ThumbnailFile", "Resim boyutu 2MB'dan büyük olamaz. Lütfen daha küçük bir resim seçin.");
+                _toastNotification.AddErrorToastMessage("Resim boyutu 2MB'dan büyük olamaz. Lütfen daha küçük bir resim seçin.", new ToastrOptions
+                {
+                    Title = "Hata!"
+                });
+            }
 
             if (ModelState.IsValid)
             {
@@ -77,7 +86,6 @@ namespace ProgrammersBlog.Mvc.Areas.Admin.Controllers
                 else
                 {
                     ModelState.AddModelError("", result.Message);
-
                 }
             }
             var menus = await _menuService.GetAllByNonDeletedAndActiveAsync();
