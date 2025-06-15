@@ -1,0 +1,42 @@
+/* Magical Background Styles */
+body {
+    position: relative;
+    background: linear-gradient(45deg, #3B82F6, #8B5CF6, #EC4899, #F59E0B);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    overflow: hidden; /* Prevents scrollbars from bubbles */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.bubbles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind all content */
+    pointer-events: none; /* Allows clicking through */
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    border-radius: 50%;
+    opacity: 0.7;
+    filter: blur(2px);
+    animation: floatUp 25s infinite linear;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        transform: translateY(-120vh) translateX(calc(sin(var(--drift)) * 100px));
+    }
+}
